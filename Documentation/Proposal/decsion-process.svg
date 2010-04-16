@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1336.5646"
+   height="531.07056"
+   id="svg4502"
+   version="1.1"
+   inkscape:version="0.47pre4 r22446"
+   sodipodi:docname="decsion-process.svg"
+   inkscape:export-filename="/home/james/Documents/Academic/Masters/Proposal/decsion-process.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4504">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective4510" />
+    <inkscape:perspective
+       id="perspective4520"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="509.8672"
+     inkscape:cy="325.69683"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1360"
+     inkscape:window-height="743"
+     inkscape:window-x="-5"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4507">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(297.12853,-25.347863)">
+    <ellipse
+       cx="17.253"
+       cy="39.081001"
+       rx="1.124"
+       ry="1.182"
+       id="ellipse3396"
+       sodipodi:cx="17.253"
+       sodipodi:cy="39.081001"
+       sodipodi:rx="1.124"
+       sodipodi:ry="1.182"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:#ffffff;stroke:none"
+       d="m 18.377,39.081001 c 0,0.652801 -0.503232,1.182 -1.124,1.182 -0.620768,0 -1.124,-0.529199 -1.124,-1.182 0,-0.6528 0.503232,-1.182 1.124,-1.182 0.620768,0 1.124,0.5292 1.124,1.182 z" />
+    <ellipse
+       cx="17.253"
+       cy="39.081001"
+       rx="1.124"
+       ry="1.182"
+       id="ellipse3398"
+       sodipodi:cx="17.253"
+       sodipodi:cy="39.081001"
+       sodipodi:rx="1.124"
+       sodipodi:ry="1.182"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:none;stroke:#000000;stroke-width:0.1"
+       d="m 18.377,39.081001 c 0,0.652801 -0.503232,1.182 -1.124,1.182 -0.620768,0 -1.124,-0.529199 -1.124,-1.182 0,-0.6528 0.503232,-1.182 1.124,-1.182 0.620768,0 1.124,0.5292 1.124,1.182 z" />
+    <text
+       x="116.63597"
+       y="214.6198"
+       font-size="0.80"
+       font-style="normal"
+       font-weight="400"
+       id="text3400"
+       style="font-size:21.5892868px;font-style:normal;font-weight:400;text-anchor:middle;fill:#000000;font-family:sans"
+       transform="scale(1.0084843,0.99158711)">X</text>
+    <ellipse
+       cx="21.101"
+       cy="44.410999"
+       rx="1.0829999"
+       ry="1.14"
+       id="ellipse3402"
+       sodipodi:cx="21.101"
+       sodipodi:cy="44.410999"
+       sodipodi:rx="1.0829999"
+       sodipodi:ry="1.14"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:#ffffff;stroke:none"
+       d="m 22.184,44.410999 c 0,0.629605 -0.484876,1.14 -1.083,1.14 -0.598125,0 -1.083,-0.510395 -1.083,-1.14 0,-0.629604 0.484875,-1.14 1.083,-1.14 0.598124,0 1.083,0.510396 1.083,1.14 z" />
+    <ellipse
+       cx="21.101"
+       cy="44.410999"
+       rx="1.0829999"
+       ry="1.14"
+       id="ellipse3404"
+       sodipodi:cx="21.101"
+       sodipodi:cy="44.410999"
+       sodipodi:rx="1.0829999"
+       sodipodi:ry="1.14"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:none;stroke:#000000;stroke-width:0.1"
+       d="m 22.184,44.410999 c 0,0.629605 -0.484876,1.14 -1.083,1.14 -0.598125,0 -1.083,-0.510395 -1.083,-1.14 0,-0.629604 0.484875,-1.14 1.083,-1.14 0.598124,0 1.083,0.510396 1.083,1.14 z" />
+    <text
+       x="220.48042"
+       y="358.45834"
+       font-size="0.80"
+       font-style="normal"
+       font-weight="400"
+       id="text3406"
+       style="font-size:21.5892868px;font-style:normal;font-weight:400;text-anchor:middle;fill:#000000;font-family:sans"
+       transform="scale(1.0084843,0.99158711)">Y</text>
+    <ellipse
+       cx="17.298"
+       cy="44.541"
+       rx="1.0829999"
+       ry="1.14"
+       id="ellipse3408"
+       sodipodi:cx="17.298"
+       sodipodi:cy="44.541"
+       sodipodi:rx="1.0829999"
+       sodipodi:ry="1.14"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:#ffffff;stroke:none"
+       d="m 18.381,44.541 c 0,0.629605 -0.484875,1.14 -1.083,1.14 -0.598124,0 -1.083,-0.510395 -1.083,-1.14 0,-0.629604 0.484876,-1.14 1.083,-1.14 0.598125,0 1.083,0.510396 1.083,1.14 z" />
+    <ellipse
+       cx="17.298"
+       cy="44.541"
+       rx="1.0829999"
+       ry="1.14"
+       id="ellipse3410"
+       sodipodi:cx="17.298"
+       sodipodi:cy="44.541"
+       sodipodi:rx="1.0829999"
+       sodipodi:ry="1.14"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:none;stroke:#000000;stroke-width:0.1"
+       d="m 18.381,44.541 c 0,0.629605 -0.484875,1.14 -1.083,1.14 -0.598124,0 -1.083,-0.510395 -1.083,-1.14 0,-0.629604 0.484876,-1.14 1.083,-1.14 0.598125,0 1.083,0.510396 1.083,1.14 z" />
+    <text
+       x="117.85032"
+       y="361.96655"
+       font-size="0.80"
+       font-style="normal"
+       font-weight="400"
+       id="text3412"
+       style="font-size:21.5892868px;font-style:normal;font-weight:400;text-anchor:middle;fill:#000000;font-family:sans"
+       transform="scale(1.0084843,0.99158711)">Z</text>
+    <ellipse
+       cx="21.096001"
+       cy="38.870998"
+       rx="1.0829999"
+       ry="1.14"
+       id="ellipse3414"
+       sodipodi:cx="21.096001"
+       sodipodi:cy="38.870998"
+       sodipodi:rx="1.0829999"
+       sodipodi:ry="1.14"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:#ffffff;stroke:none"
+       d="m 22.179001,38.870998 c 0,0.629605 -0.484876,1.14 -1.083,1.14 -0.598125,0 -1.083,-0.510395 -1.083,-1.14 0,-0.629604 0.484875,-1.14 1.083,-1.14 0.598124,0 1.083,0.510396 1.083,1.14 z" />
+    <ellipse
+       cx="21.096001"
+       cy="38.870998"
+       rx="1.0829999"
+       ry="1.14"
+       id="ellipse3416"
+       sodipodi:cx="21.096001"
+       sodipodi:cy="38.870998"
+       sodipodi:rx="1.0829999"
+       sodipodi:ry="1.14"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:none;stroke:#000000;stroke-width:0.1"
+       d="m 22.179001,38.870998 c 0,0.629605 -0.484876,1.14 -1.083,1.14 -0.598125,0 -1.083,-0.510395 -1.083,-1.14 0,-0.629604 0.484875,-1.14 1.083,-1.14 0.598124,0 1.083,0.510396 1.083,1.14 z" />
+    <text
+       x="220.34555"
+       y="208.95262"
+       font-size="0.80"
+       font-style="normal"
+       font-weight="400"
+       id="text3418"
+       style="font-size:21.5892868px;font-style:normal;font-weight:400;text-anchor:middle;fill:#000000;font-family:sans"
+       transform="scale(1.0084843,0.99158711)">W</text>
+    <line
+       x1="117.89767"
+       y1="240.59058"
+       x2="118.49641"
+       y2="308.85437"
+       id="line3420"
+       style="stroke:#000000;stroke-width:2.69866085" />
+    <polygon
+       points="17.034,42.742 17.285,42.865 17.533,42.738 17.288,43.24 "
+       id="polygon3422"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:#000000;stroke:none" />
+    <polygon
+       points="17.034,42.742 17.285,42.865 17.533,42.738 17.288,43.24 "
+       id="polygon3424"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:none;stroke:#000000;stroke-width:0.1" />
+    <line
+       x1="222.24214"
+       y1="233.5528"
+       x2="222.29662"
+       y2="305.64307"
+       id="line3426"
+       style="stroke:#000000;stroke-width:2.69866085" />
+    <polygon
+       points="20.849,42.62 21.099,42.745 21.349,42.62 21.1,43.12 "
+       id="polygon3428"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:#000000;stroke:none" />
+    <polygon
+       points="20.849,42.62 21.099,42.745 21.349,42.62 21.1,43.12 "
+       id="polygon3430"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:none;stroke:#000000;stroke-width:0.1" />
+    <line
+       x1="204.49757"
+       y1="228.01353"
+       x2="143.97015"
+       y2="316.85535"
+       id="line3432"
+       style="stroke:#000000;stroke-width:2.69866085" />
+    <polygon
+       points="18.082,42.921 18.221,43.164 18.498,43.2 18.012,43.476 "
+       id="polygon3434"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:#000000;stroke:none" />
+    <polygon
+       points="18.082,42.921 18.221,43.164 18.498,43.2 18.012,43.476 "
+       id="polygon3436"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:none;stroke:#000000;stroke-width:0.1" />
+    <ellipse
+       cx="40.467999"
+       cy="39.907001"
+       rx="0.30000001"
+       ry="0.30000001"
+       id="ellipse3514"
+       sodipodi:cx="40.467999"
+       sodipodi:cy="39.907001"
+       sodipodi:rx="0.30000001"
+       sodipodi:ry="0.30000001"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:#ffffff;stroke:none"
+       d="m 40.767999,39.907001 c 0,0.165686 -0.134315,0.300001 -0.3,0.300001 -0.165686,0 -0.300001,-0.134315 -0.300001,-0.300001 0,-0.165685 0.134315,-0.3 0.300001,-0.3 0.165685,0 0.3,0.134315 0.3,0.3 z" />
+    <ellipse
+       cx="40.467999"
+       cy="39.907001"
+       rx="0.30000001"
+       ry="0.30000001"
+       id="ellipse3516"
+       sodipodi:cx="40.467999"
+       sodipodi:cy="39.907001"
+       sodipodi:rx="0.30000001"
+       sodipodi:ry="0.30000001"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:none;stroke:#000000;stroke-width:0.1"
+       d="m 40.767999,39.907001 c 0,0.165686 -0.134315,0.300001 -0.3,0.300001 -0.165686,0 -0.300001,-0.134315 -0.300001,-0.300001 0,-0.165685 0.134315,-0.3 0.300001,-0.3 0.165685,0 0.3,0.134315 0.3,0.3 z" />
+    <line
+       x1="716.77643"
+       y1="245.75511"
+       x2="782.09375"
+       y2="245.75511"
+       id="line3518"
+       style="stroke:#000000;stroke-width:2.69866085" />
+    <line
+       x1="749.435"
+       y1="237.72736"
+       x2="749.435"
+       y2="277.86676"
+       id="line3520"
+       style="stroke:#000000;stroke-width:2.69866085" />
+    <line
+       x1="749.435"
+       y1="277.86676"
+       x2="716.77643"
+       y2="312.65408"
+       id="line3522"
+       style="stroke:#000000;stroke-width:2.69866085" />
+    <line
+       x1="749.435"
+       y1="277.86676"
+       x2="782.09375"
+       y2="312.65408"
+       id="line3524"
+       style="stroke:#000000;stroke-width:2.69866085" />
+    <g
+       transform="matrix(27.21557,0,0,26.759573,-395.50881,-983.89797)"
+       id="g3708">
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:middle;fill:#000000;font-family:sans"
+         id="text3526"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="49.646896"
+         x="42.069439">Decision</text>
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:middle;fill:#000000;font-family:sans"
+         id="text3528"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="50.446896"
+         x="42.069439">maker</text>
+    </g>
+    <g
+       transform="matrix(27.21557,0,0,26.759573,-395.50881,-983.89797)"
+       id="g3703">
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3530"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="46.625896"
+         x="44.354439">Make decision based</text>
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3532"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="47.425896"
+         x="44.354439">on assumptions from</text>
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3534"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="48.225895"
+         x="44.354439">model.</text>
+    </g>
+    <g
+       transform="matrix(27.21557,0,0,26.759573,-395.50881,-983.89797)"
+       id="g3712">
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3536"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="54.992897"
+         x="33.069443">Codify decision</text>
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3538"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="55.792896"
+         x="33.069443">and enter it into</text>
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3540"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="56.592896"
+         x="33.069443">monitoring</text>
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3542"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="57.392899"
+         x="33.069443">framework</text>
+    </g>
+    <g
+       transform="matrix(27.21557,0,0,26.759573,-395.50881,-983.89797)"
+       id="g4496">
+      <rect
+         style="fill:#ffffff;stroke:none"
+         id="rect3544"
+         height="2.8610001"
+         width="3.747"
+         y="54.649899"
+         x="28.92144" />
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.1"
+         id="rect3546"
+         height="2.8610001"
+         width="3.747"
+         y="54.649899"
+         x="28.92144" />
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3550"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="56.321896"
+         x="29.107441">W-&gt;Z^Y</text>
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3552"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="57.121895"
+         x="29.107441">W++</text>
+    </g>
+    <g
+       transform="matrix(27.21557,0,0,26.759573,-395.50881,-983.89797)"
+       id="g3691">
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3554"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="45.809898"
+         x="26.20344">Check that decision</text>
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3556"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="46.609898"
+         x="26.20344">assumptions are</text>
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3558"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="47.409897"
+         x="26.20344">still valid when model</text>
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3560"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="48.209896"
+         x="26.20344">changes</text>
+    </g>
+    <g
+       transform="matrix(27.21557,0,0,26.759573,-395.50881,-983.89797)"
+       id="g3686">
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3562"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="38.323132"
+         x="27.691441">Inform decision makers</text>
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3564"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="39.123135"
+         x="27.691441">about consequences of</text>
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3566"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="39.923134"
+         x="27.691441">changes to the model</text>
+    </g>
+    <path
+       d="m 69.971052,241.12574 a 66.814226,65.694753 0 1 0 14.070489,75.78311"
+       id="path3568"
+       style="fill:none;stroke:#000000;stroke-width:2.69866085" />
+    <polygon
+       points="15.821,40.707 15.753,40.152 15.336,40.429 "
+       id="polygon3570"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:#000000;stroke:none" />
+    <polygon
+       points="15.821,40.707 15.753,40.152 15.336,40.429 "
+       id="polygon3572"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:none;stroke:#000000;stroke-width:0.1" />
+    <path
+       d="m 742.87606,181.90678 a 504.71276,496.2563 0 0 0 -573.15991,-4.6294"
+       id="path3574"
+       style="fill:none;stroke:#000000;stroke-width:2.69866085" />
+    <polygon
+       points="39.982,38.242 40.231,38.116 40.279,37.841 40.532,38.339 "
+       id="polygon3576"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:#000000;stroke:none" />
+    <polygon
+       points="39.982,38.242 40.231,38.116 40.279,37.841 40.532,38.339 "
+       id="polygon3578"
+       transform="matrix(27.21557,0,0,26.759573,-351.92471,-838.19481)"
+       style="fill:none;stroke:#000000;stroke-width:0.1" />
+    <g
+       transform="matrix(27.21557,0,0,26.759573,-395.50881,-983.89797)"
+       id="g3718">
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3548"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="55.521896"
+         x="29.107441">X^W-&gt;Z</text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.1"
+         id="path3580"
+         d="m 21.37144,51.628896 a 21.899,21.899 0 0 0 20.737,-0.455" />
+      <polygon
+         style="fill:#000000;stroke:none"
+         transform="translate(1.60144,5.444896)"
+         id="polygon3582"
+         points="19.996,46.028 19.767,46.189 19.759,46.468 19.437,46.011 " />
+      <polygon
+         style="fill:none;stroke:#000000;stroke-width:0.1"
+         transform="translate(1.60144,5.444896)"
+         id="polygon3584"
+         points="19.996,46.028 19.767,46.189 19.759,46.468 19.437,46.011 " />
+    </g>
+    <path
+       d="m 256.76304,290.64638 a 139.47427,29.562014 0 0 0 11.29588,-44.53204"
+       id="path3586"
+       style="fill:none;stroke:#000000;stroke-width:2.59304619;stroke-miterlimit:4;stroke-dasharray:none" />
+    <polygon
+       points="22.108,40.818 22.557,40.486 22.111,40.259 "
+       id="polygon3590"
+       transform="matrix(22.937146,-14.402934,14.648367,22.552834,-838.86766,-348.23489)"
+       style="fill:#000000;stroke:#000000;stroke-width:0.1" />
+    <g
+       transform="matrix(27.21557,0,0,26.759573,-395.50881,-983.89797)"
+       id="g3697">
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3592"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="46.593895"
+         x="3.5707121">Update model based</text>
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3594"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="47.393898"
+         x="3.5707121">on calibration changes</text>
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3596"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="48.193897"
+         x="3.5707121">and remodelling after</text>
+      <text
+         style="font-size:0.80000001px;font-style:normal;font-weight:400;text-anchor:start;fill:#000000;font-family:sans"
+         id="text3598"
+         font-weight="400"
+         font-style="normal"
+         font-size="0.80"
+         y="48.993896"
+         x="3.5707121">error detection</text>
+    </g>
+  </g>
+</svg>
