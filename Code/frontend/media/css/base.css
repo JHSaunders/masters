@@ -1,0 +1,288 @@
+/*
+    custom styles
+*/
+
+
+body
+{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+}
+
+
+#outer-align
+{
+    margin-left: auto;
+    margin-right: auto;    
+    background-repeat: no-repeat;
+    background-position: right top;
+
+}
+
+#body-align
+{
+    width : 800px;
+    padding:0px;
+    margin-right: auto;    
+ 
+}
+
+#content-frame
+{
+    padding: 5px;
+    background: #edfbff;        
+    border-left: thin solid #26393d;
+    border-right: thin solid #26393d;
+    border-top: thin solid #26393d;
+    border-bottom: thin solid #26393d;
+    /*border-radius: 12px;*/
+    /*-moz-border-radius: 12px;*/
+    /*-webkit-border-radius: 12px;*/    
+}
+
+#topnavbar
+{
+    color:white;
+    padding: 2px;    
+    padding-left: 14px;
+    padding-top:10px;
+}
+
+#topnavbar .inactive
+{
+    color:#26393d;
+    border-bottom: thin solid #26393d;
+    border-top: thin solid #26393d;
+    border-left: thin solid #26393d;
+    border-right: thin solid #26393d;
+    background: white;
+    text-decoration:none;
+    font-weight: bold;
+    padding: 2px;
+}
+
+.user-info
+{
+    float: right;
+    color: white !important;    
+}
+
+.user-info a
+{
+    color: white !important;
+}
+#topnavbar .active
+{
+    color:#26393d;
+    border-bottom: thin solid #edfbff;
+    border-top: thin solid #26393d;
+    border-left: thin solid #26393d;
+    border-right: thin solid #26393d;
+
+    background:#edfbff;    
+    text-decoration:none;
+    font-weight: bold;
+    padding: 2px;
+}
+
+#logout
+{
+    float:right;    
+}
+
+#logout a
+{
+    text-decoration:none;
+    color:#26393d;
+}
+
+#footer
+{
+    width : 100%;
+    padding: 5px;
+    text-align : center;
+    clear:both;
+}
+
+#banner
+{
+    margin-bottom:5px;
+}
+
+div.left-col
+{
+    float:left;
+    width:47%;
+}
+
+div.right-col
+{
+    float:right;
+    width:47%;
+}
+
+h1#main-title
+{
+    margin: 2px;
+    font-size: 32px;
+    font-style: italic;
+    font-weight:bold;
+
+}
+
+#sub-title
+{
+    padding-left: 20px;
+}
+
+h1
+{
+    font-weight:normal;
+    color:#26393d;
+}
+
+h2
+{
+    font-weight:normal;
+    color:#26393d;    
+    margin-top: 2;
+    margin-bottom: 0;
+}
+
+
+table
+{
+    text-align : left;    
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse:collapse;
+    width:100%;
+}
+
+td,  th 
+{
+    font-size:1em;
+    border:1px solid #26393d;
+    padding:3px 7px 2px 7px;
+}
+
+th 
+{
+    font-size:1.1em;
+    text-align:left;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#567877;
+    color:#ffffff;
+}
+
+tr td 
+{
+    background-color:white;
+}
+
+tr.alt td 
+{
+    color:#000000;
+    background-color:#edfbff;
+}
+
+td input
+{
+    border: 1px solid #26393d;
+}
+
+table.thin_table
+{
+    width:auto;   
+}
+
+table.invisible tr td, table.invisible tr th
+{
+    background-color:transparent;    
+    color: black;
+    border:0px solid #26393d;
+}
+
+ul.errorlist {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.errorlist li {
+    font-size: 12px !important;
+    display: block;
+    padding: 4px 5px 4px 25px;
+    margin: 0 0 3px 0;
+    border: 1px solid red;
+    color: white;
+    background: red url(../img/admin/icon_alert.gif) 5px .3em no-repeat;
+}
+
+.header
+{
+    width:100%;
+}
+
+div.highlight
+{
+    background-color: white;
+    width: 100%;
+    border: 1px solid #26393d;
+}
+
+.add_link
+{
+    float:right;
+    clear:both;
+}
+
+.button
+{
+    cursor: pointer;
+    background: #eeeeee; 
+    border: 1px solid #bbbbbb; 
+    border-radius: 3px;
+    -webkit-border-radius: 3px; 
+    -moz-border-radius: 3px;
+    -moz-user-select: none;
+    
+    padding:2px;    
+    padding-left:2px;
+    padding-right:2px;
+    margin:2px;
+    color: black;
+    text-decoration:none;
+    font-size: 12px;    
+}
+
+.sortcol {
+	cursor: pointer;
+	padding-right: 20px;
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+.sortasc {
+	background-color: #B9DDFF;
+	background-image: url(/media/img/up.gif);
+}
+.sortdesc {
+	background-color: #B9DDFF;
+	background-image: url(/media/img/down.gif);
+}
+.nosort {
+	cursor: default;
+}
+th.resize-handle-active {
+	cursor: e-resize;
+}
+
+div.resize-handle {
+	cursor: e-resize;
+	width: 2px;
+	border-right: 1px dashed #1E90FF;
+	position:absolute;
+	top:0;
+	left:0;
+}

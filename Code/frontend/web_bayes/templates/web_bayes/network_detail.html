@@ -1,0 +1,9 @@
+{% extends "web_bayes/base.html" %}
+
+{%block bodytitle%}
+{{object}}
+{%endblock%}
+
+{% block content %}
+<a href="{%url network_properties object.id %}">Edit details</a>
+{%endblock%}
