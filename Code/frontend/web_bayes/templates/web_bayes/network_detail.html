@@ -1,9 +1,49 @@
 {% extends "web_bayes/base.html" %}
 
+
+
 {%block bodytitle%}
-{{object}}
+{{network}}
 {%endblock%}
 
 {% block content %}
-<a href="{%url network_properties object.id %}">Edit details</a>
+<div id="toolbar">
+<a class= "button" href="{%url create_node network.id %}">Add Node</a>
+<a class= "button" href="{%url create_edge network.id %}">Add Edge</a>
+<a class= "button" href="">Add Cluster</a>
+<a class= "button" href="{%url network_properties network.id %}">Edit Network Details</a>
+</div>
+
+
+<div id="network_graph">
+<img src="{% url network_definition_svg network.id %}" usemap="#model" alt="Network"/>
+{% autoescape off %}
+{{map}}
+{% endautoescape %}
+</div>
+
+<div id="nodes_list">
+<table>
+<tr>
+<th>Nodes</th>
+</tr>
+<tr>
+<td>
+<ul>
+{% for cluster in network.clusters.all %}
+<li><a href="{%url view_cluster cluster.id %}" >{{cluster}}</a></li>
+<ul>
+{% for node in cluster.nodes.all %}
+<li><a href="{%url view_node node.id %}" >{{node}}</a></li>
+{% endfor %}
+</ul>
+{% endfor %}
+{% for node in network.free_nodes.all %}
+<li><a href="{%url view_node node.id %}" >{{node}}</a></li>
+{% endfor %}
+</ul>
+</td>
+</tr>
+</table>
+</div>
 {%endblock%}

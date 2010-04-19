@@ -157,7 +157,6 @@ table
     text-align : left;    
     font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse:collapse;
-    width:100%;
 }
 
 td,  th 
@@ -274,15 +273,17 @@ div.highlight
 .nosort {
 	cursor: default;
 }
-th.resize-handle-active {
-	cursor: e-resize;
+
+div#network_graph {
+float:left;
 }
 
-div.resize-handle {
-	cursor: e-resize;
-	width: 2px;
-	border-right: 1px dashed #1E90FF;
-	position:absolute;
-	top:0;
-	left:0;
+div#nodes_list {
+float:right;
+}
+
+div#toolbar{
+border-top: solid 1px black;
+border-bottom: solid 1px black;
+padding: 5px 0px 5px 0px;t 
 }
