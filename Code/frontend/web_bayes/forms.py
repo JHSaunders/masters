@@ -10,14 +10,26 @@ class NodeForm(ModelForm):
     class Meta:
         model = Node
         
-class CPTForm:
+class CPTForm(Form):
     
-    def __init__(self,node):    
-        self.node = node
-        self.is_safe = True    
+    def __init__(self,*args,**kwargs): 
         
-    def __unicode__(self):
+        self.node = kwargs["node"]
+        if len(args) ==0:
+            defaults = {}
+            for tup in self.get_value_sets(): 
+                for value in tup[1]:
+                    defaults["%s"%(value.id,)] = value.value
+            
+            args=(defaults,)
+        del kwargs["node"]
+        super(CPTForm,self).__init__(*args,**kwargs)
         
+        for tup in self.get_value_sets():
+            for value in tup[1]:
+                self.fields["%s"%(value.id,)] = FloatField()
+        
+    def get_value_sets(self):
         max_states = []
         state_count = 0
         max_state_count = 1
@@ -30,47 +42,25 @@ class CPTForm:
             current_states.append(0)            
 
         if len(max_states)==0 or max_state_count == 0:
-           return ""
-                    
-        buf = []        
-        buf.append("<tr>")
-
-        for parent in self.node.parent_nodes():
-            buf.append('<th>%s</th>'%(parent))
-        buf.append("<td/>");
-
-        for state in self.node.states.all():
-            buf.append("<th>%s</th>"%state)       
-
-        buf.append("</tr>")
+           return []
         
-        cycle = True;
-      
-        while state_count<max_state_count:
-            
-            if cycle:
-                buf.append("<tr>")
-            else:
-                buf.append('<tr class="alt">')
-                
+        results = []
+        
+        while state_count<max_state_count:                
             parent_states = []
             for i in range(len(parent_nodes)):
                 parent_states.append(parent_nodes[i].states.all()[current_states[i]])
-                buf.append('<td>%s</td>'%parent_states[i])
             
-            buf.append('<td/>')
-            
+            values = []
             for state in self.node.states.all():
-                value = self.node.cpt_value(state,parent_states);
-                buf.append('<td>%s</td>'%value.id)
+                values.append(self.node.cpt_value(state,parent_states))
             
-                
-            buf.append("</tr>")
-            
-            cycle = not cycle
+            results.append((parent_states,values))
+                        
             state_count +=1
             running = True
             index = len(current_states) - 1
+            
             while running:                
                 current_states[index]+=1
                 running = False
@@ -78,6 +68,42 @@ class CPTForm:
                    current_states[index] = 0
                    running = True
                 index-=1
+        
+        return results
+    
+    def save_values(self):
+        for tup in self.get_value_sets():
+            for value in tup[1]:
+                value.value = self.cleaned_data["%s"%value.id]
+                value.save()
                 
+    def __unicode__(self):    
+        value_set = self.get_value_sets()
+                                    
+        buf = []        
+        buf.append("<tr>")
+        for parent in self.node.parent_nodes():
+            buf.append('<th>%s</th>'%(parent))
+        buf.append("<td/>")        
+        for state in self.node.states.all():
+            buf.append("<th>%s</th>"%state)
+        buf.append("</tr>")
+        
+        cycle = True;
+      
+        for tup in value_set:
+            
+            if cycle:
+                buf.append("<tr>")
+            else:
+                buf.append('<tr class="alt">')
+                
+            for state in tup[0]:                
+                buf.append('<td>%s</td>'%state)            
+            buf.append('<td/>')            
+            for value in tup[1]:
+                buf.append('<td class="cpt_cell">%s%s</td>'% (self["%s"%(value.id,)].errors,self["%s"%(value.id,)]) )
+            buf.append("</tr>")
+            cycle = not cycle
                 
         return "".join(buf)

@@ -62,26 +62,35 @@ def create_node(req,network_id):
     node.save()
     node.name = "New node %d" % node.id
     node.save()
+    State(node = node,name="On").save()
+    State(node = node,name="Off").save()
+    
     return HttpResponseRedirect(reverse("view_node",args=[node.id]))
     
 def view_node(req,node_id):
     node = Node.objects.get(id=node_id)
-    StatesFormSet = inlineformset_factory(Node, State)
-    
-    cpt_form = CPTForm(node)
-    print cpt_form.__unicode__()
+    StatesFormSet = inlineformset_factory(Node, State)    
+        
     if req.method=="POST":
         details_form = NodeForm(req.POST,instance = node)
         states_formset = StatesFormSet(req.POST, req.FILES, instance=node)
-        if details_form.is_valid() and states_formset.is_valid() :
-            details_form.save()
+        cpt_form = CPTForm(req.POST, node=node)
+                                
+        if cpt_form.is_valid() and details_form.is_valid() and states_formset.is_valid() :
+            
+        
+            details_form.save()            
             for state in  states_formset.save(commit=False):
                 state.node = node
                 state.save()
+            
+            cpt_form.save_values()
+                
             return HttpResponseRedirect(reverse("view_node",args=[node.id]))
     else:
         details_form = NodeForm(instance = node)
         states_formset = StatesFormSet(instance=node)            
+        cpt_form = CPTForm(node=node)
         
     return direct_to_template(req,"web_bayes/node_form.html",
                                 extra_context={"details_form":details_form,

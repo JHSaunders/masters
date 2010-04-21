@@ -5,7 +5,7 @@ def DotNode(node):
     return '%s [label="%s", style="filled", fillcolor="lightblue" URL="%s"]' % (node.slug(),node.name,reverse("view_node",args=[node.id]))
 
 def DotEdge(edge):
-    return '%s -> %s [ URL="%s" ]'%(edge.parent_node.slug(),edge.child_node.slug(),reverse("view_edge",args=[edge.id]))
+    return '%s -> %s [ URL="%s"]'%(edge.parent_node.slug(),edge.child_node.slug(),reverse("view_edge",args=[edge.id]))
                 
 def DotBasicNetwork(network):    
     dot = []
@@ -16,8 +16,9 @@ def DotBasicNetwork(network):
     for cluster in network.clusters.all():
         id_cluster +=1
         dot.append('subgraph cluster_%s{'%(id_cluster,))
-        dot.append('label="%s";' % (cluster.name,));
-        dot.append('URL="%s";' % (reverse("view_cluster",args=[cluster.id]),));
+        dot.append('label="%s";' % (cluster.name,))
+        dot.append('bgcolor="%s";' % ("aliceblue",))        
+        dot.append('URL="%s";' % (reverse("view_cluster",args=[cluster.id]),))
         
         for node in cluster.nodes.all():
             dot.append(DotNode(node))
