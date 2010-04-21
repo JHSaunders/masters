@@ -27,7 +27,6 @@ class Cluster(models.Model):
         return self.name
 
 admin.site.register(Cluster)
-
             
 class Node(models.Model):
     name = models.CharField(max_length=100)
@@ -36,11 +35,25 @@ class Node(models.Model):
     
     def __unicode__(self):
         return self.name
-    
-    
+        
     def slug(self):
         return self.name.replace(" ","_")
         
+#    def CPT(self,child_state,*args):
+#        query = CPTValue.objects.filter(child_state = child_state)
+#        for state in args:           
+#             query.filter(state_in = parent_states)
+#        if query.count() == 0:
+#            value = CPTValue(child_state = childstate)
+#            for state in args:                       
+#                value.parent_states.add(state)
+#        else
+#            return query[0]
+    
+    def parent_nodes(self): 
+        for edge in self.parent_edges.all():
+            yield edge.parent_node
+     
 admin.site.register(Node)
             
 class Edge(models.Model):
@@ -52,3 +65,21 @@ class Edge(models.Model):
         return '%s->%s'%(self.parent_node,self.child_node)    
 
 admin.site.register(Edge)
+
+class State(models.Model):
+    node = models.ForeignKey(Node,related_name="states",editable=False)
+    name = models.CharField(max_length=100)
+    
+    def delete(self, *args, **kwargs):            
+        self.dependant_values.all().delete();
+        super(State, self).delete(*args, **kwargs)        
+    
+    def __unicode__(self):
+        return self.name
+    
+class CPTValue(models.Model):    
+    child_state = models.ForeignKey(State,related_name="defining_values")
+    parent_states = models.ManyToManyField(State,related_name="dependant_values")
+    value = models.FloatField()
+
+admin.site.register(CPTValue)   

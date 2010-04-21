@@ -4,7 +4,7 @@
 {% if object.id %}
 {{object}}
 {% else %}
-New Network
+New Cluster
 {% endif %}
 {%endblock%}
 
@@ -13,9 +13,9 @@ New Network
 <table>
 {{form}}
 </table>
-<input type="submit" name="save" Value="Save"/>
+<input type="submit" name="save" Value="Save" />
 {% if object.id %}
-<a href="{%url delete_network object.id %}">Delete</a>
+<a href="{%url delete_cluster object.id %}">Delete</a>
 {% endif %}
 </form>
 {%endblock%}

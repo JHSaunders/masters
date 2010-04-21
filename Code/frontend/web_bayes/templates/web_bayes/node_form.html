@@ -1,21 +1,35 @@
 {% extends "web_bayes/base.html" %}
 
-{%block bodytitle%}
-{% if object.id %}
-{{object}}
-{% else %}
-New Node
-{% endif %}
+{%block bodytitle %}
+{{node}}
 {%endblock%}
 
 {% block content %}
 <form target="" method="POST">
+<span class="toolbar">
+<input class="button" type="submit" name="save" Value="Save Changes" />
+<a class="button" href="{%url delete_node node.id %}">Delete Node</a>
+<a class="button" href="{%url view_network node.network.id %}">Return to Network Definition</a>
+</span>
+<h2> Node Details </h2>
 <table>
-{{form}}
+{{details_form}}
 </table>
-<input type="submit" name="save" Value="Save" />
-{% if object.id %}
-<a href="{%url delete_node object.id %}">Delete</a>
-{% endif %}
+
+<h2>Node States</h2>
+{{ formset.non_form_errors.as_ul }}
+<table>
+{% with states_formset as formset %}
+{% include "web_bayes/formset.html" %}
+{% endwith %} 
+</table>
+
+<h2>CPT</h2>
+
+{%autoescape off %}
+<table>
+{{cpt_form}}
+</table>
+{%endautoescape %}
 </form>
 {%endblock%}

@@ -7,7 +7,8 @@ urlpatterns = patterns('',
     url(r'^network/(?P<network_id>\d+)$', views.view_network,name="view_network"),
     
     url(r'^network/(?P<network_id>\d+)/definition.svg$', views.network_definition_visualisation_svg,name="network_definition_svg"),
-    
+    url(r'^network/(?P<network_id>\d+)/definition.png$', views.network_definition_visualisation_png,name="network_definition_png"),
+        
     url(r'^network/(?P<network_id>\d+)/dot.txt$', views.network_definition_visualisation_dot,name="network_definition_dot"),
         
     url(r'^create_network$', views.create_network,name="create_network"),
@@ -21,6 +22,9 @@ urlpatterns = patterns('',
     url(r'^create_edge/(?P<network_id>\d+)$',views.create_edge,name="create_edge"),
     url(r'^edge/(?P<edge_id>\d+)/view$', views.view_edge, name="view_edge"),
     url(r'^edge/(?P<edge_id>\d+)/delete$', views.delete_edge,name="delete_edge"),
-            
+    
+    url(r'^create_cluster/(?P<network_id>\d+)$',views.create_cluster,name="create_cluster"),        
     url(r'^cluster/(?P<cluster_id>\d+)/view$', views.view_cluster,name="view_cluster"),
+    url(r'^cluster/(?P<cluster_id>\d+)/delete$', views.delete_cluster,name="delete_cluster"),
+    
     )
