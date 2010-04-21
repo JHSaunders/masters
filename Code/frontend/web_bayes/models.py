@@ -39,16 +39,22 @@ class Node(models.Model):
     def slug(self):
         return self.name.replace(" ","_")
         
-#    def CPT(self,child_state,*args):
-#        query = CPTValue.objects.filter(child_state = child_state)
-#        for state in args:           
-#             query.filter(state_in = parent_states)
-#        if query.count() == 0:
-#            value = CPTValue(child_state = childstate)
-#            for state in args:                       
-#                value.parent_states.add(state)
-#        else
-#            return query[0]
+    def cpt_value(self,child_state,parent_states):
+        query = CPTValue.objects.filter(child_state = child_state)
+        
+        for state in parent_states:            
+            query = query.filter(parent_states = state)
+            
+        if query.count() == 0:
+            value = CPTValue(child_state = child_state,value=0)
+            
+            value.save()
+            for state in parent_states:                       
+                value.parent_states.add(state)
+            value.save()
+            return value    
+        else:
+            return query[0]
     
     def parent_nodes(self): 
         for edge in self.parent_edges.all():

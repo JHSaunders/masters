@@ -112,7 +112,7 @@ def view_edge(req,edge_id):
 
 def delete_edge(req,edge_id):
     edge = Edge.objects.get(id=edge_id)  
-    return delete_object(req,model=Edge,object_id=cluster_id,post_delete_redirect=reverse('view_network', args=[edge.network.id]))
+    return delete_object(req,model=Edge,object_id=edge_id,post_delete_redirect=reverse('view_network', args=[edge.network.id]))
 
 def view_cluster(req,cluster_id):
     cluster = Cluster.objects.get(id=cluster_id)

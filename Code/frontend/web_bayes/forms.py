@@ -21,7 +21,7 @@ class CPTForm:
         max_states = []
         state_count = 0
         max_state_count = 1
-        current_states = []
+        current_states = []        
         parent_nodes = []
         for parent in self.node.parent_nodes():
             parent_nodes.append(parent)            
@@ -53,11 +53,18 @@ class CPTForm:
             else:
                 buf.append('<tr class="alt">')
                 
-            
+            parent_states = []
             for i in range(len(parent_nodes)):
-                buf.append('<td>%s</td>'%(parent_nodes[i].states.all()[current_states[i]]))
+                parent_states.append(parent_nodes[i].states.all()[current_states[i]])
+                buf.append('<td>%s</td>'%parent_states[i])
             
-            buf.append('<td/>')    
+            buf.append('<td/>')
+            
+            for state in self.node.states.all():
+                value = self.node.cpt_value(state,parent_states);
+                buf.append('<td>%s</td>'%value.id)
+            
+                
             buf.append("</tr>")
             
             cycle = not cycle
