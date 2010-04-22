@@ -155,18 +155,23 @@ admin.site.register(Edge)
 class State(models.Model):
     node = models.ForeignKey(Node,related_name="states",editable=False)
     name = models.CharField(max_length=100)
-    probability = models.FloatField()
+    probability = models.FloatField(blank=True)
     
     def delete(self, *args, **kwargs):            
         self.dependant_values.all().delete();
         super(State, self).delete(*args, **kwargs)        
     
+    def save(self,*args,**kwargs):
+        if self.probability==None:
+            self.probability = 0.0
+        super(State, self).save(*args, **kwargs)        
+        
     def __unicode__(self):
         return self.name
     
 class CPTValue(models.Model):    
     child_state = models.ForeignKey(State,related_name="defining_values")
     parent_states = models.ManyToManyField(State,related_name="dependant_values")
-    value = models.FloatField()
+    value = models.FloatField(default=0.0)
 
 admin.site.register(CPTValue)   

@@ -36,7 +36,7 @@
       {{ hidden }}
   {% endfor %}
   
-  <td>{{form.name.errors.as_ul}}{{form.name}}</td>
+  <td>{{form.name.errors.as_ul}}{{form.name}}{{form.probability.errors.as_ul}}</td>
   {% if node.is_root %}    
   <td>{{form.probability.errors.as_ul}}{{form.probability}}</td> 
   {%else%}

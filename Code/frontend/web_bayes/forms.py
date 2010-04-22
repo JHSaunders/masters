@@ -32,8 +32,9 @@ class CPTForm(Form):
     def save_values(self):
         for tup in self.node.get_value_sets():
             for value in tup[1]:
-                value.value = self.cleaned_data["%s"%value.id]
-                value.save()
+                if "%s"%value.id in self.cleaned_data: 
+                    value.value = self.cleaned_data["%s"%value.id]
+                    value.save()
                 
     def __unicode__(self):    
         value_set = self.node.get_value_sets()
