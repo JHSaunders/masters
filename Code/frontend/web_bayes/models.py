@@ -38,6 +38,15 @@ class Node(models.Model):
         
     def slug(self):
         return self.name.replace(" ","_")
+    
+    def parent_nodes(self): 
+        parents=[]
+        for edge in self.parent_edges.all():
+            parents.append(edge.parent_node)        
+        return parents
+    
+    def is_root(self):
+        return len(self.parent_nodes())==0
         
     def cpt_value(self,child_state,parent_states):
         query = CPTValue.objects.filter(child_state = child_state)
@@ -56,10 +65,81 @@ class Node(models.Model):
         else:
             return query[0]
     
-    def parent_nodes(self): 
-        for edge in self.parent_edges.all():
-            yield edge.parent_node
-     
+    def get_value_sets(self):
+        max_states = []
+        state_count = 0
+        max_state_count = 1
+        current_states = []        
+        parent_nodes = []
+        for parent in self.parent_nodes():
+            parent_nodes.append(parent)            
+            max_states.append(parent.states.count())
+            max_state_count*=parent.states.count()
+            current_states.append(0)            
+
+        if len(max_states)==0 or max_state_count == 0:
+           return []
+        
+        results = []
+        
+        while state_count<max_state_count:                
+            parent_states = []
+            for i in range(len(parent_nodes)):
+                parent_states.append(parent_nodes[i].states.all()[current_states[i]])
+            
+            values = []
+            for state in self.states.all():
+                values.append(self.cpt_value(state,parent_states))
+            
+            results.append((parent_states,values))
+                        
+            state_count +=1
+            running = True
+            index = len(current_states) - 1
+            
+            while running:                
+                current_states[index]+=1
+                running = False
+                if current_states[index]==max_states[index]:
+                   current_states[index] = 0
+                   running = True
+                index-=1
+        
+        return results
+    
+    def normalise_cpt_values(self):
+        for tup in self.get_value_sets():
+            total = 0
+            for value in tup[1]:
+                total+=value.value
+            for value in tup[1]:
+                if total>0:
+                    value.value = value.value/total
+                else:
+                    value.value = 1.0/len(tup[1])
+                    
+                value.save()
+                
+    def normalise_probabilities(self):
+        total = 0
+        for states in self.states.all():
+            total+=states.probability
+        
+        for state in self.states.all():
+            if total>0:
+                state.probability/=total
+            else:
+                state.probaility= 1/self.states.count()
+            state.save()
+        
+    def clean_cpt_values(self):
+        pass
+    
+    def normalise_node(self):
+        self.normalise_probabilities()        
+        self.clean_cpt_values()        
+        self.normalise_cpt_values()
+        
 admin.site.register(Node)
             
 class Edge(models.Model):
@@ -75,6 +155,7 @@ admin.site.register(Edge)
 class State(models.Model):
     node = models.ForeignKey(Node,related_name="states",editable=False)
     name = models.CharField(max_length=100)
+    probability = models.FloatField()
     
     def delete(self, *args, **kwargs):            
         self.dependant_values.all().delete();

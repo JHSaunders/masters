@@ -17,19 +17,43 @@
 </table>
 
 <h2>Node States</h2>
-{{ formset.non_form_errors.as_ul }}
+{{ states_formset.non_form_errors.as_ul }}
 <table>
-{% with states_formset as formset %}
-{% include "web_bayes/formset.html" %}
-{% endwith %} 
+<thead>
+  <tr>
+    <th>Name</th>
+    {% if node.is_root %}
+    <th>Probability</th>
+    {%endif%}
+    <th>Delete</th>
+  </tr>
+</thead>
+
+{{ states_formset.management_form }}
+{% for form in states_formset.forms %}
+  <tr class="{% cycle row,alt %}">
+  {% for hidden in form.hidden_fields %}
+      {{ hidden }}
+  {% endfor %}
+  
+  <td>{{form.name.errors.as_ul}}{{form.name}}</td>
+  {% if node.is_root %}    
+  <td>{{form.probability.errors.as_ul}}{{form.probability}}</td> 
+  {%else%}
+  {{form.probability.as_hidden}}
+  {%endif%}
+  <td>{%if not forloop.first %}{{form.DELETE}}{%else%}{{form.DELETE.as_hidden}}{%endif%}</td>
+  </tr>
+{% endfor %}
 </table>
 
+{% if not node.is_root%}
 <h2>CPT</h2>
-
 {%autoescape off %}
 <table>
 {{cpt_form}}
 </table>
 {%endautoescape %}
 </form>
+{% endif %}
 {%endblock%}

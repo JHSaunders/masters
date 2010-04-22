@@ -62,8 +62,8 @@ def create_node(req,network_id):
     node.save()
     node.name = "New node %d" % node.id
     node.save()
-    State(node = node,name="On").save()
-    State(node = node,name="Off").save()
+    State(node = node,name="On",probability=0.5).save()
+    State(node = node,name="Off",probability=0.5).save()
     
     return HttpResponseRedirect(reverse("view_node",args=[node.id]))
     
@@ -85,11 +85,12 @@ def view_node(req,node_id):
                 state.save()
             
             cpt_form.save_values()
-                
+            node.normalise_node()    
             return HttpResponseRedirect(reverse("view_node",args=[node.id]))
-    else:
+    else:        
         details_form = NodeForm(instance = node)
-        states_formset = StatesFormSet(instance=node)            
+        node.normalise_node()
+        states_formset = StatesFormSet(instance=node)
         cpt_form = CPTForm(node=node)
         
     return direct_to_template(req,"web_bayes/node_form.html",
