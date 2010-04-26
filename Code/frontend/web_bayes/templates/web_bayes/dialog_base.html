@@ -1,0 +1,24 @@
+{% extends "web_bayes/base.html"%}
+
+{%block style%}
+<link rel="stylesheet" href="/media/css/dialog.css"/>
+{{ block.super }}
+{% endblock %}
+
+{% block body %}
+
+{% load tabs %}
+{% include "web_bayes/title_block.html" %}
+<div class="dialog-border">
+<h2 class="dialog-title">{%block bodytitle %}{% endblock %}</h2>
+<span class="backlink">{%block backlink%}
+{%endblock%}</span>
+<div class="dialog-content">
+{% block content %}
+        
+{% endblock %}
+</div>
+</div>
+
+
+{% endblock %}

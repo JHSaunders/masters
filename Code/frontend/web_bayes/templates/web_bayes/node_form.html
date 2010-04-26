@@ -1,15 +1,15 @@
-{% extends "web_bayes/base.html" %}
+{% extends "web_bayes/form_base.html" %}
 
 {%block bodytitle %}
 {{node}}
 {%endblock%}
 
+{%block backlink%}
+<a  href="{%url view_network node.network.id %}">Return to Network Definition</a>
+{%endblock%}
+
 {% block content %}
 <form target="" method="POST">
-<span class="toolbar">
-<input class="button" type="submit" name="save" Value="Save Changes" />
-<a class="button" href="{%url delete_node node.id %}">Delete Node</a>
-<a class="button" href="{%url view_network node.network.id %}">Return to Network Definition</a>
 </span>
 <h2> Node Details </h2>
 <table>
@@ -56,4 +56,8 @@
 {%endautoescape %}
 </form>
 {% endif %}
+
+<input type="submit" name="save" Value="Save Changes" />
+<a  href="{%url delete_node node.id %}">Delete Node</a>
+
 {%endblock%}

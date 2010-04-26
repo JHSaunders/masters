@@ -10,41 +10,43 @@ body
     font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
 }
 
-#content-frame
+.main-title
 {
-}
-
-#footer
-{
-    padding: 5px;
-    text-align : center;
-    clear:both;
-}
-
-#main-title
-{
-    margin: 2px;
+    margin: 0px;
     padding 0px;
     font-size: 32px;
     font-style: italic;
     font-weight:bold;
+    text-decoration:none;
+    display:block;
+}
 
+a.main-title : visited
+{
+    margin: 0px;
+    padding 0px;
+    font-size: 32px;
+    font-style: italic;
+    font-weight:bold;
+    text-decoration:none;
+    display:block;
 }
 
 h1
 {
     font-weight:normal;
     color:#26393d;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 h2
 {
     font-weight:normal;
     color:#26393d;    
-    margin-top: 2;
-    margin-bottom: 0;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
-
 
 table
 {
@@ -113,11 +115,6 @@ ul.errorlist {
     background: red url(../img/admin/icon_alert.gif) 5px .3em no-repeat;
 }
 
-.header
-{
-    width:100%;
-}
-
 div.highlight
 {
     background-color: white;
@@ -160,22 +157,11 @@ img#canvas_image{
 
 div.toolbar{
     margin-bottom: 5px;
+    margin-top:5px;
+     
 }
 
 div.canvas{ 
-}
-
-span.toolbar{
-    background: #eeeeee; 
-    border: 1px solid #bbbbbb; 
-    border-radius: 3px;
-    -webkit-border-radius: 3px; 
-    -moz-border-radius: 3px;
-    -moz-user-select: none;
-    
-    padding:7px;        
-    color: black;
-    text-decoration:none;
 }
 
 .button
@@ -210,4 +196,72 @@ td.cpt_cell input
     
     background:transparent;
     font-size:medium;
+}
+
+div.dialog-border
+{
+    border: 2px solid #26393d;
+    border-radius: 5px;
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px;
+    -moz-user-select: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    width: 50%;
+    background-color: lightblue;
+}
+
+div.dialog-content
+{
+    border-top: 2px solid #26393d;
+    margin-left: auto;
+    margin-right: auto;
+    padding:5px;
+    background-color: white;
+}
+
+span.backlink
+{
+    float:right;    
+}
+
+div.tabs
+{
+    border-bottom: 1px solid #26393d;
+    padding-top:2px;
+    padding-bottom:2px;    
+}
+
+div.tabs a
+{
+    text-decoration:none;
+    color:black;
+    padding:2px;   
+
+}
+
+a.active
+{
+   border: 1px solid #26393d;
+    
+   border-bottom: 2px solid white;
+   background-color:white;
+}
+
+a.inactive
+{
+  border: 1px solid #26393d;    
+  background-color:lightblue;
+}
+
+.header
+{
+    background-color:aliceblue;
+}
+
+.title-block
+{    
+    text-align:right;
+    padding:5px;        
 }

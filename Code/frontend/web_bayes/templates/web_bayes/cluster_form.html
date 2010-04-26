@@ -1,4 +1,4 @@
-{% extends "web_bayes/base.html" %}
+{% extends "web_bayes/form_base.html" %}
 
 {%block bodytitle%}
 {% if object.id %}
@@ -6,6 +6,10 @@
 {% else %}
 New Cluster
 {% endif %}
+{%endblock%}
+
+{%block backlink%}
+<a  href="{%url view_network object.network.id %}">Return to Network Definition</a>
 {%endblock%}
 
 {% block content %}

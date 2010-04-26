@@ -9,25 +9,24 @@
     {%block scripts%}
     {%endblock%}
         
-    <title>Web Bayes- {%block pagetitle %}Web based Bayesian network interface{% endblock %}</title>
+    <title>Web BPDA - {%block pagetitle %}Web based bayesian model interface{% endblock %}</title>
 </head>
 {% endblock %}
 <body>
 {% block body %}
+<div class="header">
+{% include "web_bayes/title_block.html" %}
 
-{% load tabs %}
-<div id = "outer-align">
-    <div>
-    <h1 id="main-title">Web Bayes</h1>
-    Developed by <a href="mailto:james.h.saunders@gmail.com">James Saunders</a>
-    </div>
-    <div id="content-frame">    
-        <h1>{%block bodytitle %}{% endblock %}</h1>
-        {% block content %}
-        
-        {% endblock %}
-    </div>        
-</div>
+
+</div>        
+<h1>{%block bodytitle %}{% endblock %}</h1>
+
+
+<div id="content-frame">    
+    {% block content %}
+    
+    {% endblock %}
+</div>        
 
 {% endblock %}
 </body>

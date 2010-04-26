@@ -1,16 +1,21 @@
-{% extends "web_bayes/base.html" %}
+{% extends "web_bayes/form_base.html" %}
 
 {%block bodytitle%}
 {% if object.id %}
-{{object}}
+Edge: {{object}}
 {% else %}
 New edge
 {% endif %}
 {%endblock%}
 
+
+{%block backlink%}
+<a  href="{%url view_network network.id %}">Return to Network Definition</a>
+{%endblock%}
+
 {% block content %}
 <form target="" method="POST">
-<table>
+<table class="invisible">
 {{form}}
 </table>
 <input type="submit" name="save" Value="Save" />

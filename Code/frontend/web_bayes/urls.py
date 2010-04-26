@@ -4,12 +4,15 @@ import views
 
 urlpatterns = patterns('',
     url(r'^$', views.list_networks,name="list_networks"),
-    url(r'^network/(?P<network_id>\d+)$', views.view_network,name="view_network"),
+    url(r'^$', views.list_networks,name="home"),
+    url(r'^network/(?P<network_id>\d+)$', views.view_network_definition,name="view_network"),
     
     url(r'^network/(?P<network_id>\d+)/definition.svg$', views.network_definition_visualisation_svg,name="network_definition_svg"),
     url(r'^network/(?P<network_id>\d+)/definition.png$', views.network_definition_visualisation_png,name="network_definition_png"),
         
     url(r'^network/(?P<network_id>\d+)/dot.txt$', views.network_definition_visualisation_dot,name="network_definition_dot"),
+
+    url(r'^network/(?P<network_id>\d+)/inference.svg$', views.network_inference_visualisation_svg,name="network_inference_svg"),
         
     url(r'^create_network$', views.create_network,name="create_network"),
     url(r'^network/(?P<network_id>\d+)/properties$', views.edit_network_properties,name="network_properties"),
@@ -27,4 +30,6 @@ urlpatterns = patterns('',
     url(r'^cluster/(?P<cluster_id>\d+)/view$', views.view_cluster,name="view_cluster"),
     url(r'^cluster/(?P<cluster_id>\d+)/delete$', views.delete_cluster,name="delete_cluster"),
     
+    url(r'^network/(?P<network_id>\d+)/inference$', views.network_inference, name="network_inference")
+        
     )

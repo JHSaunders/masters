@@ -4,6 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib import admin
 from django.db.models import Sum
+from django.db.models import F
 
 class Network(models.Model):
     name = models.CharField(max_length=100)
@@ -31,7 +32,7 @@ admin.site.register(Cluster)
 class Node(models.Model):
     name = models.CharField(max_length=100)
     network = models.ForeignKey(Network,related_name="nodes",editable=False)
-    cluster = models.ForeignKey(Cluster,related_name="nodes",null=True,blank=True)
+    cluster = models.ForeignKey(Cluster,related_name="nodes", null=True, blank=True, limit_choices_to={'network':'network'})
     
     def __unicode__(self):
         return self.name
@@ -144,7 +145,7 @@ admin.site.register(Node)
             
 class Edge(models.Model):
     network = models.ForeignKey(Network,related_name="edges",editable=False)
-    parent_node = models.ForeignKey(Node,related_name="child_edges")
+    parent_node = models.ForeignKey(Node,related_name="child_edges",limit_choices_to={'network':F('network')})
     child_node = models.ForeignKey(Node,related_name="parent_edges")
     
     def __unicode__(self):

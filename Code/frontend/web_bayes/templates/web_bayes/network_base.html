@@ -1,0 +1,30 @@
+{% extends "web_bayes/base.html" %}
+
+{% block body %}
+<div class="header">
+<div style="float:right;">
+{% include "web_bayes/title_block.html" %}
+</div>
+<h1>{%block bodytitle %}{% endblock %}</h1>
+
+{% load tabs %}
+{% block tabs %}
+<div class="tabs">
+&nbsp;<a href="{%url view_network network.id %}" class="{% ifactivetab "definition" %}active{% else %}inactive{%endifactivetab %}">Network Definition</a>
+<a href="{%url network_inference network.id %}" class="{% ifactivetab "inference" %}active{% else %}inactive{%endifactivetab %}">Inference View</a>
+</div>
+{% endblock %}
+
+</div>
+
+<div class="toolbar">
+{%block toolbar%}
+{%endblock%}
+</div>
+
+<div id="content-frame">    
+    {% block content %}
+    
+    {% endblock %}
+</div>        
+{% endblock %}

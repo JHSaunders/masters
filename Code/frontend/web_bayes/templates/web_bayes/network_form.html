@@ -1,4 +1,4 @@
-{% extends "web_bayes/base.html" %}
+{% extends "web_bayes/form_base.html" %}
 
 {%block bodytitle%}
 {% if object.id %}
@@ -6,6 +6,12 @@
 {% else %}
 New Network
 {% endif %}
+{%endblock%}
+
+{%block backlink%}
+{% if object.id %}
+<a href="{%url view_network object.id %}">Return to Network Definition</a>
+{%endif%}
 {%endblock%}
 
 {% block content %}

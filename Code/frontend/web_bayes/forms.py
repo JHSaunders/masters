@@ -5,13 +5,31 @@ from models import *
 class EdgeForm(ModelForm):
     class Meta:
         model = Edge
+    
+    def __init__(self,*args,**kwargs): 
+        network = kwargs.get('network',None)
+        instance = kwargs.get('instance',None)
+        if network == None:
+            network = instance.network
+        else:
+            del kwargs['network']
+        
+        super(EdgeForm,self).__init__(*args,**kwargs)
+        
+        self.fields['parent_node'].queryset = network.nodes.all()    
+        self.fields['child_node'].queryset = network.nodes.all()
 
 class NodeForm(ModelForm):
     class Meta:
         model = Node
         
+    def __init__(self,*args,**kwargs): 
+        
+        super(NodeForm,self).__init__(*args,**kwargs)
+        
+        self.fields['cluster'].queryset = kwargs['instance'].network.clusters.all()    
+        
 class CPTForm(Form):
-    
     def __init__(self,*args,**kwargs): 
         
         self.node = kwargs["node"]

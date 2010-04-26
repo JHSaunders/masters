@@ -11,7 +11,7 @@ from django.forms.models import inlineformset_factory
 
 from models import *
 from forms import *
-from visualisation import DotBasicNetwork,VisualiseBasicNetwork
+from visualisation import DotBasicNetwork,VisualiseBasicNetwork,VisualiseInferenceNetwork
 
 def help(req,thing):
     doc = pydoc.HTMLDoc()
@@ -23,10 +23,9 @@ def test(req):
 def list_networks(req):
     return object_list(req,Network.objects.all())
 
-def view_network(req,network_id):
+def view_network_definition(req,network_id):
     network = Network.objects.get(id = network_id)
-
-    return object_detail(req,queryset=Network.objects.all(),object_id=network_id,template_object_name="network",extra_context={"map":VisualiseBasicNetwork(network,"cmapx")})
+    return direct_to_template(req,"web_bayes/network_definition.html",{"network":network,"map":VisualiseBasicNetwork(network,"cmapx")})
 
 def network_definition_visualisation_svg(req,network_id):
     network = Network.objects.get(id = network_id)
@@ -105,20 +104,28 @@ def delete_node(req,node_id):
 
 def create_edge(req,network_id):    
     if req.method=="POST":
-        form = EdgeForm(req.POST)
+        form = EdgeForm(req.POST,network=Network.objects.get(id=network_id))
         if form.is_valid():
             edge = form.save(commit=False)
             edge.network = Network.objects.get(id=network_id)
             edge.save()
             return HttpResponseRedirect(reverse('view_network', args=[edge.network.id]))
     else:
-        form = EdgeForm()        
+        form = EdgeForm(network=Network.objects.get(id=network_id))        
         
-    return direct_to_template(req,"web_bayes/edge_form.html",extra_context={"form":form})
+    return direct_to_template(req,"web_bayes/edge_form.html",extra_context={"form":form,"network":Network.objects.get(id=network_id)})
     
 def view_edge(req,edge_id):
     edge = Edge.objects.get(id=edge_id)
-    return update_object(req,model=Edge,object_id=edge_id,post_save_redirect=reverse('view_network',args=[edge.network.id]))
+    if req.method=="POST":
+        form = EdgeForm(req.POST,instance=edge)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('view_network', args=[edge.network.id]))
+    else:
+        form = EdgeForm(instance=edge)        
+        
+    return direct_to_template(req,"web_bayes/edge_form.html",extra_context={"object":edge,"form":form,"network":edge.network})   
 
 def delete_edge(req,edge_id):
     edge = Edge.objects.get(id=edge_id)  
@@ -139,3 +146,13 @@ def create_cluster(req,network_id):
     cluster.save()
     return HttpResponseRedirect(reverse("view_cluster",args=[cluster.id]))
     
+def network_inference(req,network_id):
+    network = Network.objects.get(id = network_id)
+    return direct_to_template(req,"web_bayes/network_inference.html",{"network":network,"map":VisualiseInferenceNetwork(network,"cmapx")})
+    
+def network_inference_visualisation_svg(req,network_id):
+    network = Network.objects.get(id = network_id)
+    response = HttpResponse(mimetype='image/svg+xml')
+    response['Content-Disposition'] = 'filename=network.svg'
+    response.write(VisualiseInferenceNetwork(network,"svg"))
+    return response

@@ -1,0 +1,26 @@
+{% extends "web_bayes/network_base.html" %}
+
+{%block bodytitle%}
+{{network}}
+{%endblock%}
+
+{% load tabs %}
+{% block tabs %}
+{% activetab "inference" %}
+{{ block.super }}
+{% endblock %}
+
+{%block toolbar%}
+{%endblock%}
+
+{% block content %}
+
+<div class="canvas">
+<img id="canvas_image" src="{% url network_inference_svg network.id %}" usemap="#model" alt="Network Inference Graph"/>
+{% autoescape off %}
+{{map}}
+{% endautoescape %}
+</div>
+
+{%endblock%}
+
