@@ -32,7 +32,7 @@ admin.site.register(Cluster)
 class Node(models.Model):
     name = models.CharField(max_length=100)
     network = models.ForeignKey(Network,related_name="nodes",editable=False)
-    cluster = models.ForeignKey(Cluster,related_name="nodes", null=True, blank=True, limit_choices_to={'network':'network'})
+    cluster = models.ForeignKey(Cluster,related_name="nodes", null=True, blank=True)
     
     def __unicode__(self):
         return self.name
@@ -66,7 +66,7 @@ class Node(models.Model):
         else:
             return query[0]
     
-    def get_value_sets(self):
+    def get_indexed_value_sets(self):
         max_states = []
         state_count = 0
         max_state_count = 1
@@ -79,21 +79,26 @@ class Node(models.Model):
             current_states.append(0)            
 
         if len(max_states)==0 or max_state_count == 0:
-           return []
+           return ([],[])
         
         results = []
+        indexes = []
         
         while state_count<max_state_count:                
             parent_states = []
+            state_indexes = []
             for i in range(len(parent_nodes)):
                 parent_states.append(parent_nodes[i].states.all()[current_states[i]])
+                state_indexes.append(current_states[i])
             
             values = []
             for state in self.states.all():
                 values.append(self.cpt_value(state,parent_states))
             
             results.append((parent_states,values))
-                        
+            
+            indexes.append((state_indexes,values))
+            
             state_count +=1
             running = True
             index = len(current_states) - 1
@@ -106,8 +111,11 @@ class Node(models.Model):
                    running = True
                 index-=1
         
-        return results
+        return (results,indexes)
     
+    def get_value_sets(self):
+        return self.get_indexed_value_sets()[0]
+                
     def normalise_cpt_values(self):
         for tup in self.get_value_sets():
             total = 0
@@ -145,7 +153,7 @@ admin.site.register(Node)
             
 class Edge(models.Model):
     network = models.ForeignKey(Network,related_name="edges",editable=False)
-    parent_node = models.ForeignKey(Node,related_name="child_edges",limit_choices_to={'network':F('network')})
+    parent_node = models.ForeignKey(Node,related_name="child_edges")
     child_node = models.ForeignKey(Node,related_name="parent_edges")
     
     def __unicode__(self):

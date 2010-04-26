@@ -30,6 +30,6 @@ urlpatterns = patterns('',
     url(r'^cluster/(?P<cluster_id>\d+)/view$', views.view_cluster,name="view_cluster"),
     url(r'^cluster/(?P<cluster_id>\d+)/delete$', views.delete_cluster,name="delete_cluster"),
     
-    url(r'^network/(?P<network_id>\d+)/inference$', views.network_inference, name="network_inference")
-        
+    url(r'^network/(?P<network_id>\d+)/inference$', views.network_inference, name="network_inference"),
+    url(r'^network/(?P<network_id>\d+)/perform_inference$', views.perform_inference, name="perform_inference"),        
     )

@@ -2,7 +2,7 @@ import subprocess
 from django.core.urlresolvers import reverse
 
 def DotNode(node):
-    return '%s [label="%s", style="filled", fillcolor="lightblue" URL="%s"]' % (node.slug(),node.name,reverse("view_node",args=[node.id]))
+    return '%s [label="%s", style="filled", fontname=Helvetica, fillcolor="lightblue" URL="%s"]' % (node.slug(),node.name,reverse("view_node",args=[node.id]))
 
 def DotEdge(edge):
     return '%s -> %s [ URL="%s"]'%(edge.parent_node.slug(),edge.child_node.slug(),reverse("view_edge",args=[edge.id]))
@@ -11,6 +11,7 @@ def DotBasicNetwork(network):
     dot = []
     
     dot.append('digraph model{')
+    dot.append('fontname=Helvetica')
     dot.append('bgcolor=transparent')
     id_cluster = 0
     for cluster in network.clusters.all():
@@ -55,22 +56,18 @@ def DotInferenceNode(node):
     for state in node.states.all():
         template.append('<TR><TD ALIGN="LEFT">')
         template.append(state.name)    
-        template.append("</TD>")
-        
+        template.append("</TD>")        
         template.append('<TD CELLPADDING="1">')
         
         template.append('<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD WIDTH="%d" BGCOLOR="BLACK"></TD><TD WIDTH="%d"></TD></TR></TABLE>'%(state.probability*50,(1-state.probability)*50))
         
-        
-        template.append("</TD>")
-        
+        template.append("</TD>")        
         template.append("</TR>")
         
     template.append("</TABLE>")
     template.append(">")
     html = "".join(template)
-    print html
-    return '%s [label=%s, shape=plaintext]' % (node.slug(),html)
+    return '%s [label=%s, fontname=Helvetica, shape=plaintext]' % (node.slug(),html)
 
 def DotInferenceEdge(edge):
     return '%s:p0 -> %s:p0 '%(edge.parent_node.slug(),edge.child_node.slug())
@@ -79,6 +76,7 @@ def DotInferenceNetwork(network):
     dot = []
     
     dot.append('digraph model{')
+    dot.append('fontname=Helvetica')
     dot.append('bgcolor=transparent')
     id_cluster = 0
     for cluster in network.clusters.all():

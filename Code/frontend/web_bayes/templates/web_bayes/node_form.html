@@ -54,10 +54,14 @@
 {{cpt_form}}
 </table>
 {%endautoescape %}
-</form>
 {% endif %}
 
-<input type="submit" name="save" Value="Save Changes" />
-<a  href="{%url delete_node node.id %}">Delete Node</a>
+<input type="submit" name="continue" Value="Save and Continue Editing" />
+<input type="submit" name="save" Value="Save and Finish Editing" />
+<a href="{%url delete_node node.id %}">Delete Node</a>
+</form>
+
+
+
 
 {%endblock%}

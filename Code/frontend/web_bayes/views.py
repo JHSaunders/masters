@@ -12,6 +12,7 @@ from django.forms.models import inlineformset_factory
 from models import *
 from forms import *
 from visualisation import DotBasicNetwork,VisualiseBasicNetwork,VisualiseInferenceNetwork
+from inference import PerformInference
 
 def help(req,thing):
     doc = pydoc.HTMLDoc()
@@ -74,17 +75,21 @@ def view_node(req,node_id):
         details_form = NodeForm(req.POST,instance = node)
         states_formset = StatesFormSet(req.POST, req.FILES, instance=node)
         cpt_form = CPTForm(req.POST, node=node)
-                                
+                         
         if cpt_form.is_valid() and details_form.is_valid() and states_formset.is_valid() :
-            
-        
             details_form.save()            
             for state in  states_formset.save(commit=False):
                 state.node = node
                 state.save()
             
             cpt_form.save_values()
-            node.normalise_node()    
+            node.normalise_node()                
+            if u'continue' in req.POST:                
+                return HttpResponseRedirect(reverse("view_node",args=[node.id]))
+            else:
+                return HttpResponseRedirect(reverse("view_network",args=[node.network.id]))
+                
+        else:
             return HttpResponseRedirect(reverse("view_node",args=[node.id]))
     else:        
         details_form = NodeForm(instance = node)
@@ -96,7 +101,6 @@ def view_node(req,node_id):
                                 extra_context={"details_form":details_form,
                                                "states_formset":states_formset,
                                                "cpt_form": cpt_form,"node":node})
-
 
 def delete_node(req,node_id):
     node = Node.objects.get(id=node_id)  
@@ -156,3 +160,12 @@ def network_inference_visualisation_svg(req,network_id):
     response['Content-Disposition'] = 'filename=network.svg'
     response.write(VisualiseInferenceNetwork(network,"svg"))
     return response
+
+def perform_inference(req,network_id):
+    network = Network.objects.get(id=network_id)
+    if req.method=="POST":
+        if u'perform' in req.POST:
+            PerformInference(network)
+            return HttpResponseRedirect(reverse("network_inference",args=[network_id]))          
+    
+    return direct_to_template(req,"web_bayes/perform_inference.html",{"network":network})
