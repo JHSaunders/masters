@@ -49,7 +49,7 @@ def DotInferenceNode(node):
     values = []
     template.append("<")
     template.append('<TABLE PORT="p0" BGCOLOR="LIGHTBLUE" BORDER="1" CELLBORDER="0" CELLSPACING="1">')
-    template.append('<TR><TD COLSPAN="2">')
+    template.append('<TR><TD COLSPAN="3">')
     template.append(node.name)
     template.append("</TD></TR>")
     
@@ -57,11 +57,10 @@ def DotInferenceNode(node):
         template.append('<TR><TD ALIGN="LEFT">')
         template.append(state.name)    
         template.append("</TD>")        
-        template.append('<TD CELLPADDING="1">')
-        
-        template.append('<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD WIDTH="%d" BGCOLOR="BLACK"></TD><TD WIDTH="%d"></TD></TR></TABLE>'%(state.probability*50,(1-state.probability)*50))
-        
+        template.append('<TD CELLPADDING="1">')        
+        template.append('<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD WIDTH="%d" BGCOLOR="BLACK"></TD><TD WIDTH="%d"></TD></TR></TABLE>'%(state.probability*50,(1-state.probability)*50))        
         template.append("</TD>")        
+        template.append("<TD>%.2f</TD>"%(state.probability))                
         template.append("</TR>")
         
     template.append("</TABLE>")
