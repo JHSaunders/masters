@@ -12,7 +12,7 @@ from django.forms.models import inlineformset_factory
 from models import *
 from forms import *
 from visualisation import DotBasicNetwork,VisualiseBasicNetwork,VisualiseInferenceNetwork
-from inference import PerformInference
+from inference import PerformInference, ClearInference
 
 def help(req,thing):
     doc = pydoc.HTMLDoc()
@@ -161,6 +161,11 @@ def network_inference_visualisation_svg(req,network_id):
     response.write(VisualiseInferenceNetwork(network,"svg"))
     return response
 
+def toggle_observation(req,state_id):
+    state = State.objects.get(id=state_id)
+    state.toggle_observed()
+    return HttpResponseRedirect(reverse("network_inference",args=[state.node.network.id]))
+    
 def perform_inference(req,network_id):
     network = Network.objects.get(id=network_id)
     if req.method=="POST":
@@ -169,3 +174,12 @@ def perform_inference(req,network_id):
             return HttpResponseRedirect(reverse("network_inference",args=[network_id]))          
     
     return direct_to_template(req,"web_bayes/perform_inference.html",{"network":network})
+
+def clear_inference(req,network_id):
+    network = Network.objects.get(id=network_id)
+    if req.method=="POST":
+        if u'clear' in req.POST:
+            ClearInference(network)
+            return HttpResponseRedirect(reverse("network_inference",args=[network_id]))    
+    return direct_to_template(req,"web_bayes/clear_inference.html",{"network":network})
+

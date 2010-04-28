@@ -1,5 +1,8 @@
+import math
+
 from OpenBayes import BNet, BVertex, DirEdge
 from OpenBayes import JoinTree, MCMCEngine
+
 def PerformOpenBayesInference(network):    
     G = BNet( network.name )
     
@@ -37,21 +40,31 @@ def PerformOpenBayesInference(network):
                 node_dict[node.id].distribution[index_dict] = [v.value for v in values_i]                 
             print "\n"    
         else:
-            node_dict[node.id].setDistributionParameters([state.probability for state in node.states.all()])
-       
+            node_dict[node.id].setDistributionParameters([state.probability for state in node.states.all()])       
     
     ie = JoinTree(G)
     #ie = MCMCEngine(G)
     
-    # perform inference with no evidence
+    obs_dict={}
+    for node in network.nodes.all():
+        i = 0
+        for state in node.states.all():
+            if state.observed:
+                obs_dict[node.name]=i
+            i+=1
+    ie.SetObs(obs_dict)
     results = ie.MarginaliseAll() 
-    
+        
     for node_name, distribution in results.items():
         node = network.nodes.get(name=node_name)        
         i=0    
         print node_dict[node.id].distribution
         for state in node.states.all():
-            state.probability = distribution[i]
+            state.inferred_probability = distribution[i]
+            if state.probability is None or math.isnan(state.probability):
+                state.inferred_probability = -1 
+            state.observed=False
             state.save()
+            
             i+=1
         

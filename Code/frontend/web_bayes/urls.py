@@ -31,5 +31,10 @@ urlpatterns = patterns('',
     url(r'^cluster/(?P<cluster_id>\d+)/delete$', views.delete_cluster,name="delete_cluster"),
     
     url(r'^network/(?P<network_id>\d+)/inference$', views.network_inference, name="network_inference"),
+    
+    url(r'^toggle_observation/(?P<state_id>\d+)$', views.toggle_observation, name="toggle_observation"), 
+    
     url(r'^network/(?P<network_id>\d+)/perform_inference$', views.perform_inference, name="perform_inference"),        
+    url(r'^network/(?P<network_id>\d+)/clear_inference$', views.clear_inference, name="clear_inference"),    
+        
     )

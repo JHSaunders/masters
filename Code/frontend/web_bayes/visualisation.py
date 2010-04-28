@@ -7,7 +7,7 @@ def DotNode(node):
 def DotEdge(edge):
     return '%s -> %s [ URL="%s"]'%(edge.parent_node.slug(),edge.child_node.slug(),reverse("view_edge",args=[edge.id]))
                 
-def DotBasicNetwork(network):    
+def DotBasicNetwork(network):
     dot = []
     
     dot.append('digraph model{')
@@ -54,13 +54,26 @@ def DotInferenceNode(node):
     template.append("</TD></TR>")
     
     for state in node.states.all():
-        template.append('<TR><TD ALIGN="LEFT">')
-        template.append(state.name)    
-        template.append("</TD>")        
-        template.append('<TD CELLPADDING="1">')        
-        template.append('<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD WIDTH="%d" BGCOLOR="BLACK"></TD><TD WIDTH="%d"></TD></TR></TABLE>'%(state.probability*50,(1-state.probability)*50))        
-        template.append("</TD>")        
-        template.append("<TD>%.2f</TD>"%(state.probability))                
+        toggle_url = reverse('toggle_observation',args=[state.id])
+        
+        template.append('<TR><TD ALIGN="LEFT" HREF="%s" TOOLTIP="Click to set observation">'%(toggle_url))
+        template.append(state.name)
+        template.append("</TD>")
+        
+        
+        template.append('<TD CELLPADDING="1" HREF="%s" TOOLTIP="Click to set observation">'%(toggle_url))
+        if not node.is_observed() and state.inferred_probability != None: 
+            template.append('<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD WIDTH="%d" BGCOLOR="BLACK"></TD><TD WIDTH="%d"></TD></TR></TABLE>'%(state.inferred_probability*50,(1-state.inferred_probability)*50))
+            template.append("</TD>")
+            template.append('<TD HREF="%s" TOOLTIP="Click to set observation">%.2f</TD>'%(toggle_url,state.inferred_probability))
+        elif state.observed:
+            template.append('<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD WIDTH="50" BGCOLOR="GREEN"></TD></TR></TABLE>')
+            template.append("</TD>")
+            template.append('<TD HREF="%s" TOOLTIP="Click to set observation">%.2f</TD>'%(toggle_url,1))
+        else:
+            template.append('<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD WIDTH="50" ></TD></TR></TABLE>')
+            template.append("</TD>")
+            template.append('<TD HREF="%s" TOOLTIP="Click to set observation"></TD>'%(toggle_url))                
         template.append("</TR>")
         
     template.append("</TABLE>")
@@ -98,8 +111,7 @@ def DotInferenceNetwork(network):
     
     dot_str = '\n'.join(dot)
 
-    return dot_str
-    
+    return dot_str    
     
 def VisualiseInferenceNetwork(network,format):    
     dot_string = DotInferenceNetwork(network)

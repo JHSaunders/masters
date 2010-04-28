@@ -12,7 +12,8 @@
 
 {%block toolbar%}
 <a class="button" href="{%url perform_inference network.id%}">Perform Inference</a>
-&nbsp;
+<a class="button" href="{%url clear_inference network.id%}">Clear Inferences</a>
+<a class="button" href="{%url network_inference_svg network.id%}">Save Inference Diagram</a>
 {%endblock%}
 
 {% block content %}

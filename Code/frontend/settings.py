@@ -105,6 +105,8 @@ def setup(context):
         'django.middleware.common.CommonMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
+        #'django.middleware.cache.CacheMiddleware',
+        'django.middleware.transaction.TransactionMiddleware',
         #'djangologging.middleware.LoggingMiddleware',
     )
 

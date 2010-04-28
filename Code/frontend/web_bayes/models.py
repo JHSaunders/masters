@@ -48,7 +48,13 @@ class Node(models.Model):
     
     def is_root(self):
         return len(self.parent_nodes())==0
-        
+    
+    def is_observed(self):
+        for state in self.states.all():
+            if state.observed:
+                return True
+        return False    
+    
     def cpt_value(self,child_state,parent_states):
         query = CPTValue.objects.filter(child_state = child_state)
         
@@ -165,6 +171,8 @@ class State(models.Model):
     node = models.ForeignKey(Node,related_name="states",editable=False)
     name = models.CharField(max_length=100)
     probability = models.FloatField(blank=True)
+    inferred_probability = models.FloatField(blank=True,null=True)
+    observed = models.BooleanField(blank=True,default=False)
     
     def delete(self, *args, **kwargs):            
         self.dependant_values.all().delete();
@@ -174,6 +182,16 @@ class State(models.Model):
         if self.probability==None:
             self.probability = 0.0
         super(State, self).save(*args, **kwargs)        
+    
+    def toggle_observed(self):
+        if self.observed:
+            self.observed = False
+        else:
+            for state in self.node.states.all():
+                if state.observed:                    
+                    state.toggle_observed()
+            self.observed=True        
+        self.save()
         
     def __unicode__(self):
         return self.name
