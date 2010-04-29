@@ -1,0 +1,6 @@
+digraph{
+bgcolor=aliceblue;
+node[style=filled, fontname=Helvetica, fillcolor=aliceblue, color=lightblue, fontcolor=lightblue]
+edge[color=lightblue]
+Water->Energy->Sustainability->Resources->Settlement->Agriculture->Flora->Fauna
+}
