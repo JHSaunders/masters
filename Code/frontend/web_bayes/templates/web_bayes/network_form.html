@@ -17,7 +17,9 @@ New Network
 {% block content %}
 <form target="" method="POST">
 <table>
+<tr><th>Version</th><td>{{object.version}}</td></tr>
 {{form}}
+
 </table>
 <input type="submit" name="save" Value="Save"/>
 {% if object.id %}

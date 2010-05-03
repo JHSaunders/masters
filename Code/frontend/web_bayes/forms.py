@@ -84,3 +84,7 @@ class CPTForm(Form):
             cycle = not cycle
                 
         return "".join(buf)
+
+class ReasoningJustificationForm(Form):
+    action = CharField(required=False)
+    reason = Field(required=False,widget=Textarea)

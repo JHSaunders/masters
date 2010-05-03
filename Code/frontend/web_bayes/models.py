@@ -5,22 +5,58 @@ from django.contrib.auth.models import User
 from django.contrib import admin
 from django.db.models import Sum
 from django.db.models import F
+from django.core.urlresolvers import reverse
+from django.db import transaction
 
-class Network(models.Model):
+class NetworkBase(models.Model):
+    class Meta:
+        abstract = True
+        
+    def save(self,*args,**kwargs):        
+        try:            
+            self.network.update_version(self)
+        finally:            
+            super(NetworkBase, self).save(*args, **kwargs)
+    
+    def delete(self,*args,**kwargs):        
+        try:
+            self.network.update_version(self)
+        finally:
+            super(NetworkBase, self).delete(*args, **kwargs)
+
+class Network(NetworkBase):
+    
+    def __init__(self,*args,**kwargs):
+        self.in_version_update=False
+        super(Network, self).__init__(*args, **kwargs)  
+                        
     name = models.CharField(max_length=100)
+    version = models.IntegerField(default=0,editable=False)
+    
+    @property
+    def network(self):
+        return self
     
     def get_absolute_url(self):
-        return "/network/%i"%(self.id,)
+        return reverse('view_network',args=[self.id])
     
+    @property
     def free_nodes(self):
         return self.nodes.filter(cluster=None)
-        
+    
+    def update_version(self,calling):
+        if not self.in_version_update and not transaction.is_dirty():
+            self.in_version_update = True            
+            self.version+=1       
+            self.save()
+            self.in_version_update = False
+            
     def __unicode__(self):
         return self.name
 
 admin.site.register(Network)
 
-class Cluster(models.Model):
+class Cluster(NetworkBase):
     name = models.CharField(max_length=100)
     network = models.ForeignKey(Network,related_name="clusters",editable=False)
 
@@ -29,11 +65,11 @@ class Cluster(models.Model):
 
 admin.site.register(Cluster)
             
-class Node(models.Model):
+class Node(NetworkBase):
     name = models.CharField(max_length=100)
     network = models.ForeignKey(Network,related_name="nodes",editable=False)
     cluster = models.ForeignKey(Cluster,related_name="nodes", null=True, blank=True)
-    
+    node_class = models.CharField(max_length=15,default='C',choices=(('A','Action'),('U','Utility'),('C','Chance')))
     def __unicode__(self):
         return self.name
         
@@ -156,23 +192,37 @@ class Node(models.Model):
         self.normalise_cpt_values()
         
 admin.site.register(Node)
+
+class NodeReasoningJustification(models.Model):
+    node = models.ForeignKey(Node,related_name="reasons",editable=False)
+    action = models.CharField(max_length=256)
+    reason = models.CharField(max_length=256)
+    version = models.IntegerField(editable=False)
+
+admin.site.register(NodeReasoningJustification)
             
-class Edge(models.Model):
+class Edge(NetworkBase):
     network = models.ForeignKey(Network,related_name="edges",editable=False)
     parent_node = models.ForeignKey(Node,related_name="child_edges")
     child_node = models.ForeignKey(Node,related_name="parent_edges")
+    edge_class = models.CharField(max_length=15,default='R',choices=(('R','Resulting'),('I','Initiating'),('E','Enabling'),('IE','Initiating and Enabling')))    
+    edge_effect = models.CharField(max_length=15,blank=True,null=True,default=None,choices=(('+','Positive'),('-','Negative')))    
     
     def __unicode__(self):
         return '%s->%s'%(self.parent_node,self.child_node)    
 
 admin.site.register(Edge)
 
-class State(models.Model):
+class State(NetworkBase):
     node = models.ForeignKey(Node,related_name="states",editable=False)
     name = models.CharField(max_length=100)
     probability = models.FloatField(blank=True)
     inferred_probability = models.FloatField(blank=True,null=True)
     observed = models.BooleanField(blank=True,default=False)
+    
+    @property
+    def network(self):
+        return self.node.network
     
     def delete(self, *args, **kwargs):            
         self.dependant_values.all().delete();
@@ -196,9 +246,13 @@ class State(models.Model):
     def __unicode__(self):
         return self.name
     
-class CPTValue(models.Model):    
+class CPTValue(NetworkBase):
     child_state = models.ForeignKey(State,related_name="defining_values")
     parent_states = models.ManyToManyField(State,related_name="dependant_values")
     value = models.FloatField(default=0.0)
-
+    
+    @property
+    def network(self):
+        return self.child_state.network
+    
 admin.site.register(CPTValue)   

@@ -21,7 +21,7 @@ def PerformOpenBayesInference(network):
 
     for node in network.nodes.all():
         if not node.is_root():        
-            print node
+            
             result = node.get_indexed_value_sets()[0]            
             index = node.get_indexed_value_sets()[1]
             for i in range(len(index)):
@@ -33,17 +33,14 @@ def PerformOpenBayesInference(network):
                 for j in range(len(index_i_parents)):
                     index_dict[result_i_parents[j].node.name] = index_i_parents[j]
                     check_dict[result_i_parents[j].node.name] = result_i_parents[j].name
-                    
-
-                print check_dict,[v.child_state for v in values_i]
-                print index_dict,[v.value for v in values_i]            
+                     
                 node_dict[node.id].distribution[index_dict] = [v.value for v in values_i]                 
             print "\n"    
         else:
             node_dict[node.id].setDistributionParameters([state.probability for state in node.states.all()])       
     
     ie = JoinTree(G)
-    #ie = MCMCEngine(G)
+    ie = MCMCEngine(G)
     
     obs_dict={}
     for node in network.nodes.all():

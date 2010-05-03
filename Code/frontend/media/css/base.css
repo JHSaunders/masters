@@ -60,6 +60,7 @@ td,  th
     font-size:1em;
     border:1px solid #26393d;
     padding:3px 7px 2px 7px;
+    vertical-align:top;
 }
 
 th 

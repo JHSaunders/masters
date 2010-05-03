@@ -62,6 +62,7 @@ def create_node(req,network_id):
     node.save()
     node.name = "New node %d" % node.id
     node.save()
+    node.normalise_node()
     State(node = node,name="On",probability=0.5).save()
     State(node = node,name="Off",probability=0.5).save()
     
@@ -75,8 +76,9 @@ def view_node(req,node_id):
         details_form = NodeForm(req.POST,instance = node)
         states_formset = StatesFormSet(req.POST, req.FILES, instance=node)
         cpt_form = CPTForm(req.POST, node=node)
+        reasoning_form = ReasoningJustificationForm(req.POST)
                          
-        if cpt_form.is_valid() and details_form.is_valid() and states_formset.is_valid() :
+        if cpt_form.is_valid() and details_form.is_valid() and states_formset.is_valid() and reasoning_form.is_valid():
             details_form.save()            
             for state in  states_formset.save(commit=False):
                 state.node = node
@@ -84,6 +86,9 @@ def view_node(req,node_id):
             
             cpt_form.save_values()
             node.normalise_node()                
+            if reasoning_form.cleaned_data["reason"]!="" or reasoning_form.cleaned_data["action"]!="":
+                NodeReasoningJustification(node=node,reason=reasoning_form.cleaned_data["reason"],action=reasoning_form.cleaned_data["action"],version=node.network.version).save()
+            
             if u'continue' in req.POST:                
                 return HttpResponseRedirect(reverse("view_node",args=[node.id]))
             else:
@@ -96,11 +101,14 @@ def view_node(req,node_id):
         node.normalise_node()
         states_formset = StatesFormSet(instance=node)
         cpt_form = CPTForm(node=node)
+        reasoning_form = ReasoningJustificationForm()
         
     return direct_to_template(req,"web_bayes/node_form.html",
                                 extra_context={"details_form":details_form,
                                                "states_formset":states_formset,
-                                               "cpt_form": cpt_form,"node":node})
+                                               "cpt_form": cpt_form,
+                                               "node":node,
+                                               "reasoning_form":reasoning_form})
 
 def delete_node(req,node_id):
     node = Node.objects.get(id=node_id)  

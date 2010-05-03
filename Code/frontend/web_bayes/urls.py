@@ -5,6 +5,7 @@ import views
 urlpatterns = patterns('',
     url(r'^$', views.list_networks,name="list_networks"),
     url(r'^$', views.list_networks,name="home"),
+    url(r'^network/(?P<network_id>\d+)$', views.view_network_definition,name="network_definition"),
     url(r'^network/(?P<network_id>\d+)$', views.view_network_definition,name="view_network"),
     
     url(r'^network/(?P<network_id>\d+)/definition.svg$', views.network_definition_visualisation_svg,name="network_definition_svg"),

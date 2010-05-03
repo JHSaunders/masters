@@ -1,11 +1,20 @@
 import subprocess
 from django.core.urlresolvers import reverse
 
+color = {'C':"lightblue",'A':"red",'U':"yellow"}
+shape = {'C':"ellipse",'A':"rectangle",'U':"diamond"}
+
+edge_style = {'R':'solid','I':'solid','E':'dashed','IE':'dashed'}
+edge_arrow = {'R':'normal','I':'diamond','E':'normal','IE':'diamond'}
+
 def DotNode(node):
-    return '%s [label="%s", style="filled", fontname=Helvetica, fillcolor="lightblue" URL="%s"]' % (node.slug(),node.name,reverse("view_node",args=[node.id]))
+    return '%s [label="%s", style="filled", fontname=Helvetica, fillcolor="%s",shape="%s", URL="%s"]' % (node.slug(),node.name,color[node.node_class],shape[node.node_class],reverse("view_node",args=[node.id]))
 
 def DotEdge(edge):
-    return '%s -> %s [ URL="%s"]'%(edge.parent_node.slug(),edge.child_node.slug(),reverse("view_edge",args=[edge.id]))
+    label = edge.edge_effect
+    if label == None:
+        label = ""
+    return '%s -> %s [ URL="%s", arrowhead=%s, style=%s,label="%s"]'%(edge.parent_node.slug(),edge.child_node.slug(),reverse("view_edge",args=[edge.id]),edge_arrow[edge.edge_class],edge_style[edge.edge_class],label)
                 
 def DotBasicNetwork(network):
     dot = []
@@ -25,7 +34,7 @@ def DotBasicNetwork(network):
             dot.append(DotNode(node))
         dot.append('}')
         
-    for node in network.nodes.filter(cluster=None):
+    for node in network.free_nodes:
         dot.append(DotNode(node))
     
     for edge in network.edges.all():
@@ -48,7 +57,7 @@ def DotInferenceNode(node):
     template = []
     values = []
     template.append("<")
-    template.append('<TABLE PORT="p0" BGCOLOR="LIGHTBLUE" BORDER="1" CELLBORDER="0" CELLSPACING="1">')
+    template.append('<TABLE PORT="p0" BGCOLOR="%s" BORDER="1" CELLBORDER="0" CELLSPACING="1">' % (color[node.node_class]))
     template.append('<TR><TD COLSPAN="3">')
     template.append(node.name)
     template.append("</TD></TR>")
@@ -101,7 +110,7 @@ def DotInferenceNetwork(network):
             dot.append(DotInferenceNode(node))
         dot.append('}')
         
-    for node in network.nodes.filter(cluster=None):
+    for node in network.free_nodes:
         dot.append(DotInferenceNode(node))
     
     for edge in network.edges.all():

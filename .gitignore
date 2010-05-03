@@ -10,7 +10,8 @@ obj/
 *.suo
 *TestResult.xml
 *.VisualState.xml
-temp.db
+*.db
+*.db-journal
 *spec/zips
 
 

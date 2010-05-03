@@ -56,12 +56,26 @@
 {%endautoescape %}
 {% endif %}
 
+<h2>Change Reason</h2>
+<table>
+<tr><th><label>Version:</label></th><td>{{node.network.version}}</td></tr>
+{{reasoning_form}}
+</table>
+
 <input type="submit" name="continue" Value="Save and Continue Editing" />
 <input type="submit" name="save" Value="Save and Finish Editing" />
 <a href="{%url delete_node node.id %}">Delete Node</a>
 </form>
 
-
-
-
+<h2>Reasoning History</h2>
+<table>
+<tr><th>Version</th><th>Action</th><th>Reason</th></tr>
+{% for reason in node.reasons.all%}
+<tr class="{% cycle '' 'alt' %}">
+<td>{{reason.version}}</td>
+<td>{{reason.action}}</td>
+<td>{{reason.reason}}</td>
+</tr>
+{%endfor%}
+</table>
 {%endblock%}
