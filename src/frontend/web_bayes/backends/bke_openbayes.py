@@ -39,11 +39,11 @@ def CreateOpenBayesNetwork(network):
         else:
             node_dict[node.id].setDistributionParameters([state.probability for state in node.states.all()])
 
-    return G
+    return (G,node_dict)
 
 def PerformOpenBayesInference(network):
 
-    G = CreateOpenBayesNetwork(network)           
+    (G,node_dict) = CreateOpenBayesNetwork(network)           
 
     ie = JoinTree(G)
     ie = MCMCEngine(G)
@@ -72,7 +72,7 @@ def PerformOpenBayesInference(network):
             i+=1
 
 def ExportToXBN(network):
-    G = CreateOpenBayesNetwork(network)
+    (G,node_dict) = CreateOpenBayesNetwork(network)
     SaveXBN('temp.xbn',G)
     f = open('temp.xbn','r')
     output = []
