@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<ANALYSISNOTEBOOK NAME="Notebook.bndefault" ROOT="bndefault">
+  <BNMODEL NAME="bndefault"><STATICPROPERTIES><FORMAT>MSR DTAS XML</FORMAT>
+        <VERSION>1.0</VERSION>
+        <CREATOR>Open Bayes GUI</CREATOR>
+        </STATICPROPERTIES>
+      <DYNAMICPROPERTIES/>
+      <VARIABLES>
+        <VAR NAME="Clever" TYPE="discrete" XPOS="0" YPOS="0"><FULLNAME></FULLNAME>
+          <STATENAME>0</STATENAME>
+          <STATENAME>1</STATENAME>
+          </VAR>
+        <VAR NAME="Wealth" TYPE="discrete" XPOS="0" YPOS="0"><FULLNAME></FULLNAME>
+          <STATENAME>0</STATENAME>
+          <STATENAME>1</STATENAME>
+          <STATENAME>2</STATENAME>
+          </VAR>
+        <VAR NAME="Sports Career" TYPE="discrete" XPOS="0" YPOS="0"><FULLNAME></FULLNAME>
+          <STATENAME>0</STATENAME>
+          <STATENAME>1</STATENAME>
+          </VAR>
+        <VAR NAME="Varsity" TYPE="discrete" XPOS="0" YPOS="0"><FULLNAME></FULLNAME>
+          <STATENAME>0</STATENAME>
+          <STATENAME>1</STATENAME>
+          </VAR>
+        <VAR NAME="Intellectual Career" TYPE="discrete" XPOS="0" YPOS="0"><FULLNAME></FULLNAME>
+          <STATENAME>0</STATENAME>
+          <STATENAME>1</STATENAME>
+          </VAR>
+        <VAR NAME="Sporty" TYPE="discrete" XPOS="0" YPOS="0"><FULLNAME></FULLNAME>
+          <STATENAME>0</STATENAME>
+          <STATENAME>1</STATENAME>
+          </VAR>
+        </VARIABLES>
+      <STRUCTURE>
+        <ARC PARENT="Sporty" CHILD="Varsity"/>
+        <ARC PARENT="Clever" CHILD="Varsity"/>
+        <ARC PARENT="Sporty" CHILD="Sports Career"/>
+        <ARC PARENT="Sports Career" CHILD="Wealth"/>
+        <ARC PARENT="Varsity" CHILD="Intellectual Career"/>
+        <ARC PARENT="Intellectual Career" CHILD="Wealth"/>
+        <ARC PARENT="Clever" CHILD="Intellectual Career"/>
+        </STRUCTURE>
+      <DISTRIBUTIONS>
+        <DIST TYPE="discrete">
+          <PRIVATE NAME="Clever"/>
+          <DPIS>
+            <DPI>0.5 0.5 </DPI>
+            </DPIS>
+          </DIST>
+        <DIST TYPE="discrete">
+          <CONDSET>
+            <CONDELEM NAME="Sports Career"/>
+            <CONDELEM NAME="Intellectual Career"/>
+            </CONDSET>
+          <PRIVATE NAME="Wealth"/>
+          <DPIS>
+            <DPI INDEXES="0 0 ">1.0 0.0 0.0 </DPI>
+            <DPI INDEXES="1 0 ">0.300000011921 0.5 0.20000000298 </DPI>
+            <DPI INDEXES="0 1 ">1.0 0.0 0.0 </DPI>
+            <DPI INDEXES="1 1 ">0.0 0.10000000149 0.899999976158 </DPI>
+            </DPIS>
+          </DIST>
+        <DIST TYPE="discrete">
+          <CONDSET>
+            <CONDELEM NAME="Sporty"/>
+            </CONDSET>
+          <PRIVATE NAME="Sports Career"/>
+          <DPIS>
+            <DPI INDEXES="0 ">0.20000000298 0.800000011921 </DPI>
+            <DPI INDEXES="1 ">0.0 1.0 </DPI>
+            </DPIS>
+          </DIST>
+        <DIST TYPE="discrete">
+          <CONDSET>
+            <CONDELEM NAME="Sporty"/>
+            <CONDELEM NAME="Clever"/>
+            </CONDSET>
+          <PRIVATE NAME="Varsity"/>
+          <DPIS>
+            <DPI INDEXES="0 0 ">1.0 0.0 </DPI>
+            <DPI INDEXES="1 0 ">1.0 0.0 </DPI>
+            <DPI INDEXES="0 1 ">1.0 0.0 </DPI>
+            <DPI INDEXES="1 1 ">0.0 1.0 </DPI>
+            </DPIS>
+          </DIST>
+        <DIST TYPE="discrete">
+          <CONDSET>
+            <CONDELEM NAME="Varsity"/>
+            <CONDELEM NAME="Clever"/>
+            </CONDSET>
+          <PRIVATE NAME="Intellectual Career"/>
+          <DPIS>
+            <DPI INDEXES="0 0 ">0.899999976158 0.10000000149 </DPI>
+            <DPI INDEXES="1 0 ">0.600000023842 0.40000000596 </DPI>
+            <DPI INDEXES="0 1 ">0.20000000298 0.800000011921 </DPI>
+            <DPI INDEXES="1 1 ">0.10000000149 0.899999976158 </DPI>
+            </DPIS>
+          </DIST>
+        <DIST TYPE="discrete">
+          <PRIVATE NAME="Sporty"/>
+          <DPIS>
+            <DPI>0.5 0.5 </DPI>
+            </DPIS>
+          </DIST>
+        </DISTRIBUTIONS>
+      </BNMODEL>
+    </ANALYSISNOTEBOOK>

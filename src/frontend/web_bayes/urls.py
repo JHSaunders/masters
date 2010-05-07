@@ -10,10 +10,11 @@ urlpatterns = patterns('',
     
     url(r'^network/(?P<network_id>\d+)/definition.svg$', views.network_definition_visualisation_svg,name="network_definition_svg"),
     url(r'^network/(?P<network_id>\d+)/definition.png$', views.network_definition_visualisation_png,name="network_definition_png"),
-        
     url(r'^network/(?P<network_id>\d+)/dot.txt$', views.network_definition_visualisation_dot,name="network_definition_dot"),
-
     url(r'^network/(?P<network_id>\d+)/inference.svg$', views.network_inference_visualisation_svg,name="network_inference_svg"),
+    
+    url(r'^network/(?P<network_id>\d+)/xmlbif.xml$', views.network_xmlbif,name="network_xmlbif"),
+    url(r'^network/(?P<network_id>\d+)/xbn.xml$', views.network_xbn,name="network_xbn"),    
         
     url(r'^create_network$', views.create_network,name="create_network"),
     url(r'^network/(?P<network_id>\d+)/properties$', views.edit_network_properties,name="network_properties"),
@@ -36,6 +37,5 @@ urlpatterns = patterns('',
     url(r'^toggle_observation/(?P<state_id>\d+)$', views.toggle_observation, name="toggle_observation"), 
     
     url(r'^network/(?P<network_id>\d+)/perform_inference$', views.perform_inference, name="perform_inference"),        
-    url(r'^network/(?P<network_id>\d+)/clear_inference$', views.clear_inference, name="clear_inference"),    
-        
+    url(r'^network/(?P<network_id>\d+)/clear_inference$', views.clear_inference, name="clear_inference"),            
     )

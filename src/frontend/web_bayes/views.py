@@ -14,6 +14,8 @@ from forms import *
 from visualisation import DotBasicNetwork,VisualiseBasicNetwork,VisualiseInferenceNetwork
 from inference import PerformInference, ClearInference
 
+from interchange import write_xml_bif,write_xbn
+
 def help(req,thing):
     doc = pydoc.HTMLDoc()
     return HttpResponse(doc.document(thing))
@@ -48,6 +50,20 @@ def network_definition_visualisation_dot(req,network_id):
     response.write(DotBasicNetwork(network))
     return response
 
+def network_xmlbif(req,network_id):
+    network = Network.objects.get(id = network_id)
+    response = HttpResponse(mimetype='text/xml')
+    response['Content-Disposition'] = 'filename=%s.xml'% network.name.replace(' ','_')
+    response.write(write_xml_bif(network));
+    return response
+
+def network_xbn(req,network_id):
+    network = Network.objects.get(id = network_id)
+    response = HttpResponse(mimetype='text/xml')
+    response['Content-Disposition'] = 'filename=%s.xbn'% network.name.replace(' ','_')
+    response.write(write_xbn(network))
+    return response
+    
 def create_network(req):
     return create_object(req,model=Network)
 

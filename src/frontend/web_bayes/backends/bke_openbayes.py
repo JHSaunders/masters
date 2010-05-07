@@ -1,9 +1,9 @@
 import math
 
-from OpenBayes import BNet, BVertex, DirEdge
+from OpenBayes import BNet, BVertex, DirEdge,SaveXBN
 from OpenBayes import JoinTree, MCMCEngine
 
-def PerformOpenBayesInference(network):    
+def CreateOpenBayesNetwork(network):
     G = BNet( network.name )
     
     node_dict = {}
@@ -37,8 +37,14 @@ def PerformOpenBayesInference(network):
                 node_dict[node.id].distribution[index_dict] = [v.value for v in values_i]                 
             print "\n"    
         else:
-            node_dict[node.id].setDistributionParameters([state.probability for state in node.states.all()])       
-    
+            node_dict[node.id].setDistributionParameters([state.probability for state in node.states.all()])
+
+    return G
+
+def PerformOpenBayesInference(network):
+
+    G = CreateOpenBayesNetwork(network)           
+
     ie = JoinTree(G)
     ie = MCMCEngine(G)
     
@@ -64,4 +70,14 @@ def PerformOpenBayesInference(network):
             state.save()
             
             i+=1
-        
+
+def ExportToXBN(network):
+    G = CreateOpenBayesNetwork(network)
+    SaveXBN('temp.xbn',G)
+    f = open('temp.xbn','r')
+    output = []
+    for line in f:
+        output.append(line)
+    f.close();
+    
+    return '\n'.join(output)
