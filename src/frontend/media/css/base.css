@@ -162,7 +162,8 @@ div.toolbar{
      
 }
 
-div.canvas{ 
+div.canvas{
+    background-color: red; 
 }
 
 .button
@@ -222,9 +223,9 @@ div.dialog-content
     background-color: white;
 }
 
-span.backlink
+div.backlink
 {
-    float:right;    
+  text-align:right;    
 }
 
 div.tabs
@@ -244,8 +245,7 @@ div.tabs a
 
 a.active
 {
-   border: 1px solid #26393d;
-    
+   border: 1px solid #26393d;    
    border-bottom: 2px solid white;
    background-color:white;
 }

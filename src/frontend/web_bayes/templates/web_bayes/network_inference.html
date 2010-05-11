@@ -19,9 +19,8 @@
 {% block content %}
 
 <div class="canvas">
-<img id="canvas_image" src="{% url network_inference_svg network.id %}" usemap="#model" alt="Network Inference Graph"/>
 {% autoescape off %}
-{{map}}
+{{graph}}
 {% endautoescape %}
 </div>
 

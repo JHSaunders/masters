@@ -1,5 +1,16 @@
 {% extends "web_bayes/network_base.html" %}
 
+{% block scripts %}
+{{ block.super }}
+    <script type="text/javascript" src="/media/js/jquery.svg.js"></script>    
+    <script type="text/javascript" src="/media/js/jquery.svgdom.js"></script>
+    <script type="text/javascript" src="/media/js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="/media/js/svgport.js"></script> 
+<script>
+    $(document).ready(function(){svgport.setup('#canvas');});
+</script>
+{% endblock %}
+
 {%block bodytitle%}
 {{network}}
 {%endblock%}
@@ -19,12 +30,11 @@
 
 {% block content %}
 
-<div class="canvas">
-<img id="canvas_image" src="{% url network_definition_svg network.id %}" usemap="#model" alt="Network Definition Graph"/>
+<div id="canvas">
 {% autoescape off %}
-{{map}}
+{{graph}}
 {% endautoescape %}
 </div>
-
+<div id="log"></div>
 {%endblock%}
 

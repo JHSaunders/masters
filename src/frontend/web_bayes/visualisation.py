@@ -1,5 +1,12 @@
+from xml.dom.minidom import parse, parseString
+
 import subprocess
+
 from django.core.urlresolvers import reverse
+
+def inline_svg(xml):
+    dom = parseString(xml)
+    return dom.documentElement.toxml()
 
 color = {'C':"lightblue",'A':"red",'U':"yellow"}
 shape = {'C':"ellipse",'A':"rectangle",'U':"diamond"}

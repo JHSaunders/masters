@@ -11,7 +11,7 @@ from django.forms.models import inlineformset_factory
 
 from models import *
 from forms import *
-from visualisation import DotBasicNetwork,VisualiseBasicNetwork,VisualiseInferenceNetwork
+from visualisation import DotBasicNetwork,VisualiseBasicNetwork,VisualiseInferenceNetwork,inline_svg
 from inference import PerformInference, ClearInference
 
 from interchange import write_xml_bif,write_xbn
@@ -28,7 +28,11 @@ def list_networks(req):
 
 def view_network_definition(req,network_id):
     network = Network.objects.get(id = network_id)
-    return direct_to_template(req,"web_bayes/network_definition.html",{"network":network,"map":VisualiseBasicNetwork(network,"cmapx")})
+    return direct_to_template(req,"web_bayes/network_definition.html",
+        {"network":network,
+        "graph":inline_svg(VisualiseBasicNetwork(network,"svg"))}
+        ,mimetype="application/xhtml+xml")
+    
 
 def network_definition_visualisation_svg(req,network_id):
     network = Network.objects.get(id = network_id)
@@ -176,7 +180,7 @@ def create_cluster(req,network_id):
     
 def network_inference(req,network_id):
     network = Network.objects.get(id = network_id)
-    return direct_to_template(req,"web_bayes/network_inference.html",{"network":network,"map":VisualiseInferenceNetwork(network,"cmapx")})
+    return direct_to_template(req,"web_bayes/network_inference.html",{"network":network,"graph":inline_svg(VisualiseInferenceNetwork(network,"svg"))},mimetype="application/xhtml+xml")
     
 def network_inference_visualisation_svg(req,network_id):
     network = Network.objects.get(id = network_id)

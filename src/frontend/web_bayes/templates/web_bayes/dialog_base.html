@@ -11,9 +11,9 @@
 {% include "web_bayes/title_block.html" %}
 <div class="dialog-border">
 <h2 class="dialog-title">{%block bodytitle %}{% endblock %}</h2>
-<span class="backlink">{%block backlink%}
-{%endblock%}</span>
+
 <div class="dialog-content">
+<div class="backlink">{%block backlink%}{%endblock%}</div>
 {% block content %}
         
 {% endblock %}
