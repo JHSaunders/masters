@@ -153,16 +153,13 @@ div#outer-align {
     
 }
 
-img#canvas_image{
-}
-
 div.toolbar{
     margin-bottom: 5px;
     margin-top:5px;
      
 }
 
-div.canvas{
+svg{
     background-color: red; 
 }
 
