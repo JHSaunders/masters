@@ -23,6 +23,9 @@ def help(req,thing):
 def test(req):
     return HttpResponse("Hello world")
 
+def ok():
+    return HttpResponse("success")    
+
 def list_networks(req):
     return object_list(req,Network.objects.all())
 
@@ -192,22 +195,15 @@ def network_inference_visualisation_svg(req,network_id):
 def toggle_observation(req,state_id):
     state = State.objects.get(id=state_id)
     state.toggle_observed()
-    return HttpResponseRedirect(reverse("network_inference",args=[state.node.network.id]))
+    return ok()
     
 def perform_inference(req,network_id):
     network = Network.objects.get(id=network_id)
-    if req.method=="POST":
-        if u'perform' in req.POST:
-            PerformInference(network)
-            return HttpResponseRedirect(reverse("network_inference",args=[network_id]))          
+    PerformInference(network)
+    return ok()     
     
-    return direct_to_template(req,"web_bayes/perform_inference.html",{"network":network})
-
 def clear_inference(req,network_id):
     network = Network.objects.get(id=network_id)
-    if req.method=="POST":
-        if u'clear' in req.POST:
-            ClearInference(network)
-            return HttpResponseRedirect(reverse("network_inference",args=[network_id]))    
-    return direct_to_template(req,"web_bayes/clear_inference.html",{"network":network})
+    ClearInference(network)
+    return ok()
 

@@ -64,9 +64,8 @@ def PerformOpenBayesInference(network):
         print node_dict[node.id].distribution
         for state in node.states.all():
             state.inferred_probability = distribution[i]
-            if state.probability is None or math.isnan(state.probability):
-                state.inferred_probability = -1 
-            state.observed=False
+            if state.inferred_probability is None or math.isnan(state.inferred_probability):
+                state.inferred_probability = None
             state.save()
             
             i+=1

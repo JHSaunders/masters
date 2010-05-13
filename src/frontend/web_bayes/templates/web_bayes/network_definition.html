@@ -5,9 +5,9 @@
     <script type="text/javascript" src="/media/js/jquery.svg.js"></script>    
     <script type="text/javascript" src="/media/js/jquery.svgdom.js"></script>
     <script type="text/javascript" src="/media/js/jquery.mousewheel.js"></script>
-    <script type="text/javascript" src="/media/js/svgport.js"></script> 
+    <script type="text/javascript" src="/media/js/network_graph.js"></script> 
 <script>
-    $(document).ready(function(){svgport.setup('#canvas');});
+    $(document).ready(function(){network_graph.setup('#canvas','#canvas > svg',"{% url network_definition_svg network.id %}");});
 </script>
 {% endblock %}
 

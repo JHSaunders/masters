@@ -1,5 +1,17 @@
 {% extends "web_bayes/network_base.html" %}
 
+{% block scripts %}
+{{ block.super }}
+    <script type="text/javascript" src="/media/js/jquery.svg.js"></script>    
+    <script type="text/javascript" src="/media/js/jquery.svgdom.js"></script>
+    <script type="text/javascript" src="/media/js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="/media/js/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="/media/js/network_graph.js"></script> 
+<script>
+    $(document).ready(function(){network_graph.setup('#canvas','#canvas > svg',"{%url network_inference_svg network.id%}");});
+</script>
+{% endblock %}
+
 {%block bodytitle%}
 {{network}}
 {%endblock%}
@@ -11,18 +23,17 @@
 {% endblock %}
 
 {%block toolbar%}
-<a class="button" href="{%url perform_inference network.id%}">Perform Inference</a>
-<a class="button" href="{%url clear_inference network.id%}">Clear Inferences</a>
+<a class="button" href='javascript: network_graph.send_and_refresh_with_progress("{%url perform_inference network.id%}");'>Perform Inference</a>
+<a class="button" href='javascript: network_graph.send_and_refresh("{%url clear_inference network.id%}");'>Clear Inferences</a>
 <a class="button" href="{%url network_inference_svg network.id%}">Save Inference Diagram</a>
 {%endblock%}
 
 {% block content %}
-
-<div class="canvas">
+<div id="canvas">
 {% autoescape off %}
 {{graph}}
 {% endautoescape %}
 </div>
-
+<div id="log"></div>
 {%endblock%}
 

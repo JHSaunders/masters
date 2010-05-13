@@ -9,7 +9,7 @@ def inline_svg(xml):
     return dom.documentElement.toxml()
 
 color = {'C':"lightblue",'A':"red",'U':"yellow"}
-shape = {'C':"ellipse",'A':"rectangle",'U':"diamond"}
+shape = {'C':"ellipse",'U':"rectangle",'A':"diamond"}
 
 edge_style = {'R':'solid','I':'solid','E':'dashed','IE':'dashed'}
 edge_arrow = {'R':'normal','I':'diamond','E':'normal','IE':'diamond'}
@@ -70,7 +70,7 @@ def DotInferenceNode(node):
     template.append("</TD></TR>")
     
     for state in node.states.all():
-        toggle_url = reverse('toggle_observation',args=[state.id])
+        toggle_url = "javascript:network_graph.send_and_refresh('%s')"%reverse('toggle_observation',args=[state.id])
         
         template.append('<TR><TD ALIGN="LEFT" HREF="%s" TOOLTIP="Click to set observation">'%(toggle_url))
         template.append(state.name)

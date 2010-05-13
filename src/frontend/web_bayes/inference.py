@@ -2,7 +2,7 @@ from backends.bke_openbayes import PerformOpenBayesInference
 
 def PerformInference(network):
     PerformOpenBayesInference(network)
-
+    
 def ClearInference(network):
     for node in network.nodes.all():
         for state in node.states.all():

@@ -159,9 +159,6 @@ div.toolbar{
      
 }
 
-svg{
-    background-color: red; 
-}
 
 .button
 {
@@ -183,8 +180,7 @@ svg{
 td.cpt_cell
 {
     padding:0px;
-    width:60px;
-        
+    width:60px;        
 }
 
 td.cpt_cell input
@@ -197,33 +193,6 @@ td.cpt_cell input
     font-size:medium;
 }
 
-div.dialog-border
-{
-    border: 2px solid #26393d;
-    border-radius: 5px;
-    -webkit-border-radius: 5px; 
-    -moz-border-radius: 5px;
-    -moz-user-select: none;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
-    width: 50%;
-    background-color: lightblue;
-}
-
-div.dialog-content
-{
-    border-top: 2px solid #26393d;
-    margin-left: auto;
-    margin-right: auto;
-    padding:5px;
-    background-color: white;
-}
-
-div.backlink
-{
-  text-align:right;    
-}
 
 div.tabs
 {
@@ -258,8 +227,13 @@ a.inactive
     background-color:aliceblue;
 }
 
-.title-block
-{    
-    text-align:right;
-    padding:5px;        
+#canvas
+{
+   
+    margin: 8px;
+}
+
+#canvas > svg
+{
+    border: 1px solid black;
 }
