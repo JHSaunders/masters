@@ -72,8 +72,8 @@ def PerformOpenBayesInference(network):
 
 def ExportToXBN(network):
     (G,node_dict) = CreateOpenBayesNetwork(network)
-    SaveXBN('temp.xbn',G)
-    f = open('temp.xbn','r')
+    SaveXBN('network.xbn.tmp~',G)
+    f = open('network.xbn.tmp~','r')
     output = []
     for line in f:
         output.append(line)
