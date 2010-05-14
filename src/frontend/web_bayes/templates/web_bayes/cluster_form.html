@@ -1,0 +1,25 @@
+{% extends "web_bayes/form_base.html" %}
+
+{%block bodytitle%}
+{% if object.id %}
+{{object}}
+{% else %}
+New Cluster
+{% endif %}
+{%endblock%}
+
+{%block backlink%}
+<a  href="{%url view_network object.network.id %}">Return to Network Definition</a>
+{%endblock%}
+
+{% block content %}
+<form target="" method="POST">
+<table>
+{{form}}
+</table>
+<input type="submit" name="save" Value="Save" />
+{% if object.id %}
+<a href="{%url delete_cluster object.id %}">Delete</a>
+{% endif %}
+</form>
+{%endblock%}

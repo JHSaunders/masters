@@ -1,0 +1,194 @@
+#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Extending the BPDA Framework to Integrate Real-time Data
+\end_layout
+
+\begin_layout Date
+James Saunders
+\end_layout
+
+\begin_layout Date
+06/05/2010
+\end_layout
+
+\begin_layout Abstract
+An Abstract
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Subsection
+Sustainability and Decision making
+\end_layout
+
+\begin_layout Subsection
+Bayesian Participatory-based Decision Analysis
+\end_layout
+
+\begin_layout Subsection
+Model Verification and Validation
+\end_layout
+
+\begin_layout Subsection
+Research Goals
+\end_layout
+
+\begin_layout Subsection
+Research Contribution
+\end_layout
+
+\begin_layout Subsection
+Organisation of this Thesis
+\end_layout
+
+\begin_layout Section
+Sustainability
+\end_layout
+
+\begin_layout Section
+Social-Ecological Modelling
+\end_layout
+
+\begin_layout Section
+Complexity and Decision Theory
+\end_layout
+
+\begin_layout Section
+Bayesian Networks
+\end_layout
+
+\begin_layout Standard
+Bayesian networks are a statistical tool for calculating the joint probability
+ distribution of a set of variables.
+\end_layout
+
+\begin_layout Subsection
+Required probability theory fundamentals
+\end_layout
+
+\begin_layout Subsection
+Representation of Bayesian Networks
+\end_layout
+
+\begin_layout Subsection
+Inference
+\end_layout
+
+\begin_layout Subsection
+Learning
+\end_layout
+
+\begin_layout Subsection
+Bayesian networks in decision theory
+\end_layout
+
+\begin_layout Section
+Bayesian Participatory-based Decision Analysis
+\end_layout
+
+\begin_layout Section
+Model Verification and Validation
+\end_layout
+
+\begin_layout Section
+Real-time Extensions to the BPDA framework
+\end_layout
+
+\begin_layout Subsection
+The model verification cycle
+\end_layout
+
+\begin_layout Subsection
+The decision verification cycle
+\end_layout
+
+\begin_layout Section
+Implementation and Development
+\end_layout
+
+\begin_layout Section
+Simulation, Evaluation and Testing
+\end_layout
+
+\begin_layout Section
+Case Study: Water Management in Somewhere
+\end_layout
+
+\begin_layout Section
+Conclusions
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "Masters"
+options "bibtotoc,plainnat"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

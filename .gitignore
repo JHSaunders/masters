@@ -1,1 +1,16 @@
+*#
+*pyc
 *~
+.ditz-config
+.ditz-plugins
+.ropeproject
+bin/
+*.user
+obj/
+*.suo
+*TestResult.xml
+*.VisualState.xml
+*.db
+*.db-journal
+*spec/zips
+

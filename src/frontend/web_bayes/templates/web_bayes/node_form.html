@@ -1,0 +1,81 @@
+{% extends "web_bayes/form_base.html" %}
+
+{%block bodytitle %}
+{{node}}
+{%endblock%}
+
+{%block backlink%}
+<a  href="{%url view_network node.network.id %}">Return to Network Definition</a>
+{%endblock%}
+
+{% block content %}
+<form target="" method="POST">
+</span>
+<h2> Node Details </h2>
+<table>
+{{details_form}}
+</table>
+
+<h2>Node States</h2>
+{{ states_formset.non_form_errors.as_ul }}
+<table>
+<thead>
+  <tr>
+    <th>Name</th>
+    {% if node.is_root %}
+    <th>Probability</th>
+    {%endif%}
+    <th>Delete</th>
+  </tr>
+</thead>
+
+{{ states_formset.management_form }}
+{% for form in states_formset.forms %}
+  <tr class="{% cycle row,alt %}">
+  {% for hidden in form.hidden_fields %}
+      {{ hidden }}
+  {% endfor %}
+  
+  <td>{{form.name.errors.as_ul}}{{form.name}}{{form.probability.errors.as_ul}}</td>
+  {% if node.is_root %}    
+  <td>{{form.probability.errors.as_ul}}{{form.probability}}</td> 
+  {%else%}
+  {{form.probability.as_hidden}}
+  {%endif%}
+  <td>{%if not forloop.first %}{{form.DELETE}}{%else%}{{form.DELETE.as_hidden}}{%endif%}</td>
+  </tr>
+{% endfor %}
+</table>
+
+{% if not node.is_root%}
+<h2>Conditional Probability Table</h2>
+{%autoescape off %}
+<table>
+{{cpt_form}}
+</table>
+{%endautoescape %}
+{% endif %}
+
+<h2>Change Reason</h2>
+<table>
+<tr><th><label>Version:</label></th><td>{{node.network.version}}</td></tr>
+{{reasoning_form}}
+</table>
+
+<input type="submit" name="continue" Value="Save and Continue Editing" />
+<input type="submit" name="save" Value="Save and Finish Editing" />
+<a href="{%url delete_node node.id %}">Delete Node</a>
+</form>
+
+<h2>Reasoning History</h2>
+<table>
+<tr><th>Version</th><th>Action</th><th>Reason</th></tr>
+{% for reason in node.reasons.all%}
+<tr class="{% cycle '' 'alt' %}">
+<td>{{reason.version}}</td>
+<td>{{reason.action}}</td>
+<td>{{reason.reason}}</td>
+</tr>
+{%endfor%}
+</table>
+{%endblock%}

@@ -1,0 +1,38 @@
+{% extends "web_bayes/form_base.html" %}
+
+{%block bodytitle%}
+{% if object.id %}
+{{object}}
+{% else %}
+New Network
+{% endif %}
+{%endblock%}
+
+{%block backlink%}
+{% if object.id %}
+<a href="{%url view_network object.id %}">Return to Network Definition</a>
+{%endif%}
+{%endblock%}
+
+{% block content %}
+<h3>Settings</h3>
+<form target="" method="POST">
+<table>
+<tr><th>Version</th><td>{{object.version}}</td></tr>
+{{form}}
+</table>
+<input type="submit" name="save" Value="Save"/>
+{% if object.id %}
+<a href="{%url delete_network object.id %}">Delete</a>
+{% endif %}
+</form>
+
+{% if object.id %}
+<h3>Actions</h3>
+<ul>
+<!--<li><a href="{%url network_xmlbif object.id %}">Export Network to XML-BIF</a></li>-->
+<li><a href="{%url network_xbn object.id %}">Export Network to XBN</a></li>
+<li><a href="{%url network_definition_svg object.id %}">Export Network Diagram as SVG</a></li>
+</ul>
+{%endif %}
+{%endblock%}
