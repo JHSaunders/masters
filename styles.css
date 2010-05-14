@@ -1,33 +1,42 @@
 body
 {    
     padding:0;
-    margin:0;
-    background-color:aliceblue;
+    margin:0;    
 }
 
+h1
+{
+    margin:0px;
+}
 
+h2
+{
+    margin:0px;
+}
+
+h3
+{
+    margin:0px;    
+}
 
 div.align
 {
-    width:780px;
+    width:800px;
     margin-left:auto;
     margin-right:auto;
     background-color:white;
-    border-left:1px solid black;
-    border-right:1px solid black;
-    /*background-image:url("images/background.png");*/
+    border-left:1px solid lightblue;
+    border-right:1px solid lightblue;
+    background-image:url("images/background.png");
     background-repeat:repeat-y;
     background-position:right top; 
-    background-color:white;
-    padding-top:1px;
-    padding-left:10px;
-    padding-right:10px;  
+    background-color:aliceblue;   
 }
 
 div.main
 {
     float:left;
-    width:570px;
+    width:590px;
     text-align: justify;
     padding:5px;
 }
@@ -41,17 +50,17 @@ div.side
 
 div.inset
 {
-    border:1px solid black;
+    border:1px solid lightblue;
     padding:5px;
     margin:5px;
     background: white;
-    background-color:aliceblue; 
 }
 
 div.footer
 {
     clear:both;
     text-align:center;
+    width:590px;
 }
 
 ul.links
@@ -69,34 +78,13 @@ ul.links li a
 
 h1.title
 {
-    border-top: 1px dotted black;
-    border-bottom: 1px dotted black;
-    margin-top:5px;
-    margin-bottom:5px;
-    padding-top:5px;
+    width:590px;
     text-align:center;
-    font-size:2.5em;    
+    float:left;
 }
 
-h1
+p.subtitle
 {
-    font-weight:normal;
-}
-
-h2
-{
-    font-weight:normal;
-    margin:0px;
-}
-
-h3
-{
-    font-weight:bold;
-    margin:0px;
-}
-
-img.banner
-{
-    display:block;
-    margin-bottom:10px;
+    text-align:center;
+    color: black;
 }
