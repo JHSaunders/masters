@@ -5,7 +5,9 @@ import views
 urlpatterns = patterns('',
     url(r'^$', views.list_networks,name="list_networks"),
     url(r'^$', views.list_networks,name="home"),
+    
     url(r'^network/(?P<network_id>\d+)/defintion$', views.view_network_definition,name="network_definition"),
+    
     url(r'^network/(?P<network_id>\d+)/defintion$', views.view_network_definition,name="view_network"),
     
     url(r'^network/(?P<network_id>\d+)/definition.svg$', views.network_definition_visualisation_svg,name="network_definition_svg"),
@@ -15,6 +17,8 @@ urlpatterns = patterns('',
     
     url(r'^network/(?P<network_id>\d+)/xmlbif.xml$', views.network_xmlbif,name="network_xmlbif"),
     url(r'^network/(?P<network_id>\d+)/xbn.xml$', views.network_xbn,name="network_xbn"),    
+    
+    url(r'^success$',views.success_response,name="success"),
         
     url(r'^create_network$', views.create_network,name="create_network"),
     url(r'^network/(?P<network_id>\d+)/properties$', views.edit_network_properties,name="network_properties"),

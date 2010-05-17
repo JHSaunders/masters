@@ -96,7 +96,9 @@ network_graph.setup = function(div_id, svg_id, src_url)
     $(network_graph.div).mousedown(network_graph.onmousedown);
     $(network_graph.div).mousemove(network_graph.onmousemove);
     $(document).mouseup(network_graph.onmouseup);
-    $(network_graph.div).mousewheel(network_graph.onmousewheel);     
+    $(network_graph.div).mousewheel(network_graph.onmousewheel);
+    
+    $('#dialog').dialog({autoOpen:false,modal:true, minWidth:700,width:700, position: 'top'});         
 }
 
 network_graph.convert_from_view_to_canvas = function(x,y)
@@ -134,6 +136,7 @@ network_graph.update = function()
 {
     $.ajax({url:network_graph.src_url,
             dataType: "xml",
+            cache: false,
             success: function(data)
                      {
                        $(network_graph.svg+" > g").replaceWith($("svg > g",data));
@@ -151,4 +154,28 @@ network_graph.send_and_refresh_with_progress = function(url)
 {
     $.blockUI();
     $.get(url,function(data){network_graph.update()});   
+}
+
+network_graph.refresh_form = function(data)
+{   
+    
+    if(data=="success")
+    {
+        $('#dialog').dialog('close');
+        network_graph.update();
+    }
+    else
+    {
+        $('#dialog').html(data);
+        $('#dialog').dialog( "option", "title", $('#dialog-title').text());      
+        $('#dialog-title').hide();
+        $('#dialog form').ajaxForm({success:network_graph.refresh_form,cache: false});
+    }
+}
+
+network_graph.open_form = function(url)
+{
+    $('#dialog').html("loading...");    
+    $('#dialog').dialog('open');
+    $.ajax({url:url,success:network_graph.refresh_form,cache: false}); 
 }

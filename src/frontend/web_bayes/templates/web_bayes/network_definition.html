@@ -2,12 +2,11 @@
 
 {% block scripts %}
 {{ block.super }}
-    <script type="text/javascript" src="/media/js/jquery.svg.js"></script>    
-    <script type="text/javascript" src="/media/js/jquery.svgdom.js"></script>
-    <script type="text/javascript" src="/media/js/jquery.mousewheel.js"></script>
-    <script type="text/javascript" src="/media/js/network_graph.js"></script> 
+    
 <script>
-    $(document).ready(function(){network_graph.setup('#canvas','#canvas > svg',"{% url network_definition_svg network.id %}");});
+    $(document).ready(function()
+    {network_graph.setup('#canvas','#canvas > svg',"{% url network_definition_svg network.id %}");    
+    });
 </script>
 {% endblock %}
 
@@ -22,9 +21,9 @@
 {% endblock %}
 
 {%block toolbar%}
-<a class= "button" href="{%url create_node network.id %}">Add Node</a>
-<a class= "button" href="{%url create_edge network.id %}">Add Edge</a>
-<a class= "button" href="{%url create_cluster network.id %}">Add Cluster</a>
+<a class= "button" href="javascript: network_graph.open_form('{%url create_node network.id %}')">Add Node</a>
+<a class= "button" href="javascript: network_graph.open_form('{%url create_edge network.id %}')">Add Edge</a>
+<a class= "button" href="javascript: network_graph.open_form('{%url create_cluster network.id %}')">Add Cluster</a>
 <a class= "button" href="{%url network_properties network.id %}">Network Options</a>
 {%endblock%}
 
@@ -35,6 +34,6 @@
 {{graph}}
 {% endautoescape %}
 </div>
-<div id="log"></div>
+<div id="dialog">yes</div>
 {%endblock%}
 

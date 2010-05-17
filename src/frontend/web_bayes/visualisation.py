@@ -15,13 +15,13 @@ edge_style = {'R':'solid','I':'solid','E':'dashed','IE':'dashed'}
 edge_arrow = {'R':'normal','I':'diamond','E':'normal','IE':'diamond'}
 
 def DotNode(node):
-    return '%s [label="%s", style="filled", fontname=Helvetica, fillcolor="%s",shape="%s", URL="%s"]' % (node.slug(),node.name,color[node.node_class],shape[node.node_class],reverse("view_node",args=[node.id]))
+    return '%s [label="%s", style="filled", fontname=Helvetica, fillcolor="%s",shape="%s", URL="javascript: network_graph.open_form(\'%s\')"]' % (node.slug(),node.name,color[node.node_class],shape[node.node_class],reverse("view_node",args=[node.id]))
 
 def DotEdge(edge):
     label = edge.edge_effect
     if label == None:
         label = ""
-    return '%s -> %s [ URL="%s", arrowhead=%s, style=%s,label="%s"]'%(edge.parent_node.slug(),edge.child_node.slug(),reverse("view_edge",args=[edge.id]),edge_arrow[edge.edge_class],edge_style[edge.edge_class],label)
+    return '%s -> %s [ URL="javascript: network_graph.open_form(\'%s\')", arrowhead=%s, style=%s,label="%s"]'%(edge.parent_node.slug(),edge.child_node.slug(),reverse("view_edge",args=[edge.id]),edge_arrow[edge.edge_class],edge_style[edge.edge_class],label)
                 
 def DotBasicNetwork(network):
     dot = []
@@ -34,8 +34,8 @@ def DotBasicNetwork(network):
         id_cluster +=1
         dot.append('subgraph cluster_%s{'%(id_cluster,))
         dot.append('label="%s";' % (cluster.name,))
-        dot.append('bgcolor="%s";' % ("aliceblue",))        
-        dot.append('URL="%s";' % (reverse("view_cluster",args=[cluster.id]),))
+        dot.append('bgcolor="%s";' % ("aliceblue",))
+        dot.append('URL="javascript: network_graph.open_form(\'%s\')";' % (reverse("view_cluster",args=[cluster.id]),))
         
         for node in cluster.nodes.all():
             dot.append(DotNode(node))
@@ -64,7 +64,7 @@ def DotInferenceNode(node):
     template = []
     values = []
     template.append("<")
-    template.append('<TABLE PORT="p0" BGCOLOR="%s" BORDER="1" CELLBORDER="0" CELLSPACING="1">' % (color[node.node_class]))
+    template.append('<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="1">')
     template.append('<TR><TD COLSPAN="3">')
     template.append(node.name)
     template.append("</TD></TR>")
@@ -95,10 +95,10 @@ def DotInferenceNode(node):
     template.append("</TABLE>")
     template.append(">")
     html = "".join(template)
-    return '%s [label=%s, fontname=Helvetica, shape=plaintext]' % (node.slug(),html)
+    return '%s [label=%s, fillcolor=%s, fontname=Helvetica, shape=box, style="rounded,filled"]' % (node.slug(),html,color[node.node_class])
 
 def DotInferenceEdge(edge):
-    return '%s:p0 -> %s:p0 '%(edge.parent_node.slug(),edge.child_node.slug())
+    return '%s -> %s '%(edge.parent_node.slug(),edge.child_node.slug())
 
 def DotInferenceNetwork(network):    
     dot = []

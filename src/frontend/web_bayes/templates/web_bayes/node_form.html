@@ -4,13 +4,8 @@
 {{node}}
 {%endblock%}
 
-{%block backlink%}
-<a  href="{%url view_network node.network.id %}">Return to Network Definition</a>
-{%endblock%}
-
 {% block content %}
-<form target="" method="POST">
-</span>
+<form action="{%url view_node node.id %}" method="POST">
 <h2> Node Details </h2>
 <table>
 {{details_form}}
@@ -61,10 +56,9 @@
 <tr><th><label>Version:</label></th><td>{{node.network.version}}</td></tr>
 {{reasoning_form}}
 </table>
-
-<input type="submit" name="continue" Value="Save and Continue Editing" />
-<input type="submit" name="save" Value="Save and Finish Editing" />
-<a href="{%url delete_node node.id %}">Delete Node</a>
+<input type="submit" name="continue" value="Save and Continue Editing" />
+<input type="submit" name="save" value="Save and Finish Editing" />
+<a href="javascript: network_graph.open_form('{%url delete_node node.id %}')">Delete Node</a>
 </form>
 
 <h2>Reasoning History</h2>

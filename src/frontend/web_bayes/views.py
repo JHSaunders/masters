@@ -23,9 +23,12 @@ def help(req,thing):
 def test(req):
     return HttpResponse("Hello world")
 
-def ok():
-    return HttpResponse("success")    
+def success_response(req):
+    return ok()
 
+def ok():
+    return HttpResponse("success",mimetype="text/plain")
+    
 def list_networks(req):
     return object_list(req,Network.objects.all())
 
@@ -115,7 +118,7 @@ def view_node(req,node_id):
             if u'continue' in req.POST:                
                 return HttpResponseRedirect(reverse("view_node",args=[node.id]))
             else:
-                return HttpResponseRedirect(reverse("view_network",args=[node.network.id]))
+                return success_response(req)
                 
         else:
             return HttpResponseRedirect(reverse("view_node",args=[node.id]))
@@ -135,7 +138,7 @@ def view_node(req,node_id):
 
 def delete_node(req,node_id):
     node = Node.objects.get(id=node_id)  
-    return delete_object(req,model=Node,object_id=node_id,post_delete_redirect=reverse('view_network', args=[node.network.id]))
+    return delete_object(req,model=Node,object_id=node_id,post_delete_redirect=reverse('success'),extra_context={'action_url':reverse('delete_node', args=[node_id])})
 
 def create_edge(req,network_id):    
     if req.method=="POST":
@@ -144,7 +147,7 @@ def create_edge(req,network_id):
             edge = form.save(commit=False)
             edge.network = Network.objects.get(id=network_id)
             edge.save()
-            return HttpResponseRedirect(reverse('view_network', args=[edge.network.id]))
+            return success_response(req)
     else:
         form = EdgeForm(network=Network.objects.get(id=network_id))        
         
@@ -156,7 +159,7 @@ def view_edge(req,edge_id):
         form = EdgeForm(req.POST,instance=edge)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('view_network', args=[edge.network.id]))
+            return ok()
     else:
         form = EdgeForm(instance=edge)        
         
@@ -164,16 +167,16 @@ def view_edge(req,edge_id):
 
 def delete_edge(req,edge_id):
     edge = Edge.objects.get(id=edge_id)  
-    return delete_object(req,model=Edge,object_id=edge_id,post_delete_redirect=reverse('view_network', args=[edge.network.id]))
+    return delete_object(req,model=Edge,object_id=edge_id,post_delete_redirect=reverse('success'), extra_context={'action_url':reverse('delete_edge', args=[edge_id])})
 
 def view_cluster(req,cluster_id):
     cluster = Cluster.objects.get(id=cluster_id)
-    return update_object(req,model=Cluster,object_id=cluster_id,post_save_redirect=reverse('view_network',args=[cluster.network.id]))
+    return update_object(req,model=Cluster,object_id=cluster_id,post_save_redirect=reverse('success'))
 
 def delete_cluster(req,cluster_id):
     cluster = Cluster.objects.get(id=cluster_id)  
-    return delete_object(req,model=Cluster,object_id=cluster_id,post_delete_redirect=reverse('view_network', args=[cluster.network.id]))
-
+    return delete_object(req,model=Cluster,object_id=cluster_id,post_delete_redirect=reverse('success'),extra_context={'action_url':reverse('delete_cluster', args=[cluster_id])})
+    
 def create_cluster(req,network_id):
     cluster = Cluster(network = Network.objects.get(id = network_id))
     cluster.save()

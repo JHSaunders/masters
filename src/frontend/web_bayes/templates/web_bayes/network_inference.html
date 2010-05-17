@@ -2,11 +2,7 @@
 
 {% block scripts %}
 {{ block.super }}
-    <script type="text/javascript" src="/media/js/jquery.svg.js"></script>    
-    <script type="text/javascript" src="/media/js/jquery.svgdom.js"></script>
-    <script type="text/javascript" src="/media/js/jquery.mousewheel.js"></script>
-    <script type="text/javascript" src="/media/js/jquery.blockUI.js"></script>
-    <script type="text/javascript" src="/media/js/network_graph.js"></script> 
+<script type="text/javascript" src="/media/js/jquery.blockUI.js"></script>
 <script>
     $(document).ready(function(){network_graph.setup('#canvas','#canvas > svg',"{%url network_inference_svg network.id%}");});
 </script>

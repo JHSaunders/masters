@@ -5,7 +5,8 @@ Delete {{object}}
 {%endblock%}
 
 {% block content %}
-<form target="" method="POST">
-<input type="submit" name="delete" Value="Delete" />
+<form action="{{action_url}}" method="POST">
+Are you sure you wish to delete "{{object}}"? 
+<input type="submit" name="delete" value="Delete" />
 </form>
 {%endblock%}

@@ -13,13 +13,13 @@ New Cluster
 {%endblock%}
 
 {% block content %}
-<form target="" method="POST">
+<form action="{%url view_cluster object.id%}" method="POST">
 <table>
 {{form}}
 </table>
-<input type="submit" name="save" Value="Save" />
+<input type="submit" name="save" value="Save" />
 {% if object.id %}
-<a href="{%url delete_cluster object.id %}">Delete</a>
+<a href="javascript: network_graph.open_form('{%url delete_cluster object.id %}')">Delete</a>
 {% endif %}
 </form>
 {%endblock%}

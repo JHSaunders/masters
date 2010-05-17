@@ -1,5 +1,6 @@
 {% extends "web_bayes/form_base.html" %}
 
+
 {%block bodytitle%}
 {% if object.id %}
 Edge: {{object}}
@@ -14,13 +15,18 @@ New edge
 {%endblock%}
 
 {% block content %}
-<form target="" method="POST">
+{% if object.id %}
+<form action="{%url view_edge object.id%}" method="POST">
+{% else %}
+<form action="{%url create_edge network.id%}" method="POST">
+{%endif%}
 <table>
 {{form}}
 </table>
-<input type="submit" name="save" Value="Save" />
+
+<input type="submit" name="save" value="Save" />
 {% if object.id %}
-<a href="{%url delete_edge object.id %}">Delete</a>
+<a href="javascript: network_graph.open_form('{%url delete_edge object.id %}')">Delete</a>
 {% endif %}
 </form>
 {%endblock%}

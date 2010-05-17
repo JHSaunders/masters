@@ -1,5 +1,14 @@
 {% extends "web_bayes/base.html" %}
 
+{% block scripts %}
+{{ block.super }}
+<script type="text/javascript" src="/media/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/media/js/jquery.form.js"></script>
+<script type="text/javascript" src="/media/js/jquery.svg.js"></script>    
+<script type="text/javascript" src="/media/js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="/media/js/network_graph.js"></script>  
+{%endblock%}
+
 {% block body %}
 <div class="header">
 <div style="float:right;">
