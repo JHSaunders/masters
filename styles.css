@@ -16,7 +16,8 @@ div.align
     background-color:white;
     border-left:1px solid black;
     border-right:1px solid black;
-    /*background-image:url("images/background.png");*/
+    border-bottom:1px solid black;
+
     background-repeat:repeat-y;
     background-position:right top; 
     background-color:white;
