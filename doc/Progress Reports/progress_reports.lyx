@@ -1,0 +1,159 @@
+#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language american
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Extending Social-Ecological planning into real-time: 
+\begin_inset Newline newline
+\end_inset
+
+Progress Reports
+\end_layout
+
+\begin_layout Author
+James Saunders
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+2010 - 05 - 28
+\end_layout
+
+\begin_layout Subsection*
+Progress made since last report
+\end_layout
+
+\begin_layout Standard
+Since this is the first progress report this section will sum up what has
+ been done to date.
+\end_layout
+
+\begin_layout Standard
+The majority of the work has gone into the development of the 
+\emph on
+Web BPDA
+\emph default
+ application.
+ It is currently at a stage where BPDA models can be fully designed using
+ the application, in the full and rich BDPA graphical modelling language.
+ These models can then have base probabilities and CPT's attached to them
+ to make them full Bayesian Networks.
+ Once the Bayesian network is setup it can be used to perform inference.
+ Observations can be set and the resulting probabilities can calculated.
+ The bayesian networks can be exported to 
+\begin_inset Quotes eld
+\end_inset
+
+.xbn
+\begin_inset Quotes erd
+\end_inset
+
+ format (which can then be converted to most other formats using BNJ.
+ 
+\end_layout
+
+\begin_layout Standard
+I have written out a skeleton of my thesis, basically showing the planned
+ section structure.
+\end_layout
+
+\begin_layout Standard
+I have also started on the skeleton of a paper I would like to write about
+ the implementation and design of the 
+\emph on
+Web BPDA
+\emph default
+ application.
+ I feel that given the amount of effort that has gone into the system I
+ should make full use of it as a research artifact.
+ I am most interested in elucidating on the resoning behind the many design
+ decisions within the context of Modern Web collaboration, the participatory
+ nature of BPDA and the larger Social-Technological context of decision
+ augmentation systems.
+\end_layout
+
+\begin_layout Subsection*
+Planned progress for next report
+\end_layout
+
+\begin_layout Standard
+The Web BPDA application needs to be slightly extended to be able to import
+ models from a standard format (like .xbn).
+ Once this is done the MySQL based models in the Sisyphus system need to
+ be exported to an independant format.
+ I was told that this functionality had been implemented but have not been
+ able to find it.
+ Once that is done it will be possible to load Sisyphus models into the
+ Web BPDA application (Which will be awesome).
+ 
+\end_layout
+
+\begin_layout Subsection*
+Problems and difficulties
+\end_layout
+
+\begin_layout Standard
+I have been struggling to get dedicated time to work on my masters.
+ I realise that I over extended myself by taking on too many side projects
+ (work for friends and various web sites).
+ Fortunately these are all going to come to an end in the next week, which
+ will allow me to focus on my masters.
+ I am struggling to sit down and write, but I think that this will become
+ much easier once I have finished the above aspects of the 
+\emph on
+Web BPDA 
+\emph default
+application.
+ 
+\end_layout
+
+\end_body
+\end_document
