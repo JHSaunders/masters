@@ -3,6 +3,9 @@
 \begin_document
 \begin_header
 \textclass article
+\begin_preamble
+\bibpunct{(}{)}{,}{a}{,}{,}
+\end_preamble
 \use_default_options true
 \language american
 \inputencoding auto
@@ -18,12 +21,21 @@
 \graphics default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry false
 \use_amsmath 1
 \use_esint 1
-\cite_engine basic
+\cite_engine natbib_authoryear
 \use_bibtopic false
 \paperorientation portrait
 \secnumdepth 3
@@ -50,36 +62,715 @@ Bringing Bayesian Participatory Decision Analysis to the Web
 James Saunders and Camaren Peter
 \end_layout
 
-\begin_layout Standard
-BPDA and the need for it 
+\begin_layout Section
+BPDA and the need for it
+\end_layout
+
+\begin_layout Section
+A Brief Description of the Web BPDA Application 
 \end_layout
 
 \begin_layout Standard
-What was made 
+The Web BPDA application was developed to be web-based.
+ It is accessible through any standards compliant web-browser that supports
+ modern Internet technologies, critically it only runs on browsers that
+ support the SVG (Scalable Vector Graphic
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+For more information on the SVG standard see 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/Graphics/SVG/"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+) standard.
+ This requirement means that it does not run on Microsoft Internet Explorer
+ browsers (Though this will change with the release of IE 9 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Microsoft2010"
+
+\end_inset
+
+).
+ The application has been extensively tested on the chrome and firefox web-brows
+ers.
+ 
 \end_layout
 
 \begin_layout Standard
-How was it made 
+The application is separated into 2 primary interfaces: the 
+\emph on
+network definition interface
+\emph default
+ and the 
+\emph on
+network inference interface
+\emph default
+.
+ The interfaces will be discussed separately in the proceeding sections.
+\end_layout
+
+\begin_layout Subsection
+The Network Definition Interface
 \end_layout
 
 \begin_layout Standard
-Why things were done 
+The network definition interface allows for the creation and manipulation
+ of BPDA models, a screen shot is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:The-Network-Defintion"
+
+\end_inset
+
+.
+ It centers itself around an interactive graph based visualisation of the
+ BPDA model.
+ Nodes can be placed into clusters.
+ A cluster is a group of nodes that define a logical sub-system of the larger
+ model.
 \end_layout
 
 \begin_layout Standard
-Context of greater technological developments 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Screenshot-Network Defintion.png
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-Network-Defintion"
+
+\end_inset
+
+The Network Definition Interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Comparison of other tools 
+Node, edge and cluster properties can be changed by clicking on their representa
+tions on the graph.
+ This will cause a dialog to pop-up where the settings can be changed.
+ As soon as changes are made the network graph will update.
+ New network elements can be added through the buttons on the top toolbar.
 \end_layout
 
 \begin_layout Standard
-Future development 
+The network definition graph represents the BPDA model using the full BPDA
+ visual modeling language.
+ The goal is to represent the structure of the graph as clearly as possible,
+ including the roles of the nodes and edges.
+ The different node roles are taken from classical decision theory.
+ Nodes can be classed as 
+\begin_inset Quotes eld
+\end_inset
+
+Chance
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Action
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+Utility
+\begin_inset Quotes erd
+\end_inset
+
+ nodes .
+ Differing node roles are distinguished through different shapes and colours,
+ making it very easy to identify them when the graph is zoomed out, representati
+ons of the different node types are shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:BPDA-graphical-modelling"
+
+\end_inset
+
+.
+ Relationships (or edges) are classed as 
+\begin_inset Quotes eld
+\end_inset
+
+Resulting
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Initiating
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Enabling
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+Initiating and Enabling
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Different edge roles are represented by different stroke patterns and arrow
+ head types, in addition to the class of relationship each edge can optionally
+ be given a effect type, which is either positive or negative, this is shown
+ by placing either a 
+\begin_inset Quotes eld
+\end_inset
+
++
+\begin_inset Quotes erd
+\end_inset
+
+ or a 
+\begin_inset Quotes eld
+\end_inset
+
+-
+\begin_inset Quotes erd
+\end_inset
+
+ next to the edge.
+ 
 \end_layout
 
 \begin_layout Standard
+No information relating to the variables states or conditional probabilities
+ are shown in this view, solely the structural information of the model.
+ Because only structural information is shown in this view many nodes can
+ be represented in a compact space.
+ This allows the larger global structure and the relationships between different
+ variables to be more easily comprehended.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename node_key.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Node Types
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename node_key.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Edge Types
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:BPDA-graphical-modelling"
+
+\end_inset
+
+BPDA graphical modeling language
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+The Network Inference Interface
+\end_layout
+
+\begin_layout Standard
+Once the model has been defined in the 
+\emph on
+Network Definition Interface
+\emph default
+, including the required conditional probability tables the 
+\emph on
+Network Inference Interface
+\emph default
+ can then be used to set observations and use Bayesian inference to propagate
+ the observed information through the model.
+ Observations can be set by simply clicking on the observed state, this
+ creates a clear visual representation that an observation has been set.
+ When inference in run the probabilities are shown using the classic horizontal
+ bar format that is used in many popular Bayesian Network Toolkits as well
+ as a numeric value of the probability.
+ An screen-shot is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:The-Network-Inference"
+
+\end_inset
+
+.
+ In the inference view the visual modeling language is not used for the
+ representation of the nodes and edges (with the exception of node colour).
+ This leaves the graph, which must necessarily have large nodes, as un-cluttered
+ as possible, thus increasing clarity.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Screenshot-Network Inference.png
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-Network-Inference"
+
+\end_inset
+
+The Network Inference View
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Model Management
+\end_layout
+
+\begin_layout Standard
+The BPDA models can be exported an independent format to allow them to later
+ be imported into other Bayesian Network Toolkits.
+ Currently the system exports to 
+\emph on
+a XML Belief Network
+\emph default
+ (.xbn) file, which is a format developed by 
+\emph on
+Microsoft's Decision Theory & Adaptive Systems Group (DTAS)
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cover1999"
+
+\end_inset
+
+.
+ This file format can then be converted to a number of other independent
+ formats using the 
+\emph on
+Bayesian Networks tools in Java
+\emph default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+For more information on 
+\emph on
+Bayesian Networks tools in Java
+\emph default
+ see 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://bnj.sourceforge.com"
+target "http://bnj.sourceforge.com"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+ file converter.
+ 
+\emph on
+Web BPDA
+\emph default
+ can also import models in an independent format 
+\emph on
+(Okay I lie, I still have to do this)
+\emph default
+.
+\end_layout
+
+\begin_layout Section
+Design and Implementation
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Web BPDA
+\emph default
+, like most web applications, can be split up into server and client side
+ implementation.
+ These are discussed seperately.
+ In additition the more complex sub-systems, namely the Bayesian Inference
+ and the Graph Visualization, are discussed in detail.
+ 
+\end_layout
+
+\begin_layout Subsection
+Server Side
+\end_layout
+
+\begin_layout Standard
+The Server Side of 
+\emph on
+Web BPDA
+\emph default
+ uses the 
+\emph on
+Django Web Application Framework
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+http://www.django.org
+\end_layout
+
+\end_inset
+
+ 
+\emph default
+and the Python programming language.
+ 
+\emph on
+Django
+\emph default
+ manages the base elements of the application including Database management,
+ object-relational mapping, URL dispatching, user managment and HTML templating.
+ During development SQLite3 was used for the database but full deployments
+ would use a full database server system such as 
+\emph on
+Postgresql
+\emph default
+ or 
+\emph on
+MySQL
+\emph default
+, however these differences are made transparent by 
+\emph on
+Django.
+ 
+\end_layout
+
+\begin_layout Subsection
+Client Side 
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+JQuery
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+jquery
+\end_layout
+
+\end_inset
+
+
+\emph default
+ Javascript library is used to create a rich and responsive client side
+ experience.
+ In addition to the Core JQuery Library the 
+\emph on
+JQueryUI
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+jqueryui
+\end_layout
+
+\end_inset
+
+
+\emph default
+ library is used as well as the 
+\emph on
+JQuery.svg
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+jquery.svg
+\end_layout
+
+\end_inset
+
+
+\emph default
+,
+\emph on
+ JQuery.form
+\emph default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+jquery.form
+\end_layout
+
+\end_inset
+
+, 
+\emph on
+JQuery.blockUI
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+jquery.blockui
+\end_layout
+
+\end_inset
+
+
+\emph default
+ and 
+\emph on
+JQuery.mousewheel
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+jquery.mousewheel
+\end_layout
+
+\end_inset
+
+
+\emph default
+ plugins.
+ The majority of the client side code is responsible for managing the AJAX
+ based dialogs and the Graph visualization.
+\end_layout
+
+\begin_layout Subsection
+Graph Visualisation
+\end_layout
+
+\begin_layout Standard
+The interactive graph visualization is one of the most complex components
+ of the application.
+ The goal of the graph visualization was to give a user interface experience
+ that is on a par with the existing native client bayesian network tools.
+ The major features required to create the desired level of interaction
+ were:
+\end_layout
+
+\begin_layout Itemize
+Full zooming and panning ability.
+\end_layout
+
+\begin_layout Itemize
+Clicking on graph elements brings up the relevant properties.
+\end_layout
+
+\begin_layout Itemize
+Ajax style updating, to keep the graph up to date without having to reload
+ the page.
+\end_layout
+
+\begin_layout Standard
+The graph visualisation was achieved in the following manner.
+ A Graphviz dot file is generated from the graph structure.
+ The dot file is then passed through graphviz using the force directed layout,
+ the resulting graph is output in SVG format.
+ This SVG file is then processed on the server side and transmitted to the
+ client.
+ On the client side the SVG file is then inserted directly in the DOM of
+ the XHTML document.
+ Zooming and panning is achieved through manipulating the viewBox attribute
+ of the SVG using javascript.
+ When a potential change is made (such as when a dialog is closed) the system
+ checks the version number of the Network and updates the svg element if
+ neccessary by performing an Ajax request.
+\end_layout
+
+\begin_layout Subsection
+Bayesian Inference
+\end_layout
+
+\begin_layout Standard
+Smooth responsive application
+\end_layout
+
+\begin_layout Standard
+Keep implementation as simple as possible
+\end_layout
+
+\begin_layout Standard
+Don't reinvent the wheel
+\end_layout
+
+\begin_layout Standard
+Make use of open source technologies
+\end_layout
+
+\begin_layout Standard
+Allow for easy extension
+\end_layout
+
+\begin_layout Standard
+Keep different parts as decoupled as possible
+\end_layout
+
+\begin_layout Section
+Why things were done
+\end_layout
+
+\begin_layout Section
+Context of greater technological developments
+\end_layout
+
+\begin_layout Section
+Comparison of other tools
+\end_layout
+
+\begin_layout Section
+Future development
+\end_layout
+
+\begin_layout Section
 Conclusions
+\end_layout
+
+\begin_layout Section
+Rough Work
 \end_layout
 
 \begin_layout Section
@@ -87,106 +778,78 @@ Presentation of Network Graphs
 \end_layout
 
 \begin_layout Standard
-The visualisation of the baysian networks is a critical component of the
+The visualisation of the Bayesian networks is a critical component of the
  Web BPDA system.
  These graphs form the central interface elements of the entire system and
  represent most readily the shared understanding that the BPDA process builds.
- Web BPDA seperates the design of the network from the running of inferences
+ Web BPDA separates the design of the network from the running of inferences
  over the network.
- This seperation allows for the two different tasks to use visualization
+ This separation allows for the two different tasks to use visualization
  in the manner that most suits them.
  A trade off between the completeness of the information shown and the clarity
- of the information is neccesarily made.
+ of the information is necessarily made.
  However as much visual similarity as possible is maintained between the
- two representations, importantly this consistancy includes the position
+ two representations, importantly this consistency includes the position
  of the nodes relative to each other (the graph layout) and the colours
  of the nodes.
  Visually the graph uses thick lines, and clear simple colours to aid visibility.
- The graphs can be zoomed and panned smoothly.
-\end_layout
-
-\begin_layout Subsection
-The network definition graph
-\end_layout
-
-\begin_layout Standard
-The network definition graph is concerned with representing the graph using
- the full visual modelling language.
- The goal is to represent the structure of the graph as clearly as possible,
- including the roles of the nodes and edges.
- Different node roles are represented as both different shapes and colours,
- making it very easy to distinguish them when the graph is zoomed out very
- far.
- Different edge roles are represented by different stroke patterns and arrow
- head types.
- Because only structural information is shown in this view many nodes can
- be represented in a compact space.
- This allows the larger global structure and the relationships between different
- variables to be more easily comprehended.
- 
-\end_layout
-
-\begin_layout Subsection
-The network inference graph
-\end_layout
-
-\begin_layout Standard
-The network inference graph allows for setting observations and running
- inferences over the network.
- Observations can be set by simply clicking on the observed state, this
- creates a clear visual representation taht an observation has been set.
- When inference in run the probabilities are shown using the classic horizontal
- bar format that is used in many popular BN toolkits as well as a numeric
- value.
- In the inference view the visual modelling language is not used in the
- representation of the nodes and edges (with the exception of node colour).
- This leaves the graph, which must have nessesarilly large nodes, as un-cluttere
-d as possible, thus increasing clarity.
- 
+ The graphs can be zoomed and panned smoothly in the manner that has come
+ to be expected in modern software.
 \end_layout
 
 \begin_layout Section
-Decoupling of bayesian network backends
+Decoupling of Bayesian network back ends
 \end_layout
 
 \begin_layout Standard
-Web BPDA can use multiple bayesian network backends to perform inference
+Web BPDA can use multiple Bayesian network back ends to perform inference
  and learning.
- The bayesian network backends are decoupled from any of the other logic
+ The Bayesian network back ends are decoupled from any of the other logic
  of Web BPDA.
  The rationale for this is two fold.
  
 \end_layout
 
 \begin_layout Standard
-Firstly it allows for the bayesian network logic and the web application
+Firstly it allows for the Bayesian network logic and the web application
  to be implemented in different ways.
  Because the systems are decoupled the design considerations of the two
  systems can be decoupled.
- Consequently the web-application and the bayesian network logic can be
+ Consequently the web-application and the Bayesian network logic can be
  programmed in different languages using different design patterns.
  Since the nature of the two domains are so different it makes sense that
- descions made for the purposes of the one domain shoudl not affect the
+ decisions made for the purposes of the one domain should not affect the
  other.
  
 \end_layout
 
 \begin_layout Standard
-Secondly it ensures that the project is not committed to a single bayesian
+Secondly it ensures that the project is not committed to a single Bayesian
  network implementation.
- At the time of writing there are over 58 different bayesian network packages
+ At the time of writing there are over 58 different Bayesian network packages
  available, of which over 47 are freely available.
  This shows the huge variety of software that is available for use.
  However the various software packages have there own strengths and limitations.
  For example implement different inference algorithms and the different
- algorithms are suited to different purposes, including tradeoffs between
+ algorithms are suited to different purposes, including trade offs between
  speed and accuracy.
- It also allows for new advances in the field of bayesian network to be
+ It also allows for new advances in the field of Bayesian network to be
  easily incorporated into the system.
  From a legal perspective this allows proprietary software to be in circumstance
 s where there is suitable no open source candidate that can scale to the
  levels required by very large models.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "Bibliography"
+options "bibtotoc,plainnat"
+
+\end_inset
+
+
 \end_layout
 
 \end_body

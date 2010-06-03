@@ -1,0 +1,201 @@
+Bringing Bayesian Participatory Decision Analysis to the Web 
+
+James Saunders and Camaren Peter
+
+1 BPDA and the need for it
+
+2 A Brief Description of the Web BPDA Application 
+
+The Web BPDA application was developed to be web-based. It is 
+accessible through any standards compliant web-browser that 
+supports modern Internet technologies, critically it only runs on 
+browsers that support the SVG (Scalable Vector Graphic[footnote:
+For more information on the SVG standard see [http://www.w3.org/Graphics/SVG/]
+ 
+]) standard. This requirement means that it does not run on 
+Microsoft Internet Explorer browsers (Though this will change 
+with the release of IE 9 (Microsoft, 2010)). The application has 
+been extensively tested on the chrome and firefox web-browsers. 
+
+The application is separated into 2 primary interfaces: the 
+network definition interface and the network inference interface. 
+The interfaces will be discussed separately in the proceeding 
+sections.
+
+2.1 The Network Definition Interface
+
+The network definition interface allows for the creation and 
+manipulation of BPDA models, a screen shot is shown in figure [fig:The-Network-Defintion]
+. It centers itself around an interactive graph based 
+visualisation of the BPDA model. Nodes can be placed into 
+clusters. A cluster is a group of nodes that define a logical 
+sub-system of the larger model.
+
+[float Figure:
+<Graphics file: /home/james/code/bpda/doc/Web BPDA Paper/Screenshot-Network Defintion.png>
+
+[Figure 1:
+<fig:The-Network-Defintion>The Network Definition Interface
+]
+]
+
+Node, edge and cluster properties can be changed by clicking on 
+their representations on the graph. This will cause a dialog to 
+pop-up where the settings can be changed. As soon as changes are 
+made the network graph will update. New network elements can be 
+added through the buttons on the top toolbar.
+
+The network definition graph represents the BPDA model using the 
+full BPDA visual modeling language. The goal is to represent the 
+structure of the graph as clearly as possible, including the 
+roles of the nodes and edges. The different node roles are taken 
+from classical decision theory. Nodes can be classed as “Chance”, 
+“Action” or “Utility” nodes . Differing node roles are 
+distinguished through different shapes and colours, making it 
+very easy to identify them when the graph is zoomed out, 
+representations of the different node types are shown in figure [fig:BPDA-graphical-modelling]
+. Relationships (or edges) are classed as “Resulting”, “
+Initiating”, “Enabling” or “Initiating and Enabling”. Different 
+edge roles are represented by different stroke patterns and arrow 
+head types, in addition to the class of relationship each edge 
+can optionally be given a effect type, which is either positive 
+or negative, this is shown by placing either a “+” or a “-” next 
+to the edge. 
+
+No information relating to the variables states or conditional 
+probabilities are shown in this view, solely the structural 
+information of the model. Because only structural information is 
+shown in this view many nodes can be represented in a compact 
+space. This allows the larger global structure and the 
+relationships between different variables to be more easily 
+comprehended.
+
+[float Figure:
+[float Figure:
+<Graphics file: /home/james/code/bpda/doc/Web BPDA Paper/node_key.png>
+
+[Sub-Figure a:
+Node Types
+]
+] [float Figure:
+<Graphics file: /home/james/code/bpda/doc/Web BPDA Paper/node_key.png>
+
+[Sub-Figure b:
+Edge Types
+]
+]
+
+[Figure 2:
+<fig:BPDA-graphical-modelling>BPDA graphical modeling language
+]
+]
+
+2.2 The Network Inference Interface
+
+Once the model has been defined in the Network Definition 
+Interface, including the required conditional probability tables 
+the Network Inference Interface can then be used to set 
+observations and use Bayesian inference to propagate the observed 
+information through the model. Observations can be set by simply 
+clicking on the observed state, this creates a clear visual 
+representation that an observation has been set. When inference 
+in run the probabilities are shown using the classic horizontal 
+bar format that is used in many popular Bayesian Network Toolkits 
+as well as a numeric value of the probability. An screen-shot is 
+shown in figure [fig:The-Network-Inference]. In the inference 
+view the visual modeling language is not used for the 
+representation of the nodes and edges (with the exception of node 
+colour). This leaves the graph, which must necessarily have large 
+nodes, as un-cluttered as possible, thus increasing clarity. 
+
+[float Figure:
+<Graphics file: /home/james/code/bpda/doc/Web BPDA Paper/Screenshot-Network Inference.png>
+
+[Figure 3:
+<fig:The-Network-Inference>The Network Inference View
+]
+]
+
+2.3 Model Management
+
+The BPDA models can be exported an independent format to allow 
+them to later be imported into other Bayesian Network Toolkits. 
+Currently the system exports to a XML Belief Network (.xbn) file, 
+which is a format developed by Microsoft's Decision Theory & 
+Adaptive Systems Group (DTAS) (Cover, 1999). This file format can 
+then be converted to a number of other independent formats using 
+the Bayesian Networks tools in Java [footnote:
+For more information on Bayesian Networks tools in Java see [http://bnj.sourceforge.com||http://bnj.sourceforge.com]
+ 
+] file converter. Web BPDA can also import models in an 
+independent format (Okay I lie, I still have to do this).
+
+3 Design and Implementation
+
+4 Why things were done 
+
+5 Context of greater technological developments
+
+6 Comparison of other tools
+
+7 Future development
+
+8 Conclusions
+
+9 Rough Work
+
+10 Presentation of Network Graphs
+
+The visualisation of the Bayesian networks is a critical 
+component of the Web BPDA system. These graphs form the central 
+interface elements of the entire system and represent most 
+readily the shared understanding that the BPDA process builds. 
+Web BPDA separates the design of the network from the running of 
+inferences over the network. This separation allows for the two 
+different tasks to use visualization in the manner that most 
+suits them. A trade off between the completeness of the 
+information shown and the clarity of the information is 
+necessarily made. However as much visual similarity as possible 
+is maintained between the two representations, importantly this 
+consistency includes the position of the nodes relative to each 
+other (the graph layout) and the colours of the nodes. Visually 
+the graph uses thick lines, and clear simple colours to aid 
+visibility. The graphs can be zoomed and panned smoothly in the 
+manner that has come to be expected in modern software.
+
+ 
+
+11 Decoupling of Bayesian network back ends
+
+Web BPDA can use multiple Bayesian network back ends to perform 
+inference and learning. The Bayesian network back ends are 
+decoupled from any of the other logic of Web BPDA. The rationale 
+for this is two fold. 
+
+Firstly it allows for the Bayesian network logic and the web 
+application to be implemented in different ways. Because the 
+systems are decoupled the design considerations of the two 
+systems can be decoupled. Consequently the web-application and 
+the Bayesian network logic can be programmed in different 
+languages using different design patterns. Since the nature of 
+the two domains are so different it makes sense that decisions 
+made for the purposes of the one domain should not affect the 
+other. 
+
+Secondly it ensures that the project is not committed to a single 
+Bayesian network implementation. At the time of writing there are 
+over 58 different Bayesian network packages available, of which 
+over 47 are freely available. This shows the huge variety of 
+software that is available for use. However the various software 
+packages have there own strengths and limitations. For example 
+implement different inference algorithms and the different 
+algorithms are suited to different purposes, including trade offs 
+between speed and accuracy. It also allows for new advances in 
+the field of Bayesian network to be easily incorporated into the 
+system. From a legal perspective this allows proprietary software 
+to be in circumstances where there is suitable no open source 
+candidate that can scale to the levels required by very large 
+models. 
+
+[LaTeX Command: bibtex]
+
