@@ -32,7 +32,8 @@ class Network(NetworkBase):
                         
     name = models.CharField(max_length=100)
     version = models.IntegerField(default=0,editable=False)
-    
+    backend = models.CharField(max_length=15,default='openbayes',choices=(('openbayes-jt','Open Bayes using Join Tree'),('openbayes-mcmc','Open Bayes using MCMC'),('agrum-lazy','aGrUM using Lazy Propagation'),('agrum-gibbs','aGrUM usign Gibbs Sampling'))) 
+
     @property
     def network(self):
         return self

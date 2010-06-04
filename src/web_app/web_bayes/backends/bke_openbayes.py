@@ -41,12 +41,13 @@ def CreateOpenBayesNetwork(network):
 
     return (G,node_dict)
 
-def PerformOpenBayesInference(network):
+def PerformOpenBayesInference(network,alg):
 
     (G,node_dict) = CreateOpenBayesNetwork(network)           
-
-    ie = JoinTree(G)
-    ie = MCMCEngine(G)
+    if alg=="jt":    
+        ie = JoinTree(G)
+    else:
+        ie = MCMCEngine(G)
     
     obs_dict={}
     for node in network.nodes.all():
