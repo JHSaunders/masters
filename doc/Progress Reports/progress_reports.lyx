@@ -83,12 +83,12 @@ Web BPDA
 \emph default
  application.
  It is currently at a stage where BPDA models can be fully designed using
- the application, in the full and rich BDPA graphical modelling language.
+ the application, in the full and rich BDPA graphical modeling language.
  These models can then have base probabilities and CPT's attached to them
  to make them full Bayesian Networks.
  Once the Bayesian network is setup it can be used to perform inference.
  Observations can be set and the resulting probabilities can calculated.
- The bayesian networks can be exported to 
+ The Bayesian networks can be exported to 
 \begin_inset Quotes eld
 \end_inset
 
@@ -114,7 +114,7 @@ Web BPDA
  application.
  I feel that given the amount of effort that has gone into the system I
  should make full use of it as a research artifact.
- I am most interested in elucidating on the resoning behind the many design
+ I am most interested in elucidating on the reasoning behind the many design
  decisions within the context of Modern Web collaboration, the participatory
  nature of BPDA and the larger Social-Technological context of decision
  augmentation systems.
@@ -128,7 +128,7 @@ Planned progress for next report
 The Web BPDA application needs to be slightly extended to be able to import
  models from a standard format (like .xbn).
  Once this is done the MySQL based models in the Sisyphus system need to
- be exported to an independant format.
+ be exported to an independent format.
  I was told that this functionality had been implemented but have not been
  able to find it.
  Once that is done it will be possible to load Sisyphus models into the
@@ -142,7 +142,7 @@ Problems and difficulties
 
 \begin_layout Standard
 I have been struggling to get dedicated time to work on my masters.
- I realise that I over extended myself by taking on too many side projects
+ I realize that I over extended myself by taking on too many side projects
  (work for friends and various web sites).
  Fortunately these are all going to come to an end in the next week, which
  will allow me to focus on my masters.
@@ -153,6 +153,50 @@ Web BPDA
 \emph default
 application.
  
+\end_layout
+
+\begin_layout Section
+2010-07-04
+\end_layout
+
+\begin_layout Subsection*
+Progress made since last report
+\end_layout
+
+\begin_layout Itemize
+Completed Description and implementation chapters of web BPDA paper
+\end_layout
+
+\begin_layout Itemize
+Extended web BPDA to use multiple Bayesian backends
+\end_layout
+
+\begin_layout Itemize
+Looked at Komati catchment data
+\end_layout
+
+\begin_layout Subsection*
+Planned progress for next report
+\end_layout
+
+\begin_layout Itemize
+Complete Contextualization and background chapters for web BPDA paper
+\end_layout
+
+\begin_layout Itemize
+Get cleaner more organised data 
+\end_layout
+
+\begin_layout Subsection*
+Problems and difficulties
+\end_layout
+
+\begin_layout Itemize
+Failed so far to import Sisyphus models into web-BPDA
+\end_layout
+
+\begin_layout Itemize
+Been distracted
 \end_layout
 
 \end_body
