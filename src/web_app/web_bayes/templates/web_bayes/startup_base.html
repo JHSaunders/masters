@@ -1,0 +1,14 @@
+{% extends "web_bayes/base.html" %}
+
+{% block body %}
+<div style="border-bottom:1px solid #26393d;" class="header">
+{% include "web_bayes/title_block.html" %}
+</div>
+<h1>{%block bodytitle %}{% endblock %}</h1>
+<div id="content-frame">    
+    {% block content %}
+    
+    {% endblock %}
+</div>        
+
+{% endblock %}

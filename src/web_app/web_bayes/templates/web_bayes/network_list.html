@@ -1,16 +1,24 @@
-{% extends "web_bayes/base.html" %}
+{% extends "web_bayes/startup_base.html" %}
 
 {%block bodytitle%}
 Available Networks
 {%endblock%}
 {% block content %}
-<table>
-<tr><th>Name</th></tr>
+<div id="network-list">
+<table >
+<tr><th>Name</th><th>Version</th></tr>
 {%for network in object_list%}
 <tr>
 <td><a href="{{network.get_absolute_url}}">{{network}}</a></td>
+<td>{{network.version}}</td>
 </tr>
 {%endfor%}
 </table>
-<a href="{% url create_network %}">Create new network</a>
+</div>
+
+<div id="startup-actions">
+<a class="button" href="{% url create_network %}">Create new network</a>
+<a class="button" href="{% url upload_network %}">Upload network (.xbn)</a>
+</div>
+
 {%endblock%}

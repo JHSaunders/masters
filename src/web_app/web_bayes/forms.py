@@ -88,3 +88,6 @@ class CPTForm(Form):
 class ReasoningJustificationForm(Form):
     action = CharField(required=False)
     reason = Field(required=False,widget=Textarea)
+
+class UploadForm(Form):
+    file = FileField(required=True)

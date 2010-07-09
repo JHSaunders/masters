@@ -21,6 +21,7 @@ urlpatterns = patterns('',
     url(r'^success$',views.success_response,name="success"),
         
     url(r'^create_network$', views.create_network,name="create_network"),
+    url(r'^upload_network$', views.upload_network,name="upload_network"),
     url(r'^network/(?P<network_id>\d+)/properties$', views.edit_network_properties,name="network_properties"),
     url(r'^network/(?P<network_id>\d+)/delete$', views.delete_network,name="delete_network"),
     

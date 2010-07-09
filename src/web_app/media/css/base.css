@@ -262,8 +262,32 @@ div#backlink
   text-align:right;    
 }
 
+#content-frame
+{
+    padding-left:5px;
+}
+
 #title-block
 {    
     text-align:right;
     padding:5px;        
+}
+
+#startup-actions
+{
+    width:200px;
+    float:left;
+}
+
+
+#startup-actions a
+{
+    list-style: none outside;
+    display:block;
+}
+
+#network-list
+{
+
+    float:left;
 }

@@ -14,7 +14,7 @@ from forms import *
 from visualisation import DotBasicNetwork,VisualiseBasicNetwork,VisualiseInferenceNetwork,inline_svg
 from inference import PerformInference, ClearInference
 
-from interchange import write_xml_bif,write_xbn
+from interchange import write_xml_bif,write_xbn,upload_xbn
 
 def help(req,thing):
     doc = pydoc.HTMLDoc()
@@ -76,6 +76,17 @@ def network_xbn(req,network_id):
     
 def create_network(req):
     return create_object(req,model=Network)
+
+def upload_network(req):
+    
+    if req.method=="POST":
+        form = UploadForm(req.POST,req.FILES)
+        if form.is_valid():
+            network = upload_xbn(req.FILES['file'])
+            return HttpResponseRedirect(reverse("view_network",args=[network.id]))
+    else:        
+        form = UploadForm()
+    return direct_to_template(req,"web_bayes/upload_network.html",{"form":form})
 
 def edit_network_properties(req,network_id):
     return update_object(req,model=Network,object_id=network_id)
@@ -196,6 +207,7 @@ def network_inference_visualisation_svg(req,network_id):
     return response
 
 def toggle_observation(req,state_id):
+    print state_id
     state = State.objects.get(id=state_id)
     state.toggle_observed()
     return ok()

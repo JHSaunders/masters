@@ -69,6 +69,7 @@ admin.site.register(Cluster)
 class Node(NetworkBase):
     name = models.CharField(max_length=100)
     network = models.ForeignKey(Network,related_name="nodes",editable=False)
+    description = models.CharField(max_length=256)
     cluster = models.ForeignKey(Cluster,related_name="nodes", null=True, blank=True)
     node_class = models.CharField(max_length=15,default='C',choices=(('A','Action'),('U','Utility'),('C','Chance')))
     def __unicode__(self):
