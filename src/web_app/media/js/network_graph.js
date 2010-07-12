@@ -5,10 +5,9 @@ if(network_graph==null)
 
 network_graph.onresize = function()
 {
-    $(network_graph.svg).attr("width","100%");
-    $(network_graph.svg).attr("height",document.documentElement.clientHeight-$(network_graph.svg).offset().top-15);        
     $(network_graph.div).attr("width","100%");
-    $(network_graph.div).attr("height",document.documentElement.clientHeight-$(network_graph.svg).offset().top-15);
+    $(network_graph.svg).attr("width","100%");    
+    $(network_graph.svg).attr("height",465);    
 }
 
 network_graph.get_view_coordinates = function(e)
@@ -175,7 +174,8 @@ network_graph.refresh_form = function(data)
 
 network_graph.open_form = function(url)
 {
-    $('#dialog').html("loading...");    
+    $('#dialog').html("loading...");
+    $('#dialog').dialog( "option", "title","loading...");    
     $('#dialog').dialog('open');
     $.ajax({url:url,success:network_graph.refresh_form,cache: false}); 
 }

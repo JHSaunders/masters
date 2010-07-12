@@ -1,0 +1,13 @@
+{% extends "web_bayes/startup_base.html" %}
+
+{%block bodytitle%}
+Login
+{%endblock%}
+{% block content %}
+<form method="POST">
+<table>
+{{form}}
+</table>
+<input type="submit" name="login" value="Login"/>
+</form>
+{%endblock%}

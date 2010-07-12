@@ -62,6 +62,8 @@ def write_xbn(network):
     for  node in network.nodes.all():
         var = appendNode(vars,"var",None,{"name":node.name,"type":"discrete","xpos":0,"ypos":0})
         appendNode(var,"fullname",node.name,None)
+        appendNode(var,"description",node.description,None)
+        
         for state in node.states.all():
             appendNode(var,"statename",state.name,None)        
     #structure
@@ -88,11 +90,9 @@ def write_xbn(network):
                 appendNode(dpis,"dpi",values,{"indexes":indexes})
         else:
             values = " ".join([str(s.probability) for s in node.states.all()])
-            appendNode(dpis,"dpi",values,{"indexes":indexes}) 
+            appendNode(dpis,"dpi",values,None) 
     
     return doc.toprettyxml()
-def write_xbn_openbayes(network):
-    return ExportToXBN(network)
     
 def upload_xbn(file):
     doc = xml.dom.minidom.parse(file)
@@ -104,7 +104,11 @@ def upload_xbn(file):
     for var in vars:
         node=Node(name=var.getAttribute("NAME"),network=network)
         
-        node.description = var.getElementsByTagName("DESCRIPTION")[0].firstChild.data.strip()
+        try:
+            node.description = var.getElementsByTagName("DESCRIPTION")[0].firstChild.data.strip()
+        except:
+            pass
+            
         node.save()
         nodemap[node.name] = node
         for statename in var.getElementsByTagName("STATENAME"):

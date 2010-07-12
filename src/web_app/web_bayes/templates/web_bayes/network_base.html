@@ -26,14 +26,21 @@
 
 </div>
 
+<div id="content-frame"> 
+
+<div class="toolbar account-toolbar">
+<a href="{% url logout %}">Logout</a>
+</div>
+
 <div class="toolbar">
 {%block toolbar%}
 {%endblock%}
 </div>
 
-<div id="content-frame">    
-    {% block content %}
-    
-    {% endblock %}
+ 
+{% block content %}
+
+{% endblock %}
+
 </div>        
 {% endblock %}

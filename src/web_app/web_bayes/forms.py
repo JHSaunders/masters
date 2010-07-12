@@ -2,6 +2,10 @@ from django.forms import *
 
 from models import *
 
+class NetworkForm(ModelForm):
+    class Meta:
+        model= Network
+
 class EdgeForm(ModelForm):
     class Meta:
         model = Edge

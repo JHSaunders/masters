@@ -150,15 +150,16 @@ div.highlight
 div#outer-align {
     margin:5px;
     width:100%;
-    
 }
 
 div.toolbar{
     margin-bottom: 5px;
-    margin-top:5px;
-     
 }
 
+div.account-toolbar{
+    margin-top:5px;
+    float:right;        
+}
 
 .button
 {
@@ -171,8 +172,7 @@ div.toolbar{
     -moz-user-select: none;
     
     font-size: 11px;
-    padding:5px;    
-    margin:5px;
+    padding:5px;
     color: black;
     text-decoration:none;
 }
@@ -227,10 +227,24 @@ a.inactive
     background-color:aliceblue;
 }
 
+.header h1
+{
+    padding:5px;
+    margin-top:0px;
+}
+
+.title-block
+{    
+    text-align:right;    
+    padding:5px;   
+    padding-top:0px;  
+    margin-top:0px;
+       
+}
+
 #canvas
 {
-   
-    margin: 8px;
+
 }
 
 #canvas > svg
@@ -240,21 +254,20 @@ a.inactive
 
 div#dialog-border
 {
-    border: 1px solid #26393d;
-   
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
+    border: 1px solid #26393d;   
+    margin: 10px;
     background-color: lightblue;
+    
 }
 
 div#dialog-content
 {
-    border-top: 2px solid #26393d;
+    border-top: 1px solid #26393d;
     margin-left: auto;
     margin-right: auto;
     padding:5px;
     background-color: white;
+    
 }
 
 div#backlink
@@ -264,14 +277,10 @@ div#backlink
 
 #content-frame
 {
-    padding-left:5px;
+    padding:5px;
 }
 
-#title-block
-{    
-    text-align:right;
-    padding:5px;        
-}
+
 
 #startup-actions
 {
@@ -284,10 +293,11 @@ div#backlink
 {
     list-style: none outside;
     display:block;
+    margin-bottom:5px;    
+    margin-left:5px;
 }
 
 #network-list
 {
-
     float:left;
 }

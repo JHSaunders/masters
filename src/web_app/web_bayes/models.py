@@ -28,12 +28,13 @@ class Network(NetworkBase):
     
     def __init__(self,*args,**kwargs):
         self.in_version_update=False
-        super(Network, self).__init__(*args, **kwargs)  
+        super(Network, self).__init__(*args, **kwargs)
                         
     name = models.CharField(max_length=100)
     version = models.IntegerField(default=0,editable=False)
-    backend = models.CharField(max_length=15,default='openbayes',choices=(('openbayes-jt','Open Bayes using Join Tree'),('openbayes-mcmc','Open Bayes using MCMC'),('agrum-lazy','aGrUM using Lazy Propagation'),('agrum-gibbs','aGrUM usign Gibbs Sampling'))) 
-
+    backend = models.CharField(max_length=15,default='agrum-lazy',choices=(('openbayes-jt','Open Bayes using Join Tree'),('openbayes-mcmc','Open Bayes using MCMC'),('agrum-lazy','aGrUM using Lazy Propagation'),('agrum-gibbs','aGrUM usign Gibbs Sampling'))) 
+    users = models.ManyToManyField(User,related_name="networks",blank=True)
+    
     @property
     def network(self):
         return self
@@ -166,12 +167,13 @@ class Node(NetworkBase):
             for value in tup[1]:
                 total+=value.value
             for value in tup[1]:
+                old_value = value.value
                 if total>0:
                     value.value = value.value/total
                 else:
                     value.value = 1.0/len(tup[1])
-                    
-                value.save()
+                if value.value != old_value: 
+                    value.save()
                 
     def normalise_probabilities(self):
         total = 0
@@ -179,11 +181,14 @@ class Node(NetworkBase):
             total+=states.probability
         
         for state in self.states.all():
+            old_state=state.probability
             if total>0:
                 state.probability/=total
             else:
-                state.probaility= 1/self.states.count()
-            state.save()
+                state.probability= 1/self.states.count()
+            
+            if state.probability != old_state:
+                state.save()
         
     def clean_cpt_values(self):
         pass

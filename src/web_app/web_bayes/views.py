@@ -16,6 +16,7 @@ from inference import PerformInference, ClearInference
 
 from interchange import write_xml_bif,write_xbn,upload_xbn
 
+
 def help(req,thing):
     doc = pydoc.HTMLDoc()
     return HttpResponse(doc.document(thing))
@@ -28,9 +29,10 @@ def success_response(req):
 
 def ok():
     return HttpResponse("success",mimetype="text/plain")
-    
+
+@login_required   
 def list_networks(req):
-    return object_list(req,Network.objects.all())
+    return object_list(req,req.user.networks.all())
 
 def view_network_definition(req,network_id):
     network = Network.objects.get(id = network_id)
@@ -75,14 +77,23 @@ def network_xbn(req,network_id):
     return response
     
 def create_network(req):
-    return create_object(req,model=Network)
-
+    if req.method=="POST":
+        form = NetworkForm(req.POST)
+        if form.is_valid():
+            network=form.save()
+            network.users.add(req.user)
+            return HttpResponseRedirect(reverse("view_network",args=[network.id]))
+    else:        
+        form = NetworkForm()
+    return direct_to_template(req,"web_bayes/network_form.html",{"form":form})
+    
 def upload_network(req):
     
     if req.method=="POST":
         form = UploadForm(req.POST,req.FILES)
         if form.is_valid():
             network = upload_xbn(req.FILES['file'])
+            network.users.add(req.user)
             return HttpResponseRedirect(reverse("view_network",args=[network.id]))
     else:        
         form = UploadForm()

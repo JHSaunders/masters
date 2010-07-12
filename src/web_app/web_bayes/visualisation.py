@@ -15,7 +15,7 @@ edge_style = {'R':'solid','I':'solid','E':'dashed','IE':'dashed'}
 edge_arrow = {'R':'normal','I':'diamond','E':'normal','IE':'diamond'}
 
 def DotNode(node):
-    return '%s [label="%s", style="filled", fontname=Helvetica, fillcolor="%s",shape="%s", URL="javascript: network_graph.open_form(\'%s\')"]' % (node.slug(),node.name,color[node.node_class],shape[node.node_class],reverse("view_node",args=[node.id]))
+    return '%s [label="%s", style="filled", fontname=Helvetica, fillcolor="%s",shape="%s", URL="javascript: network_graph.open_form(\'%s\')"]' % (node.slug(),node.name.replace(" ","\\n"),color[node.node_class],shape[node.node_class],reverse("view_node",args=[node.id]))
 
 def DotEdge(edge):
     label = edge.edge_effect
@@ -73,7 +73,7 @@ def DotInferenceNode(node):
         toggle_url = "javascript:network_graph.send_and_refresh('%s')"%reverse('toggle_observation',args=[state.id])
         
         template.append('<TR><TD ALIGN="LEFT" HREF="%s" TOOLTIP="Click to set observation">'%(toggle_url))
-        template.append(state.name)
+        template.append(state.name+"&nbsp;")
         template.append("</TD>")
         
         
