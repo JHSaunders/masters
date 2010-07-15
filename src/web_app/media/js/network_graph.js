@@ -7,7 +7,7 @@ network_graph.onresize = function()
 {
     $(network_graph.div).attr("width","100%");
     $(network_graph.svg).attr("width","100%");    
-    $(network_graph.svg).attr("height",465);    
+    $(network_graph.svg).attr("height",765);    
 }
 
 network_graph.get_view_coordinates = function(e)

@@ -23,6 +23,9 @@ class NetworkBase(models.Model):
             self.network.update_version(self)
         finally:
             super(NetworkBase, self).delete(*args, **kwargs)
+            
+    def type_name(self):
+        return self.__class__.__name__.lower()
 
 class Network(NetworkBase):
     
@@ -70,14 +73,15 @@ admin.site.register(Cluster)
 class Node(NetworkBase):
     name = models.CharField(max_length=100)
     network = models.ForeignKey(Network,related_name="nodes",editable=False)
-    description = models.CharField(max_length=256)
+    description = models.CharField(max_length=256,blank=True)
     cluster = models.ForeignKey(Cluster,related_name="nodes", null=True, blank=True)
     node_class = models.CharField(max_length=15,default='C',choices=(('A','Action'),('U','Utility'),('C','Chance')))
+    
     def __unicode__(self):
         return self.name
         
     def slug(self):
-        return self.name.replace(" ","_")
+        return str(self.id)
     
     def parent_nodes(self): 
         parents=[]

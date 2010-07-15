@@ -97,8 +97,7 @@ def write_xbn(network):
 def upload_xbn(file):
     doc = xml.dom.minidom.parse(file)
     network = Network(name=doc.getElementsByTagName("BNMODEL")[0].getAttribute("NAME"))
-    network.save()
-    
+    network.save()                                                           
     nodemap = {}
     vars = doc.getElementsByTagName("VAR")
     for var in vars:

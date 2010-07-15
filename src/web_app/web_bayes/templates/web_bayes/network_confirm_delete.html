@@ -1,11 +1,19 @@
-{% extends "web_bayes/base.html" %}
+{% extends "web_bayes/full_screen_dialog_base.html" %}
 
 {%block bodytitle%}
 Delete {{object}}
 {%endblock%}
 
+{%block backlink%}
+{% if object.id %}
+<a href="{%url network_properties object.id %}">Return to Network Properties</a>
+{%endif%}
+{%endblock%}
+
 {% block content %}
 <form target="" method="POST">
+Are you sure you wish to delete the "{{object}}" {{object.type_name}}?
+{% csrf_token %}
 <input type="submit" name="delete" Value="Delete" />
 </form>
 {%endblock%}

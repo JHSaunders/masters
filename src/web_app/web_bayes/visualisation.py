@@ -1,6 +1,7 @@
 from xml.dom.minidom import parse, parseString
 
 import subprocess
+import urllib
 
 from django.core.urlresolvers import reverse
 
@@ -66,7 +67,7 @@ def DotInferenceNode(node):
     template.append("<")
     template.append('<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="1">')
     template.append('<TR><TD COLSPAN="3">')
-    template.append(node.name)
+    template.append(node.name.replace('&','&amp;'))
     template.append("</TD></TR>")
     
     for state in node.states.all():

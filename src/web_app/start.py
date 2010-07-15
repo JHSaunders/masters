@@ -22,17 +22,15 @@ def main():
             manage_args = str(a).split(",")
 
     if not os.environ.has_key("LOCAL_CONF_NAME"):
-        print "no conf specified"
+        pass
 
     manage_command = ["python", "manage.py"]
     map(manage_command.append, manage_args)
-    print "Running manage command : " + str(manage_command)
     pipe = subprocess.Popen(manage_command)
-    print "Started with process ID " + str(pipe.pid)
     try:
         pipe.wait()
     except KeyboardInterrupt:
-        print "bye"
+        pass
 
 if __name__ == "__main__":
     main()

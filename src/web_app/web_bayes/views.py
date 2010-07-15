@@ -45,14 +45,14 @@ def view_network_definition(req,network_id):
 def network_definition_visualisation_svg(req,network_id):
     network = Network.objects.get(id = network_id)
     response = HttpResponse(mimetype='image/svg+xml')
-    response['Content-Disposition'] = 'filename=network.svg'
+    response['Content-Disposition'] = 'attachment; filename=%s_definition.svg' % network.name.replace(' ','_')
     response.write(VisualiseBasicNetwork(network,"svg"))
     return response
 
 def network_definition_visualisation_png(req,network_id):
     network = Network.objects.get(id = network_id)
     response = HttpResponse(mimetype='image/png')
-    response['Content-Disposition'] = 'filename=network.png'
+    response['Content-Disposition'] = 'attachment; filename=%s_definition.png' % network.name.replace(' ','_')
     response.write(VisualiseBasicNetwork(network,"png"))
     return response
 
@@ -65,14 +65,14 @@ def network_definition_visualisation_dot(req,network_id):
 def network_xmlbif(req,network_id):
     network = Network.objects.get(id = network_id)
     response = HttpResponse(mimetype='text/xml')
-    response['Content-Disposition'] = 'filename=%s.xml'% network.name.replace(' ','_')
+    response['Content-Disposition'] = 'attachment; filename=%s.xml'% network.name.replace(' ','_')
     response.write(write_xml_bif(network));
     return response
 
 def network_xbn(req,network_id):
     network = Network.objects.get(id = network_id)
     response = HttpResponse(mimetype='text/xml')
-    response['Content-Disposition'] = 'filename=%s.xbn'% network.name.replace(' ','_')
+    response['Content-Disposition'] = 'attachment; filename=%s.xbn'% network.name.replace(' ','_')
     response.write(write_xbn(network))
     return response
     
@@ -100,7 +100,7 @@ def upload_network(req):
     return direct_to_template(req,"web_bayes/upload_network.html",{"form":form})
 
 def edit_network_properties(req,network_id):
-    return update_object(req,model=Network,object_id=network_id)
+    return update_object(req,form_class=NetworkForm,object_id=network_id)
 
 def delete_network(req,network_id):
     return delete_object(req,model=Network,object_id=network_id,post_delete_redirect=reverse('list_networks'))
@@ -193,7 +193,7 @@ def delete_edge(req,edge_id):
 
 def view_cluster(req,cluster_id):
     cluster = Cluster.objects.get(id=cluster_id)
-    return update_object(req,model=Cluster,object_id=cluster_id,post_save_redirect=reverse('success'))
+    return update_object(req,form_class=ClusterForm,object_id=cluster_id,post_save_redirect=reverse('success'))
 
 def delete_cluster(req,cluster_id):
     cluster = Cluster.objects.get(id=cluster_id)  
@@ -213,7 +213,7 @@ def network_inference(req,network_id):
 def network_inference_visualisation_svg(req,network_id):
     network = Network.objects.get(id = network_id)
     response = HttpResponse(mimetype='image/svg+xml')
-    response['Content-Disposition'] = 'filename=network.svg'
+    response['Content-Disposition'] = 'attachment; filename=%s_inference.xbn'% network.name.replace(' ','_')
     response.write(VisualiseInferenceNetwork(network,"svg"))
     return response
 

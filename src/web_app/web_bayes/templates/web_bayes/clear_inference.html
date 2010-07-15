@@ -10,6 +10,7 @@ Clear Inferences
 
 {% block content %}
 <form action="" method="POST">
+{% csrf_token %}
 <h2>Are you sure you wish to clear the inference information?</h2>
 <input type="submit" name="clear" Value="Clear Inferences" />
 </form>

@@ -17,6 +17,7 @@ New Network
 {% block content %}
 <h3>Settings</h3>
 <form target="" method="POST">
+{% csrf_token %}
 <table>
 <tr><th>Version</th><td>{{object.version}}</td></tr>
 {{form}}

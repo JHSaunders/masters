@@ -6,6 +6,7 @@
 
 {% block content %}
 <form action="{%url view_node node.id %}" method="POST">
+{% csrf_token %}
 <h2> Node Details </h2>
 <table>
 {{details_form}}

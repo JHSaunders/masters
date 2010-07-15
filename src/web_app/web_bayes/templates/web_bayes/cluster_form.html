@@ -14,6 +14,7 @@ New Cluster
 
 {% block content %}
 <form action="{%url view_cluster object.id%}" method="POST">
+{% csrf_token %}
 <table>
 {{form}}
 </table>

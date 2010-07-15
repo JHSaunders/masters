@@ -1,5 +1,4 @@
 import math
-
 import pyAgrum
 from pyAgrum import BayesNet, LabelizedVar, LazyPropagation, Gibbs
 
@@ -11,15 +10,13 @@ def PerformPyAgrumInference(network,alg):
     for node in network.nodes.all():
         pynode =  G.add(LabelizedVar( str(node.name), str(node.name), node.states.count()))
         node_dict[node.id] = pynode
-        print pynode
            
     for edge in network.edges.all():
         p = node_dict[edge.parent_node.id]
         c = node_dict[edge.child_node.id]
         G.insertArc(p,c)
     
-    print G
-    
+   
     for node in network.nodes.all():
         if not node.is_root():            
             result = node.get_indexed_value_sets()[0]            
@@ -33,9 +30,6 @@ def PerformPyAgrumInference(network,alg):
                 for j in range(len(index_i_parents)):
                     index_dict[result_i_parents[j].node.name] = index_i_parents[j]
                     check_dict[result_i_parents[j].node.name] = result_i_parents[j].name
-                print index_dict
-                
-                print [v.value for v in values_i]     
                 G.cpt(node_dict[node.id])[index_dict]=[v.value for v in values_i]
         else:
             G.cpt(node_dict[node.id]).fillWith([state.probability for state in node.states.all()])          
@@ -56,7 +50,6 @@ def PerformPyAgrumInference(network,alg):
         
     for node in network.nodes.all():
         distribution = ie.marginal(node_dict[node.id])       
-        print node, distribution
         i=0    
         for state in node.states.all():
             state.inferred_probability = distribution[i]
@@ -64,3 +57,4 @@ def PerformPyAgrumInference(network,alg):
                 state.inferred_probability = None
             state.save()            
             i+=1
+

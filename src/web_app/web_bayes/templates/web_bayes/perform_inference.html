@@ -10,6 +10,7 @@ Perform Inference
 
 {% block content %}
 <form action="" method="POST">
+{% csrf_token %}
 <h2>Are you ready to perform inference?</h2>
 <input type="submit" name="perform" Value="Perform Inference" />
 </form>

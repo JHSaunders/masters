@@ -6,7 +6,8 @@ Delete {{object}}
 
 {% block content %}
 <form action="{{action_url}}" method="POST">
-Are you sure you wish to delete "{{object}}"? 
+{% csrf_token %}
+Are you sure you wish to delete the "{{object}}" {{object.type_name}}? 
 <input type="submit" name="delete" value="Delete" />
 </form>
 {%endblock%}

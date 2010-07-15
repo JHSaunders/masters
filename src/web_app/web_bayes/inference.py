@@ -1,5 +1,10 @@
 from backends.bke_openbayes import PerformOpenBayesInference
-from backends.bke_pyagrum import PerformPyAgrumInference
+try:
+    from backends.bke_pyagrum import PerformPyAgrumInference
+    has_pyAgrum=True
+except:
+    has_pyAgrum=False
+    
 def PerformInference(network):
     for node in network.nodes.all():
         node.normalise_node()
@@ -8,9 +13,9 @@ def PerformInference(network):
         PerformOpenBayesInference(network, alg='jt')
     elif network.backend == 'openbayes-mcmc':
         PerformOpenBayesInference(network, alg='mcmc')
-    elif network.backend == 'agrum-lazy':
+    elif network.backend == 'agrum-lazy' and has_pyAgrum:
         PerformPyAgrumInference(network,alg='lazy')
-    elif network.backend == 'agrum-gibbs':
+    elif network.backend == 'agrum-gibbs' and has_pyAgrum:
         PerformPyAgrumInference(network,alg='gibbs')
         
 def ClearInference(network):
