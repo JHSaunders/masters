@@ -89,7 +89,8 @@ class CPTForm(Form):
         self.node = kwargs["node"]
         if len(args) ==0:
             defaults = {}
-            for tup in self.node.get_value_sets(): 
+            value_sets = self.node.get_value_sets()
+            for tup in value_sets: 
                 for value in tup[1]:
                     defaults["%s"%(value.id,)] = value.value
             
@@ -103,7 +104,8 @@ class CPTForm(Form):
                 self.fields["%s"%(value.id,)] = FloatField()
     
     def save_values(self):
-        for tup in self.node.get_value_sets():
+        value_sets = self.node.get_value_sets()    
+        for tup in value_sets:
             for value in tup[1]:
                 if "%s"%value.id in self.cleaned_data: 
                     value.value = self.cleaned_data["%s"%value.id]

@@ -67,11 +67,11 @@ def setup(context):
 
     context["MANAGERS"] = context["ADMINS"]
 
-    context["DATABASE_ENGINE"] = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-    context["DATABASE_NAME"] = 'temp.db'             # Or path to database file if using sqlite3.
-    context["DATABASE_USER"] = ''             # Not used with sqlite3.
-    context["DATABASE_PASSWORD"] = ''         # Not used with sqlite3.
-    context["DATABASE_HOST"] = ''             # Set to empty string for localhost. Not used with sqlite3.
+    context["DATABASE_ENGINE"] = 'postgresql_psycopg2'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+    context["DATABASE_NAME"] = 'web_bpda'             # Or path to database file if using sqlite3.
+    context["DATABASE_USER"] = 'web_bpda'             # Not used with sqlite3.
+    context["DATABASE_PASSWORD"] = 'web_bpda'         # Not used with sqlite3.
+    context["DATABASE_HOST"] = '127.0.0.1'             # Set to empty string for localhost. Not used with sqlite3.
     context["DATABASE_PORT"] = ''             # Set to empty string for default. Not used with sqlite3.
 
     # Local time zone for this installation. Choices can be found here:
@@ -118,14 +118,14 @@ def setup(context):
     )
 
     context["MIDDLEWARE_CLASSES"] = (
+        'django.middleware.gzip.GZipMiddleware',
         'django.middleware.common.CommonMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.middleware.csrf.CsrfResponseMiddleware',
-        #'django.middleware.cache.CacheMiddleware',
         'django.middleware.transaction.TransactionMiddleware',
-        #'djangologging.middleware.LoggingMiddleware',
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
     )
 
     context["LOGIN_REDIRECT_URL"] = '/accounts/login/'
@@ -134,6 +134,7 @@ def setup(context):
     # required for logging
     context["INTERNAL_IPS"] = (
         '127.0.0.1',
+        '192.168.2.2',
     )
 
     context["LOGGING_FILE"] = "ndibano.log"
@@ -158,7 +159,8 @@ def setup(context):
         'django.contrib.sites',
         'django.contrib.admin',
         'django.contrib.admindocs',        
-        'tabs'
+        'tabs',
+        'debug_toolbar'
     )
     
 settings_main(globals())

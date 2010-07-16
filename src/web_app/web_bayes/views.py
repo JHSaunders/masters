@@ -230,7 +230,7 @@ def network_inference(req,network_id):
 def network_inference_visualisation_svg(req,network_id):
     network = Network.objects.get(id = network_id)
     response = HttpResponse(mimetype='image/svg+xml')
-    response['Content-Disposition'] = 'attachment; filename=%s_inference.xbn'% network.name.replace(' ','_')
+    response['Content-Disposition'] = 'filename=%s_inference.svg'% network.name.replace(' ','_')
     response.write(VisualiseInferenceNetwork(network,"svg"))
     return response
 

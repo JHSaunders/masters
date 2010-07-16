@@ -93,6 +93,10 @@ class Node(NetworkBase):
     cluster = models.ForeignKey(Cluster,related_name="nodes", null=True, blank=True)
     node_class = models.CharField(max_length=15,default='C',choices=(('A','Action'),('U','Utility'),('C','Chance')))
     
+    def __init__(self,*args,**kwargs):
+        self.cpt_cached = False
+        super(Node, self).__init__(*args, **kwargs)
+    
     def __unicode__(self):
         return self.name
         
@@ -101,7 +105,7 @@ class Node(NetworkBase):
     
     def parent_nodes(self): 
         parents=[]
-        for edge in self.parent_edges.all():
+        for edge in self.parent_edges.select_related().all():
             parents.append(edge.parent_node)        
         return parents
     
@@ -115,19 +119,18 @@ class Node(NetworkBase):
         return False    
     
     def cpt_value(self,child_state,parent_states):
-        query = CPTValue.objects.filter(child_state = child_state)
         
+        query = CPTValue.objects.select_related().filter(child_state = child_state)        
         for state in parent_states:            
             query = query.filter(parent_states = state)
             
         if query.count() == 0:
-            value = CPTValue(child_state = child_state,value=0)
-            
+            value = CPTValue(child_state = child_state,value=0)            
             value.save()
             for state in parent_states:                       
                 value.parent_states.add(state)
             value.save()
-            return value    
+            return value
         else:
             return query[0]
     
@@ -214,9 +217,10 @@ class Node(NetworkBase):
         pass
     
     def normalise_node(self):
-        self.normalise_probabilities()        
-        self.clean_cpt_values()        
-        self.normalise_cpt_values()
+        #self.normalise_probabilities()        
+        #self.clean_cpt_values()        
+        #self.normalise_cpt_values()
+        pass
         
 admin.site.register(Node)
 
@@ -241,6 +245,8 @@ class Edge(NetworkBase):
 admin.site.register(Edge)
 
 class State(NetworkBase):
+    class Meta:
+        ordering =('node','id')
     node = models.ForeignKey(Node,related_name="states",editable=False)
     name = models.CharField(max_length=100)
     probability = models.FloatField(blank=True)
