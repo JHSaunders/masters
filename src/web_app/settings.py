@@ -125,7 +125,7 @@ def setup(context):
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.middleware.csrf.CsrfResponseMiddleware',
         'django.middleware.transaction.TransactionMiddleware',
-        'debug_toolbar.middleware.DebugToolbarMiddleware',
+        #'debug_toolbar.middleware.DebugToolbarMiddleware',
     )
 
     context["LOGIN_REDIRECT_URL"] = '/accounts/login/'
@@ -160,7 +160,7 @@ def setup(context):
         'django.contrib.admin',
         'django.contrib.admindocs',        
         'tabs',
-        'debug_toolbar'
+        #'debug_toolbar'
     )
     
 settings_main(globals())

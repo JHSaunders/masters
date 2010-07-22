@@ -87,16 +87,21 @@ class Cluster(NetworkBase):
 admin.site.register(Cluster)
             
 class Node(NetworkBase):
+    
+    class Meta:
+        ordering =('id',)
+            
     name = models.CharField(max_length=100)
     network = models.ForeignKey(Network,related_name="nodes",editable=False)
     description = models.CharField(max_length=256,blank=True)
     cluster = models.ForeignKey(Cluster,related_name="nodes", null=True, blank=True)
     node_class = models.CharField(max_length=15,default='C',choices=(('A','Action'),('U','Utility'),('C','Chance')))
+    cpts_string = models.CharField(max_length=10000,blank=True,editable=False)
     
     def __init__(self,*args,**kwargs):
-        self.cpt_cached = False
         super(Node, self).__init__(*args, **kwargs)
-    
+        self._cpt = None
+   
     def __unicode__(self):
         return self.name
         
@@ -105,7 +110,7 @@ class Node(NetworkBase):
     
     def parent_nodes(self): 
         parents=[]
-        for edge in self.parent_edges.select_related().all():
+        for edge in self.parent_edges.select_related().select_related():
             parents.append(edge.parent_node)        
         return parents
     
@@ -118,85 +123,18 @@ class Node(NetworkBase):
                 return True
         return False    
     
-    def cpt_value(self,child_state,parent_states):
-        
-        query = CPTValue.objects.select_related().filter(child_state = child_state)        
-        for state in parent_states:            
-            query = query.filter(parent_states = state)
-            
-        if query.count() == 0:
-            value = CPTValue(child_state = child_state,value=0)            
-            value.save()
-            for state in parent_states:                       
-                value.parent_states.add(state)
-            value.save()
-            return value
-        else:
-            return query[0]
+    def CPT(self):
+        if self._cpt == None:
+            self._cpt = CPT(self)
+        return self._cpt
     
-    def get_indexed_value_sets(self):
-        max_states = []
-        state_count = 0
-        max_state_count = 1
-        current_states = []        
-        parent_nodes = []
-        for parent in self.parent_nodes():
-            parent_nodes.append(parent)            
-            max_states.append(parent.states.count())
-            max_state_count*=parent.states.count()
-            current_states.append(0)            
-
-        if len(max_states)==0 or max_state_count == 0:
-           return ([],[])
-        
-        results = []
-        indexes = []
-        
-        while state_count<max_state_count:                
-            parent_states = []
-            state_indexes = []
-            for i in range(len(parent_nodes)):
-                parent_states.append(parent_nodes[i].states.all()[current_states[i]])
-                state_indexes.append(current_states[i])
-            
-            values = []
-            for state in self.states.all():
-                values.append(self.cpt_value(state,parent_states))
-            
-            results.append((parent_states,values))
-            
-            indexes.append((state_indexes,values))
-            
-            state_count +=1
-            running = True
-            index = len(current_states) - 1
-            
-            while running:                
-                current_states[index]+=1
-                running = False
-                if current_states[index]==max_states[index]:
-                   current_states[index] = 0
-                   running = True
-                index-=1
-        
-        return (results,indexes)
+    def write_back_cpt_values(self):
+        if self._cpt!=None:
+            self.cpts_string = ",".join([str(cp) for cp in self.CPT().get_clean_cp_values()])
     
-    def get_value_sets(self):
-        return self.get_indexed_value_sets()[0]
-                
-    def normalise_cpt_values(self):
-        for tup in self.get_value_sets():
-            total = 0
-            for value in tup[1]:
-                total+=value.value
-            for value in tup[1]:
-                old_value = value.value
-                if total>0:
-                    value.value = value.value/total
-                else:
-                    value.value = 1.0/len(tup[1])
-                if value.value != old_value: 
-                    value.save()
+    def save(self,*args,**kwargs):
+        self.write_back_cpt_values()
+        super(Node, self).save(*args, **kwargs)     
                 
     def normalise_probabilities(self):
         total = 0
@@ -217,10 +155,89 @@ class Node(NetworkBase):
         pass
     
     def normalise_node(self):
-        #self.normalise_probabilities()        
-        #self.clean_cpt_values()        
-        #self.normalise_cpt_values()
-        pass
+        self.normalise_probabilities()
+
+class CPT:
+    def __init__(self,node):
+        self.node = node
+        self._indexes = self._get_indexes(self.node)
+        
+        if node.cpts_string.strip() != '':
+            cps = [ float(cp) for cp in node.cpts_string.strip().split(",") ]
+        else:
+            cps = []
+        self.set_cpt_values(cps)
+            
+    def _get_indexes(self,node):
+        parent_nodes = node.parent_nodes()
+        state_counts = [p.states.count() for p in parent_nodes]
+        state_counts.append(node.states.count())
+        
+        cpt_count = 1
+        for cnt in state_counts:
+            cpt_count*=cnt
+        cpt_count*= len(parent_nodes)>0 and node.states.count()>0 
+        
+        indexes=[]
+                
+        base_index = [0 for p in state_counts]
+        divisors = [1 for p in state_counts]
+        
+        for i in range(len(state_counts)-2,-1,-1):
+            divisors[i]=divisors[i+1]*state_counts[i+1]
+       
+        for cpt_index in range(cpt_count):
+            index = []
+            for (div,cnt) in zip(divisors,state_counts):
+                index.append((cpt_index // div) % cnt)
+            indexes.append(tuple(index))
+        
+        return indexes
+    
+    def set_cpt_values(self,values):
+        self._cps = values[:len(self._indexes)]
+        while len(self._cps)<len(self._indexes):
+            self._cps.append(0.0)        
+        print self._cps        
+        
+    def get_cpt_values(self):
+        return zip(self._indexes,self._cps)
+    
+    def get_cpt_rows(self):
+        cnt_st = self.node.states.count()
+        cps = self._cps
+        rows = []
+        
+        for ri in range(len(cps)/cnt_st):
+            index = self._indexes[ri*cnt_st][:-1]
+            values =self._cps[ri*cnt_st:(ri+1)*cnt_st]
+            rows.append((index,values))
+
+        return rows
+            
+    def normalize_cpt_values(self):
+        cnt_st = self.node.states.count()
+        cps = self._cps
+        cpt_normalised = []
+        
+        for ri in range(len(cps)/cnt_st):
+            
+            row =self._cps[ri*cnt_st:(ri+1)*cnt_st]
+            sum = 0.0
+            for v in row:
+                sum+=v
+            if sum ==0.0:
+                for v in row:
+                    cpt_normalised.append(1.0/cnt_st)
+            else:    
+                for v in row:
+                    cpt_normalised.append(v/sum)
+
+        self._cps = cpt_normalised                    
+                        
+    def get_clean_cp_values(self):
+        self.normalize_cpt_values()
+        return self._cps
         
 admin.site.register(Node)
 
@@ -240,7 +257,7 @@ class Edge(NetworkBase):
     edge_effect = models.CharField(max_length=15,blank=True,null=True,default=None,choices=(('+','Positive'),('-','Negative')))    
     
     def __unicode__(self):
-        return '%s->%s'%(self.parent_node,self.child_node)    
+        return '%s->%s'%(self.parent_node,self.child_node)  
 
 admin.site.register(Edge)
 
@@ -278,14 +295,4 @@ class State(NetworkBase):
         
     def __unicode__(self):
         return self.name
-    
-class CPTValue(NetworkBase):
-    child_state = models.ForeignKey(State,related_name="defining_values")
-    parent_states = models.ManyToManyField(State,related_name="dependant_values")
-    value = models.FloatField(default=0.0)
-    
-    @property
-    def network(self):
-        return self.child_state.network
-    
-admin.site.register(CPTValue)   
+admin.site.register(State)

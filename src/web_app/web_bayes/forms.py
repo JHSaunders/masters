@@ -42,8 +42,7 @@ class EdgeForm(ModelForm):
 
 class NodeForm(ModelForm):
     class Meta:
-        model = Node
-        
+        model = Node        
     def __init__(self,*args,**kwargs): 
         
         super(NodeForm,self).__init__(*args,**kwargs)
@@ -89,56 +88,58 @@ class CPTForm(Form):
         self.node = kwargs["node"]
         if len(args) ==0:
             defaults = {}
-            value_sets = self.node.get_value_sets()
-            for tup in value_sets: 
-                for value in tup[1]:
-                    defaults["%s"%(value.id,)] = value.value
-            
+            cpt = self.node.CPT().get_cpt_values()            
+            for i in range(len(cpt)):
+                defaults["cpt_%s"%(i,)] = cpt[i][1]            
             args=(defaults,)
         
         del kwargs["node"]
         super(CPTForm,self).__init__(*args,**kwargs)
                 
-        for tup in self.node.get_value_sets():
-            for value in tup[1]:
-                self.fields["%s"%(value.id,)] = FloatField()
-    
-    def save_values(self):
-        value_sets = self.node.get_value_sets()    
-        for tup in value_sets:
-            for value in tup[1]:
-                if "%s"%value.id in self.cleaned_data: 
-                    value.value = self.cleaned_data["%s"%value.id]
-                    value.save()
+        cpt = self.node.CPT().get_cpt_values()            
+        for i in range(len(cpt)):
+            self.fields["cpt_%s"%(i,)] = FloatField()
                 
+    def save_values(self):
+        cpt = self.node.CPT().get_cpt_values()
+        values = []
+        for vi in range(len(cpt)):
+            values.append(self.cleaned_data["cpt_%s"%(vi,)])
+        self.node.CPT().set_cpt_values(values)        
+                        
     def __unicode__(self):    
-        value_set = self.node.get_value_sets()
-                                    
-        buf = []        
-        buf.append("<tr>")
-        for parent in self.node.parent_nodes():
-            buf.append('<th>%s</th>'%(parent))
-        buf.append("<th/>")        
-        for state in self.node.states.all():
-            buf.append("<th>%s</th>"%state)
-        buf.append("</tr>")
         
-        cycle = True;
-      
-        for tup in value_set:
-            
-            if cycle:
+        cpt = self.node.CPT().get_cpt_values()
+        if len(cpt)==0:
+            return""
+        parent_nodes = self.node.parent_nodes()
+        num_val_cols = self.node.states.count()        
+        num_index_cols = len(cpt[0][0])-1
+        num_rows = len(cpt)/num_val_cols
+
+        buf = []
+        vi = 0
+        buf.append("<tr>")        
+        for p in parent_nodes:
+            buf.append('<th>%s</th>'%(p))
+        for s in self.node.states.all():
+            buf.append('<th>%s</th>'%(s))                        
+        buf.append("</tr>")
+
+        for ri in range(num_rows):
+            if ri % 2 == 0:
                 buf.append("<tr>")
             else:
                 buf.append('<tr class="alt">')
+
+            for ci in range(num_index_cols):
+                buf.append('<th>%s</th>'%(parent_nodes[ci].states.all()[cpt[vi][0][ci]]))
                 
-            for state in tup[0]:                
-                buf.append('<td>%s</td>'%state)            
-            buf.append('<td/>')            
-            for value in tup[1]:
-                buf.append('<td class="cpt_cell">%s%s</td>'% (self["%s"%(value.id,)].errors,self["%s"%(value.id,)]) )
+            for ci in range(num_val_cols):
+                buf.append('<td class="cpt_cell">%s%s</td>'%(self["cpt_%s"%(vi,)].errors,self["cpt_%s"%(vi,)]))
+                vi+=1
+                
             buf.append("</tr>")
-            cycle = not cycle
                 
         return "".join(buf)
 

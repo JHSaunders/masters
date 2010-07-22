@@ -142,9 +142,15 @@ def view_node(req,node_id):
         states_formset = StatesFormSet(req.POST, req.FILES, instance=node)
         cpt_form = CPTForm(req.POST, node=node)
         reasoning_form = ReasoningJustificationForm(req.POST)
+        
+        df = details_form.is_valid()
+        cpt = cpt_form.is_valid()
+        sf = states_formset.is_valid()
+        rf = reasoning_form.is_valid()
                          
         if cpt_form.is_valid() and details_form.is_valid() and states_formset.is_valid() and reasoning_form.is_valid():
-            details_form.save()            
+            details_form.save(commit = False)            
+
             for state in  states_formset.save(commit=False):
                 state.node = node
                 state.save()
@@ -153,14 +159,12 @@ def view_node(req,node_id):
             node.normalise_node()                
             if reasoning_form.cleaned_data["reason"]!="" or reasoning_form.cleaned_data["action"]!="":
                 NodeReasoningJustification(node=node,reason=reasoning_form.cleaned_data["reason"],action=reasoning_form.cleaned_data["action"],version=node.network.version).save()
-            
-            if u'continue' in req.POST:                
+            node.save()
+                                                                                                                                                
+            if u'continue' in req.POST:
                 return HttpResponseRedirect(reverse("view_node",args=[node.id]))
             else:
                 return success_response(req)
-                
-        else:
-            return HttpResponseRedirect(reverse("view_node",args=[node.id]))
     else:        
         details_form = NodeForm(instance = node)
         node.normalise_node()

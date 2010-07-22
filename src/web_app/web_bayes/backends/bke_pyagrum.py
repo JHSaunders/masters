@@ -34,19 +34,16 @@ def PerformPyAgrumInference(network,alg):
     
    
     for node in network.nodes.all():
-        if not node.is_root():            
-            result = node.get_indexed_value_sets()[0]            
-            index = node.get_indexed_value_sets()[1]
-            for i in range(len(index)):
-                index_dict = {}
-                check_dict = {}
-                result_i_parents = result[i][0]
-                values_i = result[i][1]
-                index_i_parents = index[i][0]
-                for j in range(len(index_i_parents)):
-                    index_dict[result_i_parents[j].node.name] = index_i_parents[j]
-                    check_dict[result_i_parents[j].node.name] = result_i_parents[j].name
-                G.cpt(node_dict[node.id])[index_dict]=[v.value for v in values_i]
+        if not node.is_root():
+            rows = node.CPT().get_cpt_rows()
+            index_dict = {}
+            for row in rows:
+                i = 0
+                for parent in node.parent_nodes():
+                    index_dict[parent.name]= row[0][i]
+                    i+=1
+                G.cpt(node_dict[node.id])[index_dict]=list(row[1])
+                #print index_dict,rows[1]
         else:
             G.cpt(node_dict[node.id]).fillWith([state.probability for state in node.states.all()])          
     if alg=="gibbs":    

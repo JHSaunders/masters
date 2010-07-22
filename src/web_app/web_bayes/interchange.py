@@ -89,8 +89,7 @@ def write_xbn(network):
     
     #distributions
     dists = appendNode(bnNode,"distributions",None,None)
-    for node in network.nodes.all():
-        
+    for node in network.nodes.all():        
         dist = appendNode(dists,"dist",None,{"type":"discrete"})
         appendNode(dist,"private",None,{"name":node.name})
         condset = appendNode(dist,"condset",None,None)
@@ -99,10 +98,11 @@ def write_xbn(network):
         dpis = appendNode(dist,"dpis",None,None)
         
         if node.parent_edges.count()>0:
-            valuesets = node.get_indexed_value_sets()[1]
+            valuesets = node.CPT().get_cpt_rows()
+            print "\n".join([str(x) for x in valuesets])
             for valueset in valuesets:
                 indexes = " ".join([str(st) for st in valueset[0]])
-                values = " ".join([str(v.value) for v in valueset[1]])
+                values = " ".join([str(v) for v in valueset[1]])
                 appendNode(dpis,"dpi",values,{"indexes":indexes})
         else:
             values = " ".join([str(s.probability) for s in node.states.all()])
@@ -144,22 +144,48 @@ def upload_xbn(file):
         node = nodemap[dist.getElementsByTagName("PRIVATE")[0].getAttribute("NAME")]
         if node.parent_edges.count() >0:
             parents = [ nodemap[elem.getAttribute("NAME")] for elem in dist.getElementsByTagName("CONDELEM")]    
-            print node, parents 
+#            print "Node", node
+#            for parent in parents:
+#                print "Parent", parent, parent.states.all()
+
+            parents_in_order = node.parent_nodes()            
+#            print "Parents no order",parents 
+#            print "Parents in order",parents_in_order 
+            
+
+            re_order = []
+            for i in range(len(parents)):
+                re_order.append(parents.index(parents_in_order[i]))
+#            print "Reordering", re_order
+                                            
+            values_by_index = {}
+             
             for dpi in dist.getElementsByTagName("DPI"):
                 indexes_string = dpi.getAttribute("INDEXES").strip()
-                indexes = [int(i) for i in indexes_string.split(" ")]
+                index = tuple([int(i) for i in indexes_string.split(" ")])
                 parent_states=[]
-                print indexes
-                for i in range(len(indexes)):
-                    parent = parents[i]
-                    parent_states.append(parent.states.all()[indexes[i]])
-                cpts_strings = dpi.firstChild.data.strip().split(" ")
-                child_states = node.states.all()
-                
-                for i in range(len(cpts_strings)):
-                    cpt = node.cpt_value(child_states[i],parent_states)
-                    cpt.value = float(cpts_strings[i])
-                    cpt.save()
+                cpt_row = [float(s) for s in dpi.firstChild.data.strip().split(" ")]                
+                values_by_index[index] = cpt_row
+
+
+            indexes = values_by_index.keys()
+            values_by_new_index={}
+            for index in indexes:               
+               new_index = tuple([index[re_order[i]] for i in range(len(index))])
+               values_by_new_index[new_index] = values_by_index[index] 
+               #print index,"to",new_index               
+
+            values = []
+            indexes = values_by_new_index.keys()          
+            indexes.sort()
+#            print indexes 
+            for index in indexes:
+#                print index
+                for v in values_by_new_index[index]:
+                    values.append(v)
+                    
+            node.CPT().set_cpt_values(values)
+            node.save()                          
         else:
             dpi = dist.getElementsByTagName("DPI")[0]
             cpts_strings = dpi.firstChild.data.strip().split(" ")
@@ -169,4 +195,4 @@ def upload_xbn(file):
                 state.probability = float(cpts_strings[i])
                 state.save() 
     return network
-    
+        
