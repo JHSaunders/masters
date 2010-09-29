@@ -24,6 +24,8 @@ from django.db.models import F
 from django.core.urlresolvers import reverse
 from django.db import transaction
 
+from django.db.models.signals import post_save
+
 class NetworkBase(models.Model):
     class Meta:
         abstract = True
@@ -51,7 +53,7 @@ class Network(NetworkBase):
                         
     name = models.CharField(max_length=100)
     version = models.IntegerField(default=0,editable=False)
-    backend = models.CharField(max_length=15,default='agrum-lazy',choices=(('openbayes-jt','Open Bayes using Join Tree'),('openbayes-mcmc','Open Bayes using MCMC'),('agrum-lazy','aGrUM using Lazy Propagation'),('agrum-gibbs','aGrUM usign Gibbs Sampling'))) 
+    backend = models.CharField(max_length=15,default='agrum-lazy',choices=(('openbayes-jt','Open Bayes using Join Tree'),('openbayes-mcmc','Open Bayes using MCMC'),('agrum-lazy','aGrUM using Lazy Propagation'),('agrum-gibbs','aGrUM using Gibbs Sampling'))) 
     users = models.ManyToManyField(User,related_name="networks",blank=True)
     
     @property
@@ -74,7 +76,75 @@ class Network(NetworkBase):
             
     def __unicode__(self):
         return self.name
+    
+    def copy_network(self,source):
+        
+        cluster_map= {}
+        for cluster in source.clusters.all():
+            old_id = cluster.id
+            cluster.id = None
+            cluster.network = self
+            cluster.save()
+            cluster_map[old_id] = cluster.id
+            print cluster
+            
+        node_map = {}
+        for node in source.nodes.all():
+            states = node.states.all()
+            old_id = node.id
+            node.id = None
+            node.network = self
+            if node.cluster !=None:
+                node.cluster = Cluster.objects.get(id = cluster_map[node.cluster.id])
+            node.save()
+            node_map[old_id] = node.id
+            
+            for state in states:
+                state.id = None
+                state.node = node
+                state.save()
 
+        for edge in source.edges.all():
+            old_id = edge.id
+            edge.id = None
+            edge.network = self
+            edge.parent_node = Node.objects.get(id= node_map[edge.parent_node.id])
+            edge.child_node = Node.objects.get(id= node_map[edge.child_node.id])
+            edge.save()
+            
+        self.save()
+
+    def copy_cluster(self,source):        
+        old_network = source.network
+        old_source_id = source.id
+        nodes = source.nodes.all()
+        source.network =self
+        source.id = None
+        source.save()
+            
+        node_map = {}
+        for node in nodes.all():
+            states = node.states.all()
+            old_id = node.id
+            node.id = None
+            node.network = self
+            node.cluster =source
+            node.save()
+            node_map[old_id] = node.id
+            for state in states:
+                state.id = None
+                state.node = node
+                state.save()
+        
+        for edge in old_network.edges.filter(parent_node__cluster__id = old_source_id).filter(child_node__cluster__id = old_source_id):
+            old_id = edge.id
+            edge.id = None
+            edge.network = self
+            edge.parent_node = Node.objects.get(id= node_map[edge.parent_node.id])
+            edge.child_node = Node.objects.get(id= node_map[edge.child_node.id])
+            edge.save()
+        self.save()
+        
 admin.site.register(Network)
 
 class Cluster(NetworkBase):
@@ -288,11 +358,24 @@ class State(NetworkBase):
             self.observed = False
         else:
             for state in self.node.states.all():
-                if state.observed:                    
+                if state.observed:
                     state.toggle_observed()
-            self.observed=True        
+            self.observed=True
         self.save()
         
     def __unicode__(self):
         return self.name
+        
 admin.site.register(State)
+
+class UserProfile(models.Model):
+    user =  models.OneToOneField(User)
+    copied_cluster = models.ForeignKey(Cluster,null=True,blank=True)
+
+admin.site.register(UserProfile)
+
+def user_post_save_handler(sender, **kwargs):
+    if kwargs["created"]:
+        UserProfile(user=kwargs["instance"]).save()
+post_save.connect(user_post_save_handler, sender=User)
+

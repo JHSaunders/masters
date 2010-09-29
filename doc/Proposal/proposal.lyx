@@ -90,6 +90,11 @@ Supervisor
 Dr Camaren Peter
 \end_layout
 
+\begin_layout Itemize
+Prof.
+ Ingrid Rewitsky
+\end_layout
+
 \begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
@@ -1196,7 +1201,7 @@ reference "fig:The-model-verification"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1343,13 +1348,13 @@ g in a participatory process, the assumptions are tested against the model
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
-	filename decsion-process.png
+	filename decision-process.png
 	lyxscale 50
 	width 100line%
 
