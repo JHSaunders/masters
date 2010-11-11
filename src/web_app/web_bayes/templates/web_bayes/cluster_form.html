@@ -21,6 +21,7 @@ New Cluster
 <input type="submit" name="save" value="Save" />
 {% if object.id %}
 <a href="javascript: network_graph.open_form('{%url delete_cluster object.id %}')">Delete</a>
+<a href="javascript: network_graph.open_form('{%url copy_cluster object.id %}')">Copy (Currently {{user.get_profile.copied_cluster}})</a>
 {% endif %}
 </form>
 {%endblock%}

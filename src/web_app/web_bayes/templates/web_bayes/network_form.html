@@ -19,8 +19,13 @@ New Network
 <form target="" method="POST">
 {% csrf_token %}
 <table>
+{% if object.id %}
 <tr><th>Version</th><td>{{object.version}}</td></tr>
+{%endif%}
 {{form}}
+{% if not object.id %}
+{{copy_form}}
+{%endif %}
 </table>
 <input type="submit" name="save" Value="Save"/>
 {% if object.id %}
@@ -31,7 +36,9 @@ New Network
 {% if object.id %}
 <h3>Actions</h3>
 <ul>
-<!--<li><a href="{%url network_xmlbif object.id %}">Export Network to XML-BIF</a></li>-->
+{% if user.get_profile.copied_cluster %}
+<li><a href="{%url import_cluster object.id %}">Import Copied Cluster ({{user.get_profile.copied_cluster}}) </a></li>
+{% endif %}
 <li><a href="{%url network_xbn object.id %}">Export Network to XBN</a></li>
 <li><a href="{%url network_definition_svg object.id %}">Export Network Diagram as SVG</a></li>
 </ul>

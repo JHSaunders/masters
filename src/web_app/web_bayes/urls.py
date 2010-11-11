@@ -33,7 +33,8 @@ urlpatterns = patterns('',
     
     url(r'^network/(?P<network_id>\d+)/xmlbif.xml$', views.network_xmlbif,name="network_xmlbif"),
     url(r'^network/(?P<network_id>\d+)/xbn.xml$', views.network_xbn,name="network_xbn"),    
-    
+    url(r'^network/(?P<network_id>\d+)/import_cluster$', views.import_cluster,name="import_cluster"),    
+        
     url(r'^success$',views.success_response,name="success"),
         
     url(r'^create_network$', views.create_network,name="create_network"),
@@ -52,7 +53,8 @@ urlpatterns = patterns('',
     url(r'^create_cluster/(?P<network_id>\d+)$',views.create_cluster,name="create_cluster"),        
     url(r'^cluster/(?P<cluster_id>\d+)/view$', views.view_cluster,name="view_cluster"),
     url(r'^cluster/(?P<cluster_id>\d+)/delete$', views.delete_cluster,name="delete_cluster"),
-    
+    url(r'^cluster/(?P<cluster_id>\d+)/copy$', views.copy_cluster,name="copy_cluster"),
+        
     url(r'^network/(?P<network_id>\d+)/inference$', views.network_inference, name="network_inference"),
     
     url(r'^toggle_observation/(?P<state_id>\d+)$', views.toggle_observation, name="toggle_observation"), 

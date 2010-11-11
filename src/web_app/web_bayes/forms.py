@@ -151,3 +151,6 @@ class ReasoningJustificationForm(Form):
 
 class UploadForm(Form):
     file = FileField(required=True)
+    
+class CopyNetworkListForm(Form):
+    copy_network=ModelChoiceField(queryset=Network.objects.all(),required=False)

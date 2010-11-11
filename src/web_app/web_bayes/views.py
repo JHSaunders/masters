@@ -57,7 +57,6 @@ def view_network_definition(req,network_id):
         {"network":network,
         "graph":inline_svg(VisualiseBasicNetwork(network,"svg"))}
         ,mimetype="application/xhtml+xml")
-    
 
 def network_definition_visualisation_svg(req,network_id):
     network = Network.objects.get(id = network_id)
@@ -96,13 +95,17 @@ def network_xbn(req,network_id):
 def create_network(req):
     if req.method=="POST":
         form = NetworkForm(req.POST)
-        if form.is_valid():
+        copy_form = CopyNetworkListForm(req.POST)
+        if form.is_valid() and copy_form.is_valid():
             network=form.save()
             network.users.add(req.user)
+            if copy_form.cleaned_data["copy_network"]!=None:
+                network.copy_network(copy_form.cleaned_data["copy_network"])
             return HttpResponseRedirect(reverse("view_network",args=[network.id]))
     else:        
         form = NetworkForm()
-    return direct_to_template(req,"web_bayes/network_form.html",{"form":form})
+        copy_form = CopyNetworkListForm()
+    return direct_to_template(req,"web_bayes/network_form.html",{"form":form,"copy_form":copy_form})
     
 def upload_network(req):
     
@@ -219,7 +222,18 @@ def view_cluster(req,cluster_id):
 def delete_cluster(req,cluster_id):
     cluster = Cluster.objects.get(id=cluster_id)  
     return delete_object(req,model=Cluster,object_id=cluster_id,post_delete_redirect=reverse('success'),extra_context={'action_url':reverse('delete_cluster', args=[cluster_id])})
-    
+
+def copy_cluster(req,cluster_id):
+    profile = req.user.get_profile()
+    profile.copied_cluster = Cluster.objects.get(id = cluster_id)
+    profile.save()
+    return success_response(req)
+
+def import_cluster(req,network_id):
+    network = Network.objects.get(id = network_id)
+    network.copy_cluster(req.user.get_profile().copied_cluster)
+    return HttpResponseRedirect(reverse("view_network",args=[network_id]))
+   
 def create_cluster(req,network_id):
     cluster = Cluster(network = Network.objects.get(id = network_id))
     cluster.save()

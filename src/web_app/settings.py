@@ -163,4 +163,6 @@ def setup(context):
         #'debug_toolbar'
     )
     
+    context["AUTH_PROFILE_MODULE"] = 'web_bayes.UserProfile'
+    
 settings_main(globals())
