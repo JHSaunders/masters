@@ -14,6 +14,8 @@
 #
 #You should have received a copy of the GNU General Public License
 #along with Web BPDA.  If not, see <http://www.gnu.org/licenses/>.
+from cgi import escape
+
 from django.forms import *
 
 from models import *
@@ -121,9 +123,9 @@ class CPTForm(Form):
         vi = 0
         buf.append("<tr>")        
         for p in parent_nodes:
-            buf.append('<th>%s</th>'%(p))
+            buf.append('<th>%s</th>'%escape(str(p)))
         for s in self.node.states.all():
-            buf.append('<th>%s</th>'%(s))                        
+            buf.append('<th>%s</th>'%escape(str(s)))                        
         buf.append("</tr>")
 
         for ri in range(num_rows):

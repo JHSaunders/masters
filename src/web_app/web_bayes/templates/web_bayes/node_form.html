@@ -10,10 +10,12 @@
 <h2> Node Details </h2>
 <table>
 {{details_form}}
+
 </table>
 
 <h2>Node States</h2>
 {{ states_formset.non_form_errors.as_ul }}
+{{ states_formset.management_form }}
 <table>
 <thead>
   <tr>
@@ -25,19 +27,26 @@
   </tr>
 </thead>
 
-{{ states_formset.management_form }}
+
 {% for form in states_formset.forms %}
   <tr class="{% cycle row,alt %}">
+ 
+  <td>{{form.name.errors.as_ul}}{{form.name}}{{form.probability.errors.as_ul}}
+  
   {% for hidden in form.hidden_fields %}
       {{ hidden }}
   {% endfor %}
-  
-  <td>{{form.name.errors.as_ul}}{{form.name}}{{form.probability.errors.as_ul}}</td>
+
   {% if node.is_root %}    
-  <td>{{form.probability.errors.as_ul}}{{form.probability}}</td> 
+  </td>
+  <td>
+  {{form.probability.errors.as_ul}}{{form.probability}}
+  </td> 
   {%else%}
   {{form.probability.as_hidden}}
+  </td> 
   {%endif%}
+  
   <td>{%if not forloop.first %}{{form.DELETE}}{%else%}{{form.DELETE.as_hidden}}{%endif%}</td>
   </tr>
 {% endfor %}

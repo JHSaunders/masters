@@ -99,7 +99,6 @@ def write_xbn(network):
         
         if node.parent_edges.count()>0:
             valuesets = node.CPT().get_cpt_rows()
-            print "\n".join([str(x) for x in valuesets])
             for valueset in valuesets:
                 indexes = " ".join([str(st) for st in valueset[0]])
                 values = " ".join([str(v) for v in valueset[1]])

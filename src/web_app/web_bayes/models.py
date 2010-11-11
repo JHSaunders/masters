@@ -14,6 +14,7 @@
 #
 #You should have received a copy of the GNU General Public License
 #along with Web BPDA.  If not, see <http://www.gnu.org/licenses/>.
+
 import datetime
 
 from django.db import models
@@ -91,9 +92,9 @@ class Node(NetworkBase):
     class Meta:
         ordering =('id',)
             
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=300)
     network = models.ForeignKey(Network,related_name="nodes",editable=False)
-    description = models.CharField(max_length=256,blank=True)
+    description = models.TextField(max_length=1000,blank=True)
     cluster = models.ForeignKey(Cluster,related_name="nodes", null=True, blank=True)
     node_class = models.CharField(max_length=15,default='C',choices=(('A','Action'),('U','Utility'),('C','Chance')))
     cpts_string = models.CharField(max_length=10000,blank=True,editable=False)
@@ -143,6 +144,7 @@ class Node(NetworkBase):
         
         for state in self.states.all():
             old_state=state.probability
+            
             if total>0:
                 state.probability/=total
             else:
@@ -198,7 +200,7 @@ class CPT:
         self._cps = values[:len(self._indexes)]
         while len(self._cps)<len(self._indexes):
             self._cps.append(0.0)        
-        print self._cps        
+        #print self._cps        
         
     def get_cpt_values(self):
         return zip(self._indexes,self._cps)
@@ -265,7 +267,7 @@ class State(NetworkBase):
     class Meta:
         ordering =('node','id')
     node = models.ForeignKey(Node,related_name="states",editable=False)
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=300)
     probability = models.FloatField(blank=True)
     inferred_probability = models.FloatField(blank=True,null=True)
     observed = models.BooleanField(blank=True,default=False)
