@@ -16,7 +16,6 @@
 #along with Web BPDA.  If not, see <http://www.gnu.org/licenses/>.
 import xml.dom.minidom
 
-from backends.bke_openbayes import ExportToXBN
 from models import *
 
 def write_xml_bif(network):

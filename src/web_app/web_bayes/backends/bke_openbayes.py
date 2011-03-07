@@ -16,6 +16,7 @@
 #along with Web BPDA.  If not, see <http://www.gnu.org/licenses/>.
 import math
 
+
 from OpenBayes import BNet, BVertex, DirEdge,SaveXBN
 from OpenBayes import JoinTree, MCMCEngine
 

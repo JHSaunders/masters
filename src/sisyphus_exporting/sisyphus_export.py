@@ -1,21 +1,30 @@
 import sys
+import os
 import MySQLdb
 import xml.dom.minidom
 
+dotctr = 0
+
 def export(conn,scenario):
+
     cursor = conn.cursor (MySQLdb.cursors.DictCursor)
     cursor.execute ("SELECT scen.id,scen.path,ses.id,ses.session,w.workbook from scenarios scen, sessions ses, workbooks w  where scen.id=%s and w.id = scen.workbook and ses.id = scen.session"%(scenario,))
 
-    info = cursor.fetchone()    
+    info = cursor.fetchone()
+    if info == None:
+        return (None,None)
+    print "Exporting %s , %s " % (info["session"],info["path"])
     session = int(info["ses.id"])
     workbook_name = info["workbook"]
     session_name = info["session"]
     scenario_name = info["path"]
     model_name = "%s %s %s"%(workbook_name,session_name,scenario_name)
 
-    doc = xml.dom.minidom.Document()    
+    doc = xml.dom.minidom.Document()
+
     def appendNode(parent,tagname,text,attributes):
         node = doc.createElement(tagname.upper())
+
         
         if attributes!=None:
             for k,v in attributes.items():
@@ -24,7 +33,12 @@ def export(conn,scenario):
         if text!=None: 
             node.appendChild(doc.createTextNode(str(text)))
         
-        parent.appendChild(node)           
+        parent.appendChild(node)
+        
+        global dotctr        
+        if dotctr % 100 == 0:
+            sys.stdout.write(".")
+        dotctr+=1
         return node
         
     root = appendNode(doc,"analysisnotebook",None,{"name":workbook_name,"root":model_name})    
@@ -74,9 +88,11 @@ if __name__ == "__main__":
     cursor = conn.cursor (MySQLdb.cursors.DictCursor)
     cursor.execute ("SELECT id from scenarios")
 
-    for row in cursor.fetchall():                             
+    for row in cursor.fetchall():
+        print row["id"]
         (filename,contents) = export(conn,row["id"])
-        f = open(filename,'w')
-        f.write(contents)
-        f.close()
+        if filename != None:
+            f = open(filename,'w')
+            f.write(contents)
+            f.close()
     conn.close ()

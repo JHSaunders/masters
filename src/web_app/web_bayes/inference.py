@@ -14,7 +14,12 @@
 #
 #You should have received a copy of the GNU General Public License
 #along with Web BPDA.  If not, see <http://www.gnu.org/licenses/>.
-from backends.bke_openbayes import PerformOpenBayesInference
+try:
+    from backends.bke_openbayes import PerformOpenBayesInference
+    has_openbayes = True
+except:
+    has_openbayes = False
+
 try:
     from backends.bke_pyagrum import PerformPyAgrumInference
     has_pyAgrum=True
@@ -25,9 +30,9 @@ def PerformInference(network):
     for node in network.nodes.all():
         node.normalise_node()
     
-    if network.backend == 'openbayes-jt':
+    if network.backend == 'openbayes-jt' and has_openbayes:
         PerformOpenBayesInference(network, alg='jt')
-    elif network.backend == 'openbayes-mcmc':
+    elif network.backend == 'openbayes-mcmc' and has_openbayes:
         PerformOpenBayesInference(network, alg='mcmc')
     elif network.backend == 'agrum-lazy' and has_pyAgrum:
         PerformPyAgrumInference(network,alg='lazy')
