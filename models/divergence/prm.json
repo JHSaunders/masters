@@ -1,0 +1,9 @@
+{
+    "time":10,
+    "samples":100000,
+    "skip":10,
+    "burnin":100,
+    "seed":-1,
+    "observations": {
+        }
+}

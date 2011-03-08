@@ -1,0 +1,25 @@
+{
+    "properties":{
+        "name": "Divergence Test",
+        "type": "dynamic"
+    }, 
+    "nodes": [          
+        {
+            "id": "A",
+            "label": "A",
+            "description": "",
+            "inputs":[],
+            "interslice":["A"],
+            "range":[0,100],
+            "interval":1,
+            "infinities":false,
+            "cpd":{
+                "expression":"A/2 if floor(A)==round(A) else 100-A/2"
+                },
+            "initial-cpd":{
+                "distribution": "norm(50,20)"
+                }
+        }
+    ]
+    
+}

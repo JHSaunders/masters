@@ -166,17 +166,8 @@ class ResultViewerCommand(Command):
                   Arg("results","r","The results file after inference ('-' for stdin)",str,default="res.json") ]
                  
     def action(self):
-        
-        modelins = get_in_stream(self.argument_values.model or "model.json")
-        parameterins = get_in_stream(self.argument_values.parameters or "prm.json")
-        resultins = get_in_stream(self.argument_values.parameters or "res.json")
-        
-        
-        model_obj = json.load(modelins)
-        param_obj = json.load(parameterins)
-        result_obj = json.load(resultins)
-        
-        run_viewer(model_obj,param_obj,result_obj)
+
+        run_viewer(self.argument_values.model,self.argument_values.parameters,self.argument_values.results)
         
 def main():
     execute_command()

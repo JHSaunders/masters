@@ -1,0 +1,38 @@
+{
+    "properties":{
+        "name": "hmm",
+        "type": "dynamic"
+    },
+    "nodes": [
+        {
+            "id": "H",
+            "label": "Hidden",
+            "description": "",
+            "inputs":[],
+            "interslice":["H"],
+            "range":[0,5],
+            "interval":0.1,
+            "infinities":false,
+            "cpd":{
+                "expression":"H/2"
+                },
+            "initial-cpd":{
+                "distribution": "norm(1.5,0.5)"
+                }
+        },
+        
+        {
+            "id": "O",
+            "label": "Observed",
+            "description": "",
+            "inputs":["H"],
+            "range":[0,5],
+            "interval":0.1,
+            "infinities":false,
+            "cpd": {
+                "expression":"H*2"
+                }
+        }
+    ]
+    
+}

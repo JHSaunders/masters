@@ -5,6 +5,7 @@ from random import Random
 from scipy.stats import *
 from xdot import *
 import gtk
+from math import *
 
 r = Random()
 
@@ -36,8 +37,10 @@ def eval_exp_on_range(input_intervals,expr,output_intervals,num_samples):
     
     def find_interval(value,intervals):
         for i in range(len(intervals)):
-            if intervals[i][0]<=value and value <= intervals[i][1]:
+            if intervals[i][0]<=value and value < intervals[i][1]:
                 return i
+        if value == intervals[-1][1]:
+            return len(intervals)-1
         return -1
     def normalize_counts(counts):
         total = sum(counts)

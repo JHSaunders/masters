@@ -14,4 +14,3 @@ obj/
 *.db-journal
 *spec/zips
 *.egg-info*
-
