@@ -94,7 +94,7 @@
             "description": "Guessed Value",
             "inputs":[],
             "range":[0,30],
-            "interval":3.75,
+            "interval":3.75 ,
             "infinities":false,
             "cpd":{
                 "distribution":"norm(15,3.75)"

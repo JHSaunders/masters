@@ -16,7 +16,7 @@ def get_in_stream(name):
         return open(name,'r')
 
 class ResultViewer(gtk.Window):
-    def __init__(self,modelf,paramsf,resultsf):
+    def __init__(self,modelf,paramsf,resultsf,auto_update = 1):
         super(ResultViewer, self).__init__()
         self.model_file = modelf if modelf!=None else "model.json"
         self.param_file = paramsf
@@ -47,9 +47,13 @@ class ResultViewer(gtk.Window):
         self.hbox.pack2(self.vbox,True)
         self.hbox.set_position(400)
         self.init_chart()
-        import gobject
-        gobject.timeout_add(500, self.update)
-        self.update()
+        if auto_update==1:
+            import gobject
+            gobject.timeout_add(500, self.update)
+            self.update()
+        else:
+            self.reload()
+            
         self.show_all()
     
     def reload(self):
@@ -126,6 +130,6 @@ class ResultViewer(gtk.Window):
 #            self.axis.set_ylim(0,1)
         self.canvas.draw()
             
-def run_viewer(model,params,results):
-    ResultViewer(model,params,results)
+def run_viewer(model,params,results,auto_update):
+    ResultViewer(model,params,results,auto_update)
     gtk.main()

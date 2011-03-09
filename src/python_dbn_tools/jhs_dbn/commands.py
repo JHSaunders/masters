@@ -144,7 +144,7 @@ class SimpleInferenceCommand(Command):
                   Arg("output","o","Destination for inference results('-' for stdout)",str,default="-")]
                   
     def action(self):
-        
+    
         modelins = get_in_stream(self.argument_values.model)
         parameterins = get_in_stream(self.argument_values.parameters)
         
@@ -163,11 +163,14 @@ class ResultViewerCommand(Command):
     description = ""
     arguments = [ Arg("model","m","The input model ('-' for stdin)",str,default="model.json"),
                   Arg("parameters","p","The input paramaters ('-' for stdin)",str,default="prm.json"),
-                  Arg("results","r","The results file after inference ('-' for stdin)",str,default="res.json") ]
+                  Arg("results","r","The results file after inference ('-' for stdin)",str,default="res.json"),
+                  Arg("auto_update","a","Detect changes inthe model file and automaticaly update",int,default=1) ]
                  
     def action(self):
-
-        run_viewer(self.argument_values.model,self.argument_values.parameters,self.argument_values.results)
+        if self.argument_values.auto_update == None:
+            self.argument_values.auto_update = 1
+            
+        run_viewer(self.argument_values.model,self.argument_values.parameters,self.argument_values.results,self.argument_values.auto_update)
         
 def main():
     execute_command()
