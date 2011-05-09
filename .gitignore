@@ -13,4 +13,8 @@ obj/
 *.db
 *.db-journal
 *spec/zips
+<<<<<<< HEAD
 
+=======
+*.egg-info*
+>>>>>>> a0c64ad5e49f0942cc1da5a9ce60567d1a16aaa2
