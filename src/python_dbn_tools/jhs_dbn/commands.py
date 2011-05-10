@@ -83,16 +83,19 @@ class GenerateObservationIndexesCommand(Command):
 class GraphCommand(Command):
     name = "graph"
     description= "Shows the graph of the given model"
-    arguments = [ Arg("input","i","The input model ('-' for stdin)",str,default="-")]
+    arguments = [ Arg("input","i","The input model ('-' for stdin)",str,default="model.json")]
     def action(self):
-        ins = get_in_stream(self.argument_values.input)
+        if self.argument_values.input is None:
+            ins = get_in_stream("model.json")
+        else:
+            ins = get_in_stream(self.argument_values.input)
         show_dot(json.load(ins))
 
 @register_command
 class DotCommand(Command):
     name = "dot"
     description= "Print the dot code of the graph of the given network"
-    arguments = [ Arg("input","i","The input model ('-' for stdin)",str,default="-"),
+    arguments = [ Arg("input","i","The input model ('-' for stdin)",str,default="model.json"),
                   Arg("output","o","Destination for dot code('-' for stdout)",str,default="-")]
     def action(self):
         ins = get_in_stream(self.argument_values.input)
@@ -122,8 +125,8 @@ class BarResultsCommand(Command):
 class AnimBarResultsCommand(Command):
     name = "abar"
     description= "Plot an animated bar chart of the prosterior probabilities of a node after inference"
-    arguments = [ Arg("model","m","The model ('-' for stdin)",str,default="-"),
-                  Arg("results","r","The results file after inference ('-' for stdin)",str,default="-"),
+    arguments = [ Arg("model","m","The model ('-' for stdin)",str,default="model.json"),
+                  Arg("results","r","The results file after inference ('-' for stdin)",str,default="results.json"),
                   Arg("node","n","The node to look at"),
                   Arg("fps","f","Frames per second",float),
                   ]

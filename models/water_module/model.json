@@ -6,6 +6,7 @@
     "nodes": [
         {
             "id": "AveT",
+            "cluster":"Water Module",
             "label": "Average Temperature",
             "description": "Average taken from http://www.sa-venues.com/no/weather.htm",
             "inputs":[],
@@ -18,6 +19,7 @@
         },
         {
             "id": "EvapRateMar",
+            "cluster":"Water Module",
             "label": "Evaporation rate mean annual runoff MM3/A",
             "description": "",
             "inputs":["AveT"],
@@ -30,6 +32,7 @@
         },
         {
             "id": "EvapRateDam",
+            "cluster":"Water Module",
             "label": "Evaporation rate Dams MM3/A",
             "description": "",
             "inputs":["AveT"],
@@ -42,6 +45,7 @@
         },
         {
             "id": "AveR",
+            "cluster":"Water Module",
             "label": "Average Rainfall",
             "description": "Average taken from http://www.southafrica.info/travel/advice/climate.htm",
             "inputs":[],
@@ -54,6 +58,7 @@
         },
         {
             "id": "MAR",
+            "cluster":"Water Module",
             "label": "Mean Annual Runoff KM3/A",
             "description": "",
             "inputs":["AveR"],
@@ -66,6 +71,7 @@
         },
         {
             "id": "EvapLossMar",
+            "cluster":"Water Module",
             "label": "Evaporation Losses mean annual runoff KM3/A",
             "description": "",
             "inputs":["EvapRateMar","MAR"],
@@ -78,6 +84,7 @@
         },
         {
             "id": "ExpMar",
+            "cluster":"Water Module",
             "label": "Expected Net Mean Annual Runoff KM3/A",
             "description": "",
             "inputs":["MAR","EvapLossMar"],
@@ -90,6 +97,7 @@
         },
         {
             "id": "PlnAbs",
+            "cluster":"Water Module",
             "label": "Planned Storage Abstraction This Year",
             "description": "Guessed Value",
             "inputs":[],
@@ -102,6 +110,7 @@
         },
         {
             "id": "MARYR",
+            "cluster":"Water Module",
             "label": "Mean Annual Runoff Available this year",
             "description": "",
             "inputs":["ExpMar","PlnAbs"],
@@ -114,6 +123,7 @@
         },
         {
             "id": "DamPast",
+            "cluster":"Water Module",
             "label": "Dam Storage last Year",
             "description": "Guessed value",
             "inputs":[],
@@ -130,6 +140,7 @@
         },
         {
             "id": "PlnDam",
+            "cluster":"Water Module",
             "label": "Planned Dam Storage this Year",
             "description": "",
             "inputs":["DamPast","PlnAbs"],
@@ -142,6 +153,7 @@
         },
         {
             "id": "EvapLossDam",
+            "cluster":"Water Module",
             "label": "Evaporation Losses from Dams",
             "description": "",
             "inputs":["PlnDam","EvapRateDam"],
@@ -154,6 +166,7 @@
         },
         {
             "id": "Trans",
+            "cluster":"Water Module",
             "label": "Interbasin Transfer",
             "description": "Guessed Value",
             "inputs":[],
@@ -166,6 +179,7 @@
         },
         {
             "id": "DamLoss",
+            "cluster":"Water Module",
             "label": "Water losses from dams",
             "description": "",
             "inputs":["Trans","EvapLossDam"],
@@ -178,6 +192,7 @@
         },
         {
             "id": "DamStr",
+            "cluster":"Water Module",
             "label": "Stored Water in Dams",
             "description": "",
             "inputs":["DamLoss","PlnDam"],
@@ -190,6 +205,7 @@
         },
         {
             "id": "WaterAvail",
+            "cluster":"Water Module",
             "label": "Planned Available Water",
             "description": "",
             "inputs":["MARYR","DamStr"],
@@ -200,32 +216,153 @@
                 "expression":"MARYR+DamStr"
                 }
         },
+        
         {
-            "id": "WaterUsage",
-            "label": "Water Usage from Dams by Population",
-            "description": "Completely made up",
-            "inputs":[],
-            "range":[0,100],
-            "interval":3,
+            "id": "PropDamWater",
+            "cluster":"Water Module",
+            "label": "Proportion of Available Water from Dams",
+            "description": "DamStr/WaterAvail",
+            "inputs":["DamStr","WaterAvail"],
+            "range":[0,1],
+            "interval":0.1,
             "infinities":false,
             "cpd":{
-                "distribution":"norm(15,2)"
+                "expression":"0"
                 }
-        },
-        {
-            "id": "RemainingDam",
-            "label": "Remaining Dam Water",
-            "description": "Completely made up",
-            "inputs":["DamStr","WaterUsage"],
+         },         
+         {
+            "id": "CanolaArea",
+            "cluster":"Water Requirements",
+            "label": "Canola Area (HA)",
+            "description": "",
+            "inputs":[],
+            "range":[0,300000],
+            "interval":15000,
+            "infinities":false,
+            "cpd":{
+                "expression":"100"
+                }
+         },
+         {
+            "id": "CanolaIrrigReq",
+            "cluster":"Water Requirements",
+            "label": "Canola Irrigation Requirements (KM^3)",
+            "description": "",
+            "inputs":["CanolaArea"],
+            "range":[0,0.6],
+            "interval":0.03,
+            "infinities":false,
+            "cpd":{
+                "expression":"CanolaArea*2e-6"
+                }
+         },
+         {
+            "id": "TotalWaterReq",
+            "cluster":"Water Requirements",
+            "label": "Total Water Requirements (KM^3)",
+            "description": "",
+            "inputs":["CanolaIrrigReq"],
+            "range":[0,0.6],
+            "interval":0.03,
+            "infinities":false,
+            "cpd":{
+                "expression":"CanolaIrrigReq"
+                }
+         },
+         
+         {
+            "id": "PropWaterReq",
+            "cluster":"",
+            "label": "Proportion of Water Requirements Met",
+            "description": "",
+            "inputs":["TotalWaterReq","WaterAvail"],
+            "range":[0,10],
+            "interval":0.1,
+            "infinities":false,
+            "cpd":{
+                "expression":"TotalWaterReq/WaterAvail"
+                }
+         },
+         
+         {
+            "id": "WaterImpactRatio",
+            "cluster":"",
+            "label": "Water Impact Ratio",
+            "description": "",
+            "inputs":["PropWaterReq"],
+            "range":[0,1.5],
+            "interval":0.05,
+            "infinities":false,
+            "cpd":{
+                "expression":"max(min(PropWaterReq,-14.0/6.0*PropWaterReq+14,1.4),0)"
+                }
+         },
+         
+         {
+            "id": "ProdCanolaArea",
+            "cluster":"Water Usage",
+            "label": "Producing Canola Area (HA)",
+            "description": "",
+            "inputs":["CanolaArea","WaterImpactRatio"],
+            "range":[0,450000],
+            "interval":15000,
+            "infinities":false,
+            "cpd":{
+                "expression":"CanolaArea*WaterImpactRatio"
+                }
+         },
+         {
+            "id": "CanolaIrrig",
+            "cluster":"Water Usage",
+            "label": "Canola Irrigation (KM^3)",
+            "description": "",
+            "inputs":["ProdCanolaArea"],
+            "range":[0,0.6],
+            "interval":0.03,
+            "infinities":false,
+            "cpd":{
+                "expression":"ProdCanolaArea*2e-6"
+                }
+         },
+         {
+            "id": "TotalWaterUsed",
+            "cluster":"Water Usage",
+            "label": "Total Water Used",
+            "description": "",
+            "inputs":["CanolaIrrig"],
             "range":[0,200],
             "interval":3,
             "infinities":false,
             "cpd":{
-                "expression":"max(DamStr - WaterUsage,0)"
+                "expression":"CanolaIrrig"
+                }
+         },
+         {
+            "id": "TotalDamWaterUsed",
+            "cluster":"Water Usage",
+            "label": "Total Dam Water Used",
+            "description": "",
+            "inputs":["PropDamWater","TotalWaterUsed"],
+            "range":[0,200],
+            "interval":3,
+            "infinities":false,
+            "cpd":{
+                "expression":"PropDamWater*TotalWaterUsed"
+                }
+         },
+         
+         {
+            "id": "RemainingDam",
+            "label": "Remaining Dam Water",
+            "description": "",
+            "inputs":["DamStr","TotalDamWaterUsed"],
+            "range":[0,200],
+            "interval":3,
+            "infinities":false,
+            "cpd":{
+                "expression":"max(DamStr - TotalDamWaterUsed,0)"
                 }
          }
-        
-        
     ]
     
 }

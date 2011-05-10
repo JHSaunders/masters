@@ -1,10 +1,10 @@
 all: res.json
 
-res.json : model.json prm.json
-	jdbn dynamic-inference -m model.json -p prm.json -o res.json
-
 #res.json: obs.json cpts.json
 #	./social_ecological cpts.json obs.json > res.json
+
+res.json: obs.json cpts.json
+	jdbn inference -m cpts.json -p obs.json -o res.json
 
 obs.json: prm.json model.json
 	jdbn obs -m model.json -p prm.json -o obs.json

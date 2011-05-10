@@ -209,38 +209,65 @@ def generate_dot(model):
     p.write("digraph {0} {{".format(prop["name"].replace(" ","_")))
     p.push()
     p.write("rankdir=BT")
+    
+    clusters = set([""])
     for node in obj["nodes"]:
-        p.write(node["id"]+" [")
-        p.push()
-        
-        def get_expr_label(cpd):
-            expr = "?"
-            if "expression" in cpd:
-                expr = cpd["expression"]
-            elif "distribution" in cpd:
-                expr = cpd["distribution"]
-            return expr
-        
-        label = node["label"]+"\\n"+"[{0}:{1}:{2}]\\n".format(node["range"][0],node["interval"],node["range"][1])+node["id"]+"="+get_expr_label(node["cpd"])
-        if "initial-cpd" in node:
-            label += "\\n("+node["id"]+"="+get_expr_label(node["initial-cpd"])+")"
-        
-        url = node["id"]
-        p.write("label = \"{0}\",".format(label))
-        p.write('URL = "{0}"'.format(url))
-        
-        if not ("interslice" in node):
-            node["interslice"] = []
+        if "cluster" in node:
+            clusters.add(node["cluster"])
+    
+    for cluster in clusters:
+    
+        if cluster!="":
+            p.write("subgraph cluster_{0}{{\n".format(cluster.replace(" ","_")))
+            p.push()
+            p.write("label=\"{0}\"".format(cluster))
+            p.write("fontsize=28")
             
-        is_driver = len(node["inputs"])+len(node["interslice"]) == 0
+        for node in obj["nodes"]:
+            node_cluster = ""
+            if "cluster" in node:
+                node_cluster = node["cluster"]
+            
+            if cluster!=node_cluster:
+                continue
+            
+            p.write(node["id"]+" [")
+            p.push()
+            
+            def get_expr_label(cpd):
+                expr = "?"
+                if "expression" in cpd:
+                    expr = cpd["expression"]
+                elif "distribution" in cpd:
+                    expr = cpd["distribution"]
+                return expr
+            
+            label = node["label"]+"\\n"+"[{0}:{1}:{2}]\\n".format(node["range"][0],node["interval"],node["range"][1])+node["id"]+"="+get_expr_label(node["cpd"])
+            if "initial-cpd" in node:
+                label += "\\n("+node["id"]+"="+get_expr_label(node["initial-cpd"])+")"
+            
+            url = node["id"]
+            p.write("label = \"{0}\",".format(label))
+            p.write('URL = "{0}"'.format(url))
+            
+            if not ("interslice" in node):
+                node["interslice"] = []
+                
+            is_driver = len(node["inputs"])+len(node["interslice"]) == 0
+            is_retrospective = len(node["interslice"])>0
+            if is_driver:
+                p.write("style=filled")
+                p.write("color=orange")
+            if is_retrospective:
+                p.write("style=filled")
+                p.write("color=lightblue")
+            p.pop()
+            p.write("]\n")
         
-        if is_driver:
-            p.write("style=filled")
-            p.write("color=orange")
-        
-        p.pop()
-        p.write("]\n")
-        
+        if cluster!="":
+            p.write("}\n")
+            p.pop()
+            
     for node in obj["nodes"]:
         for input in node["inputs"]:
             p.write("{0}->{1}".format(input,node["id"]))

@@ -1,11 +1,9 @@
 {
-    "time":5,
-    "samples":10,
-    "burnin":10,
-    "seed":128341,
-    "observations": {
-        "0":{"AveT":12.5,"RemainingDam":15},
-        "1":{"RemainingDam":15},
-        "2":{"AveT":12.5}
-        }
+    "burnin": 100, 
+    "observations": {}, 
+    "observations_by_index": {}, 
+    "samples": 100000, 
+    "seed": -1, 
+    "skip": 10, 
+    "time": 10
 }
