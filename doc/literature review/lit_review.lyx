@@ -69,6 +69,342 @@ James Saunders
 \end_layout
 
 \begin_layout Standard
+The state of the environment and the impact of humans.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lubchenco1998"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Vitousek1997"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ipcc2007intergovernmental"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Social-Ecological system
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Peter2010"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Social Ecological systems as Complex adaptive systems
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cowan1994,Levin2006"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wu20021"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+(complexity theory) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "heylighen2006complexity"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Interconnectedness
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Folke2005"
+
+\end_inset
+
+ (biofuels example) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Runge2007"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Non-linearity,dynamics 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Richardson2003"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uncertainty
+\end_layout
+
+\begin_layout Standard
+Difficulties in decision making
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citep
+key "malhotra1999knowledge"
+
+\end_inset
+
+ (rates of change and precedent)
+\end_layout
+
+\begin_layout Standard
+Transdiciplinarity
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Baran2004"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Islam2006"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+New management techniques and resilience
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Holling1978"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Holling1973"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Big Data
+\end_layout
+
+\begin_layout Standard
+Models and Indicators
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+(monitoring) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Dietz2003"
+
+\end_inset
+
+ (indicators)
+\begin_inset CommandInset citation
+LatexCommand citet
+key "meadows1998indicators"
+
+\end_inset
+
+, (monitoring) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "malhotra1999knowledge"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bayesian Networks
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citep
+key "pearl1988probabilistic"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Potgieter2004"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uses of Bayesian networks in Social-ecological modeling
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Baran2004,borsuk2004bayesian"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Peter2010"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Henriksen20081025"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Problems with BN's as modeling tools
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "MichelaCatenacci2010"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Alternative Models 
+\end_layout
+
+\begin_layout Standard
+SDE's
+\end_layout
+
+\begin_layout Standard
+Dynamical Systems models
+\end_layout
+
+\begin_layout Standard
+Other BN types (Continuous guassian, continuous time)
+\end_layout
+
+\begin_layout Standard
+Dynamic Bayesian networks
+\end_layout
+
+\begin_layout Standard
+Uses of dynamic Bayesian networks in Social-ecological modeling
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "MichelaCatenacci2010"
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "johnson2010modelling"
+
+\end_inset
+
 
 \end_layout
 
