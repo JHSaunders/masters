@@ -231,7 +231,7 @@
   timestamp = {2010.03.02}
 }
 
-@BOOK{IPCC2000,
+@BOOK{,
   title = {Special Report on Emmision Scenarios},
   year = {2000},
   author = {IPCC},

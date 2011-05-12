@@ -3,9 +3,12 @@
 \begin_document
 \begin_header
 \textclass article
+\begin_preamble
+\bibpunct{(}{)}{,}{a}{,}{,}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
-\language american
+\language english
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -45,8 +48,8 @@
 \end_index
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation indent
-\paragraph_indentation default
+\paragraph_separation skip
+\defskip medskip
 \quotes_language english
 \papercolumns 1
 \papersides 1
@@ -68,13 +71,386 @@ Literature Review
 James Saunders
 \end_layout
 
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+Ecological sustainability and the sustainability of human development is
+ rapidly becoming a greater concern for the global and local populations
+ and the policy makers tasked with governance 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lubchenco1998"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Climate change
+\end_layout
+
+\begin_layout Standard
+There is a large body of evidence that we are living in the beginning of
+ an era of massive anthropogenic climate change.
+ The increasing human population coupled with the increasing intensity of
+ human consumption and economic activity is placing unprecedented strain
+ on the environment 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Vitousek1997"
+
+\end_inset
+
+.
+ The effects of anthropogenic climate change are wide reaching, affecting
+ all aspects of the environment and human society
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lubchenco1998"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The global population is becoming increasingly vulnerable to effects of
+ both environmental disaster and slow environmental degradation 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lubchenco1998"
+
+\end_inset
+
+.
+ Not only is there a risk of massive loss of human life, but the increasing
+ pressures on resources and land availability make even small environmental
+ changes capable of displacing local populations and threatening food security,
+ leading to economic and political instability.
+ These risks are especially pertinent to Sub-Saharan Africa as well as much
+ of the rest of the developing world
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Brown01022008,BloemJanuary2010"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The International Panel on Climate Change (IPCC), a committee convened by
+ the United Nations to investigate climate change, is unequivocal that a
+ large component of the increases in global temperatures are caused anthropogeni
+c green house gases 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ipcc2007intergovernmental"
+
+\end_inset
+
+.
+ Its further states that even if green house gas emissions were to be stabilized
+ global warming and rising sea levels would continue for centuries, stating
+ quite simply:
+\end_layout
+
+\begin_layout Quotation
+\begin_inset Quotes eld
+\end_inset
+
+Anthropogenic warming and sea level rise would continue for centuries due
+ to the time scales associated with climate processes and feedbacks, even
+ if GHG (Green house gas) concentrations were to be stabilised.
+ {WGI 10.4, 10.5, 10.7, SPM}
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ipcc2007intergovernmental"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Predictions about climate change are heavily contingent on the assumptions
+ made about future human activity.
+ Because of this the IPCC has devloped a number of possible scenarios in
+ the 
+\emph on
+Special Report on Emissions Scenarios 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "IPCC2000"
+
+\end_inset
+
+
+\emph default
+ which were then updated in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ipcc2007intergovernmental"
+
+\end_inset
+
+.
+ Forty scenarios were developed and grouped in to 4 scenario families, that
+ are representative the range of predicted possible futures 
+\emph on
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "IPCC2000"
+
+\end_inset
+
+.
+
+\emph default
+ These scenario families, listed in a rough order of severity, are B1, B2,
+ A1, A2 and are divided based on the global integration of nations and the
+ focus of policy.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:SRES Scenarios"
+
+\end_inset
+
+ shows the four different scenarios.
+ Climate change is going to happen, in fact it is already happening 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ipcc2007intergovernmental"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Policy Focus
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Economic
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Environmental
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Globalisation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+A1
+\emph default
+ (1.4 - 6.4 °C)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+B1
+\emph default
+ (1.1 - 2.9 °C)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Regionalisation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+A2
+\emph default
+ (2.0 - 5.4 °C)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+B2
+\emph default
+ (1.4 - 3.8 °C)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:SRES Scenarios"
+
+\end_inset
+
+SRES Scenarios showing projected global average surface warming until 2100.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ipcc2007intergovernmental"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Resource Shortages
+\end_layout
+
+\begin_layout Standard
+Global biodiversity is being increasingly threatened by mass extinctions
+ of species caused by the compounding effects of climate change and the
+ habitat destruction caused by expanding human activities 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "thomas2004extinction"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Outline
+\end_layout
+
 \begin_layout Standard
 The state of the environment and the impact of humans.
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Lubchenco1998"
@@ -85,8 +461,6 @@ key "Lubchenco1998"
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Vitousek1997"
@@ -97,13 +471,7 @@ key "Vitousek1997"
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citet
-key "ipcc2007intergovernmental"
-
-\end_inset
-
-
+(High certainty that changes are anthropogenic, scenarios)
 \end_layout
 
 \begin_layout Standard
@@ -111,8 +479,6 @@ The Social-Ecological system
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Peter2010"
@@ -127,8 +493,6 @@ Social Ecological systems as Complex adaptive systems
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Cowan1994,Levin2006"
@@ -146,8 +510,6 @@ key "Wu20021"
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 (complexity theory) 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -159,14 +521,10 @@ key "heylighen2006complexity"
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Interconnectedness
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Folke2005"
@@ -188,8 +546,6 @@ Non-linearity,dynamics
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Richardson2003"
@@ -208,8 +564,6 @@ Difficulties in decision making
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset CommandInset citation
 LatexCommand citep
 key "malhotra1999knowledge"
@@ -224,8 +578,6 @@ Transdiciplinarity
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Baran2004"
@@ -247,8 +599,6 @@ New management techniques and resilience
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Holling1978"
@@ -274,8 +624,6 @@ Models and Indicators
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 (monitoring) 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -305,8 +653,6 @@ Bayesian Networks
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset CommandInset citation
 LatexCommand citep
 key "pearl1988probabilistic"
@@ -328,8 +674,6 @@ Uses of Bayesian networks in Social-ecological modeling
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Baran2004,borsuk2004bayesian"
@@ -380,11 +724,15 @@ Dynamical Systems models
 \end_layout
 
 \begin_layout Standard
-Other BN types (Continuous guassian, continuous time)
+Dynamic Bayesian networks
 \end_layout
 
 \begin_layout Standard
-Dynamic Bayesian networks
+(BNT guy)
+\end_layout
+
+\begin_layout Standard
+Other BN types (Continuous guassian, continuous time,irregular time)
 \end_layout
 
 \begin_layout Standard
