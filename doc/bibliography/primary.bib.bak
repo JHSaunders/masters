@@ -168,6 +168,16 @@
   timestamp = {2010.02.04}
 }
 
+@ARTICLE{folke2005adaptive,
+  author = {Folke, C. and Hahn, T. and Olsson, P. and Norberg, J.},
+  title = {Adaptive governance of social-ecological systems},
+  journal = {Annu. Rev. Environ. Resour.},
+  year = {2005},
+  volume = {30},
+  pages = {441--473},
+  publisher = {Annual Reviews}
+}
+
 @ARTICLE{Henriksen20081025,
   author = {Hans Jørgen Henriksen and Heidi Christiansen Barlebo},
   title = {Reflections on the use of Bayesian belief networks for adaptive management},
@@ -231,7 +241,7 @@
   timestamp = {2010.03.02}
 }
 
-@BOOK{,
+@BOOK{IPCC2000,
   title = {Special Report on Emmision Scenarios},
   year = {2000},
   author = {IPCC},

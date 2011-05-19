@@ -29,8 +29,19 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
-\papersize default
+\use_hyperref true
+\pdf_title "MSc Literature Review"
+\pdf_author "James Saunders"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 2
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
 \use_geometry false
 \use_amsmath 1
 \use_esint 1
@@ -71,14 +82,26 @@ Literature Review
 James Saunders
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Introduction
 \end_layout
 
 \begin_layout Standard
-Ecological sustainability and the sustainability of human development is
- rapidly becoming a greater concern for the global and local populations
- and the policy makers tasked with governance 
+The modern policy maker is faced with a host of new problems regarding the
+ 
+\noun on
+sustainability
+\noun default
+ of our current existence as a society and a species 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Lubchenco1998"
@@ -86,16 +109,6 @@ key "Lubchenco1998"
 \end_inset
 
 .
- 
-\end_layout
-
-\begin_layout Section
-Climate change
-\end_layout
-
-\begin_layout Standard
-There is a large body of evidence that we are living in the beginning of
- an era of massive anthropogenic climate change.
  The increasing human population coupled with the increasing intensity of
  human consumption and economic activity is placing unprecedented strain
  on the environment 
@@ -106,11 +119,14 @@ key "Vitousek1997"
 \end_inset
 
 .
- The effects of anthropogenic climate change are wide reaching, affecting
- all aspects of the environment and human society
+ Our ability to influence, and damage, our environment are greater now than
+ at any time before, exponentially so.
+ The increasing human population coupled with the increasing intensity of
+ human consumption and economic activity is placing unprecedented strain
+ on the environment 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Lubchenco1998"
+key "Vitousek1997"
 
 \end_inset
 
@@ -119,29 +135,212 @@ key "Lubchenco1998"
 \end_layout
 
 \begin_layout Standard
-The global population is becoming increasingly vulnerable to effects of
- both environmental disaster and slow environmental degradation 
+Sustainability can be most clearly described as ensuring intergenerational
+ equity (Weiss, 1987), meaning that the actions of this generation do not
+ prejudice future generations by depleting resources or degrading the environmen
+t that our society depends on.
+ However the problem is made more complex by the necessity to consider intra-gen
+erational equity, the considerations around the fair and equitable distribution
+ of, or right of access to, resources between different sections of the
+ same generation, this is largely the traditional economic problem.
+ In the South African constitution the concept of intergenerational equity
+ is enshrined as a right.
+\end_layout
+
+\begin_layout Quote
+Everyone has the right -
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+a.
+ to an environment that is not harmful to their health or well-being; and
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+b.
+ to have the environment protected, for the benefit of present and future
+ generations, through reasonable legislative and other measures that 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+i.
+ prevent pollution and ecological degradation; 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ii.
+ promote conservation; and 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+iii.
+ secure ecologically sustainable development and use of natural resources
+ while promoting justifiable economic and social development.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Quote
+(Section 24, Bill of Rights of South Africa,1996)
+\end_layout
+
+\begin_layout Section
+Social-ecological systems and complexity
+\end_layout
+
+\begin_layout Standard
+This world in which policy makers must try to make these rights realisable
+ is now more complicated than ever before.
+ The problems of sustainability can best be contextualised within the modern
+ 
+\noun on
+Social-ecological system
+\noun default
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Lubchenco1998"
+key "Folke2005"
 
 \end_inset
 
 .
- Not only is there a risk of massive loss of human life, but the increasing
- pressures on resources and land availability make even small environmental
- changes capable of displacing local populations and threatening food security,
- leading to economic and political instability.
- These risks are especially pertinent to Sub-Saharan Africa as well as much
- of the rest of the developing world
+ The concept of the social-ecological system emphasizes the coupling between
+ the social-economic dimension of human activity and the ecological dimension
+ of the natural environment 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Brown01022008,BloemJanuary2010"
+key "Folke2005"
 
 \end_inset
 
+.
+ The social-ecological system is heavily interconnected, with changes in
+ one aspect capable of influencing many other aspects and factors.
+ The increasing rate of human and technological development is rapidly increasin
+g the rate of change of the system, both at a purely social-economic level
+ and at an environmental level.
+ This rapid rate of change means that many of the problems now facing society
+ in general and policy makers specifically are unprecedented in history,
+ and require new approaches to governance (ref?).
+ These properties of the social ecological system make it a 
+\noun on
+Complex Adaptive System
+\noun default
 .
  
+\end_layout
+
+\begin_layout Standard
+Complex adaptive systems, or adaptive multi-agent systems, are composed
+ of multiple 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cowan1994,Levin2006"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wu20021"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+(complexity theory) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "heylighen2006complexity"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Interconnectedness
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Folke2005"
+
+\end_inset
+
+ (biofuels example) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Runge2007"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Non-linearity,dynamics 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Richardson2003"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Current sustainability concerns
+\end_layout
+
+\begin_layout Subsection
+Climate change
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+This section a rewrite and a change in focus
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Anthropogenic climate changes are significant changes in the global climate
+ system that can be linked to human causes.
+ These include changes in global temperatures, rainfall patterns, wind patterns
+ and various other aspects of the climate.
 \end_layout
 
 \begin_layout Standard
@@ -185,7 +384,7 @@ key "ipcc2007intergovernmental"
 \begin_layout Standard
 Predictions about climate change are heavily contingent on the assumptions
  made about future human activity.
- Because of this the IPCC has devloped a number of possible scenarios in
+ Because of this the IPCC has developed a number of possible scenarios in
  the 
 \emph on
 Special Report on Emissions Scenarios 
@@ -229,14 +428,7 @@ reference "tab:SRES Scenarios"
 \end_inset
 
  shows the four different scenarios.
- Climate change is going to happen, in fact it is already happening 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "ipcc2007intergovernmental"
-
-\end_inset
-
-.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -424,8 +616,51 @@ key "ipcc2007intergovernmental"
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Move this to separate sections
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The global population is becoming increasingly vulnerable to effects of
+ both environmental disaster and slow environmental degradation 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lubchenco1998"
+
+\end_inset
+
+.
+ Not only is there a risk of massive loss of human life, but the increasing
+ pressures on resources and land availability make even small environmental
+ changes capable of displacing local populations and threatening food security,
+ leading to economic and political instability.
+ These risks are especially pertinent to Sub-Saharan Africa as well as much
+ of the rest of the developing world
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Brown01022008,BloemJanuary2010"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
 Resource Shortages
+\end_layout
+
+\begin_layout Subsection
+Loss of biodiversity
 \end_layout
 
 \begin_layout Standard
@@ -442,163 +677,24 @@ key "thomas2004extinction"
  
 \end_layout
 
+\begin_layout Subsection
+Food security
+\end_layout
+
+\begin_layout Subsection
+Water scarcity
+\end_layout
+
 \begin_layout Section
-Outline
+Governance in a complex and uncertain environments
 \end_layout
 
 \begin_layout Standard
-The state of the environment and the impact of humans.
-\end_layout
+\begin_inset Note Greyedout
+status open
 
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Lubchenco1998"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Vitousek1997"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-(High certainty that changes are anthropogenic, scenarios)
-\end_layout
-
-\begin_layout Standard
-The Social-Ecological system
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Peter2010"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Social Ecological systems as Complex adaptive systems
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Cowan1994,Levin2006"
-
-\end_inset
-
-, 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Wu20021"
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Standard
-(complexity theory) 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "heylighen2006complexity"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Interconnectedness
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Folke2005"
-
-\end_inset
-
- (biofuels example) 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Runge2007"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Non-linearity,dynamics 
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Richardson2003"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Uncertainty
-\end_layout
-
-\begin_layout Standard
-Difficulties in decision making
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citep
-key "malhotra1999knowledge"
-
-\end_inset
-
- (rates of change and precedent)
-\end_layout
-
-\begin_layout Standard
-Transdiciplinarity
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Baran2004"
-
-\end_inset
-
-, 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Islam2006"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-New management techniques and resilience
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
+Adaptive governance 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Holling1978"
@@ -615,16 +711,39 @@ key "Holling1973"
 
 \end_layout
 
-\begin_layout Standard
-Big Data
+\begin_layout Plain Layout
+Trandisciplinarity 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Baran2004"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Islam2006"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Models
 \end_layout
 
 \begin_layout Standard
-Models and Indicators
-\end_layout
+\begin_inset Note Greyedout
+status open
 
-\begin_layout Standard
-(monitoring) 
+\begin_layout Plain Layout
+And indicators (monitoring) 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Dietz2003"
@@ -648,32 +767,43 @@ key "malhotra1999knowledge"
 
 \end_layout
 
-\begin_layout Standard
-Bayesian Networks
+\begin_layout Plain Layout
+, Integration models as important for Transdisciplinarity 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Peter2010"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Bayesian networks
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Explanation 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "pearl1988probabilistic"
 
 \end_inset
 
-, 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Potgieter2004"
-
-\end_inset
-
 
 \end_layout
 
-\begin_layout Standard
-Uses of Bayesian networks in Social-ecological modeling
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
+Bayesian networks in Social-Ecological modeling 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Baran2004,borsuk2004bayesian"
@@ -697,11 +827,8 @@ key "Henriksen20081025"
 
 \end_layout
 
-\begin_layout Standard
-Problems with BN's as modeling tools
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
+Pro's and Cons
 \begin_inset CommandInset citation
 LatexCommand citet
 key "MichelaCatenacci2010"
@@ -711,35 +838,100 @@ key "MichelaCatenacci2010"
 
 \end_layout
 
-\begin_layout Standard
-Alternative Models 
+\begin_layout Plain Layout
+The absence of feedback and time (inherent relationship between time and
+ sustainability)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Alternative Modeling systems
 \end_layout
 
 \begin_layout Standard
-SDE's
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+DEs
 \end_layout
 
-\begin_layout Standard
-Dynamical Systems models
+\begin_layout Plain Layout
+SEDs
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
+Dynamical systems models
+\end_layout
+
+\begin_layout Plain Layout
+Agent based models
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Dynamic Bayesian networks
 \end_layout
 
 \begin_layout Standard
-(BNT guy)
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Explanation and description
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Variations of dynamic Bayesian networks
 \end_layout
 
 \begin_layout Standard
-Other BN types (Continuous guassian, continuous time,irregular time)
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Discrete Variables, Discrete Time (Standard DBN)
+\end_layout
+
+\begin_layout Plain Layout
+Continuous Variable BN's (Guassian, Conditional Guassian)
+\end_layout
+
+\begin_layout Plain Layout
+Continuous Time BN's
+\end_layout
+
+\begin_layout Plain Layout
+Irregular Time BN's
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Dynamic Bayesian networks in Social-Ecological modeling
 \end_layout
 
 \begin_layout Standard
-Uses of dynamic Bayesian networks in Social-ecological modeling
-\end_layout
+\begin_inset Note Greyedout
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset citation
 LatexCommand citet
 key "MichelaCatenacci2010"
@@ -750,6 +942,11 @@ key "MichelaCatenacci2010"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "johnson2010modelling"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
