@@ -126,7 +126,7 @@ key "Vitousek1997"
  on the environment 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Vitousek1997"
+key "Vitousek1997,swilling2010africa"
 
 \end_inset
 
@@ -239,11 +239,6 @@ Complex Adaptive System
 \end_layout
 
 \begin_layout Standard
-Complex adaptive systems, or adaptive multi-agent systems, are composed
- of multiple 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Greyedout
 status open
 
@@ -315,12 +310,125 @@ key "Richardson2003"
 
 \end_layout
 
+\begin_layout Itemize
+Dealing with SES's is an inherently transdisciplinary activity 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Baran2004"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Islam2006"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Dealing with SES requires a systemic view 
+\end_layout
+
+\begin_layout Itemize
+Transdisciplinary and systemic thinking require SES's to be thought of as
+ Complex Adaptive Systems (CAS) 
+\end_layout
+
+\begin_layout Itemize
+Complex Adaptive Systems are:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Multi-agent system
+\end_layout
+
+\begin_layout Itemize
+Exhibiting self-organisation and adaptation
+\end_layout
+
+\begin_layout Itemize
+Emergent behaviour
+\end_layout
+
+\begin_layout Itemize
+Heavily interconnected
+\end_layout
+
+\begin_layout Itemize
+Exhibits non-linearities
+\end_layout
+
+\end_deeper
 \begin_layout Section
-Current sustainability concerns
+Current state of the world and the narrative of the poly-crisis
 \end_layout
 
 \begin_layout Subsection
-Climate change
+Global Changes (In no specific order yet, heavily interrelated)
+\end_layout
+
+\begin_layout Subsubsection
+Technological changes
+\end_layout
+
+\begin_layout Subsubsection
+Economic Changes (Globalization)
+\end_layout
+
+\begin_layout Subsubsection
+Environmental change
+\end_layout
+
+\begin_layout Standard
+Global biodiversity is being increasingly threatened by mass extinctions
+ of species caused by the compounding effects of climate change and the
+ habitat destruction caused by expanding human activities 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "thomas2004extinction"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Water and Food scarcity
+\end_layout
+
+\begin_layout Subsubsection
+Changing land use and Urbanization 
+\end_layout
+
+\begin_layout Subsubsection
+Changes in geopolitical power relations
+\end_layout
+
+\begin_layout Subsubsection
+Institutional and Organisational changes
+\end_layout
+
+\begin_layout Subsubsection
+Resource limits
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citep
+key "swilling2010africa"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Climate Change
 \end_layout
 
 \begin_layout Standard
@@ -655,43 +763,26 @@ key "Brown01022008,BloemJanuary2010"
  
 \end_layout
 
-\begin_layout Subsection
-Resource Shortages
-\end_layout
-
-\begin_layout Subsection
-Loss of biodiversity
-\end_layout
-
 \begin_layout Standard
-Global biodiversity is being increasingly threatened by mass extinctions
- of species caused by the compounding effects of climate change and the
- habitat destruction caused by expanding human activities 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "thomas2004extinction"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Subsection
-Food security
-\end_layout
-
-\begin_layout Subsection
-Water scarcity
+* Changes are coupled and compounding
 \end_layout
 
 \begin_layout Section
-Governance in a complex and uncertain environments
+Dealing with these changes requires new governance concepts
 \end_layout
 
 \begin_layout Standard
+* Resilience
+\end_layout
+
+\begin_layout Standard
+* Complexity can be exploited (give some hope)
+\end_layout
+
+\begin_layout Standard
+* Adaptive management 
 \begin_inset Note Greyedout
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Adaptive governance 
@@ -711,36 +802,26 @@ key "Holling1973"
 
 \end_layout
 
-\begin_layout Plain Layout
-Trandisciplinarity 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Baran2004"
-
-\end_inset
-
-, 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Islam2006"
-
 \end_inset
 
 
 \end_layout
 
-\end_inset
-
-
+\begin_layout Standard
+* Fragmented perspectives and Shared understanding
 \end_layout
 
-\begin_layout Section
-Models
+\begin_layout Standard
+* Shared understanding between different disciplines and decision makers
+\end_layout
+
+\begin_layout Standard
+* Role of modeling in creating shared understanding
 \end_layout
 
 \begin_layout Standard
 \begin_inset Note Greyedout
-status open
+status collapsed
 
 \begin_layout Plain Layout
 And indicators (monitoring) 
@@ -784,12 +865,37 @@ key "Peter2010"
 \end_layout
 
 \begin_layout Section
+Brief history of modeling
+\end_layout
+
+\begin_layout Standard
+* Differential equations
+\end_layout
+
+\begin_layout Standard
+* Dynamical Systems models
+\end_layout
+
+\begin_layout Standard
+* Agent Based models
+\end_layout
+
+\begin_layout Standard
+* Challenge to modelling has changed (more uncertainty, more complex, "softer"
+ less physical systems) [What do we really mean here?]
+\end_layout
+
+\begin_layout Section
 Bayesian networks
 \end_layout
 
 \begin_layout Standard
+* What is a Bayesian network, Bayes rule, CPD's etc.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Greyedout
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Explanation 
@@ -848,33 +954,16 @@ The absence of feedback and time (inherent relationship between time and
 
 \end_layout
 
-\begin_layout Subsection
-Alternative Modeling systems
+\begin_layout Section
+Use of Bayesian networks in SES modelling 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-DEs
+* Advantages of Bayesian Networks for SES modelling 
 \end_layout
 
-\begin_layout Plain Layout
-SEDs
-\end_layout
-
-\begin_layout Plain Layout
-Dynamical systems models
-\end_layout
-
-\begin_layout Plain Layout
-Agent based models
-\end_layout
-
-\end_inset
-
-
+\begin_layout Standard
+* Short comings of BN's
 \end_layout
 
 \begin_layout Section
@@ -883,7 +972,7 @@ Dynamic Bayesian networks
 
 \begin_layout Standard
 \begin_inset Note Greyedout
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Explanation and description
@@ -929,7 +1018,7 @@ Dynamic Bayesian networks in Social-Ecological modeling
 
 \begin_layout Standard
 \begin_inset Note Greyedout
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset CommandInset citation

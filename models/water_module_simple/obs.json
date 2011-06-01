@@ -1,0 +1,9 @@
+{
+    "burnin": 100, 
+    "observations": {}, 
+    "observations_by_index": {}, 
+    "samples": 100000, 
+    "seed": -1, 
+    "skip": 10, 
+    "time": 10
+}

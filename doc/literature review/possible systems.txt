@@ -1,0 +1,11 @@
+* Water Catchment models
+Water Catchment models are a great place to start. They are complex and multifacetted but you can still fence them off at different levels and maintain interesting behaviour, there is also lots of literature on them and normal BN's. If the project with Dr Nicky Allsop from SAEON goes through I will also have access to real data from a live and well funded project.
+  
+* Extend Lesotho climate impact model (prime for DBN, slightly different type of model, links with GIS stuff)
+A while back Camaren and I reviewed a paper that did a climate impact analysis on Lesotho (I think, may have been Swaziland). It worked by breaking up the country into small block with high resolution data on plant life, altitude and water availability. Each block then had a small BN placed in it with maybe 6 nodes that related the various physical measures plant life and habitat type. The author then used this to see what the impact would be given the different IPCC climate scenarios. It was an interesting idea but I felt it had a fatal flaw which was that neighbouring land segments didn't have any influence on the each other, which seemed pretty unrealistic to me. Of course the reason for the flaw was that it would have created cycles in the BN, but with DBN's you could create that sort of feedback system and create a massive network that would simultaneously evolve the climatic state of the whole country. It would be simple to build the model (since it is so repetitive it could be built programmatically) but it would be a massive computational challenge (it would be a huge network). Since the aforementioned paper is pretty recent it shouldn't be difficult to get a hold of the raw data either, which saves on leg work.
+
+* Urban System
+I like cities. They are very complex.
+
+* Climate change impact on Cape Town
+This would be the ultimate kickass paper. Its really publishable.

@@ -134,7 +134,7 @@
             "cpd":{
                 "expression":"RemainingDam"
                 },
-            "initial-cpd":{
+            "initial_cpd":{
                 "distribution": "norm(50,1)"
                 }
         },

@@ -168,16 +168,6 @@
   timestamp = {2010.02.04}
 }
 
-@ARTICLE{folke2005adaptive,
-  author = {Folke, C. and Hahn, T. and Olsson, P. and Norberg, J.},
-  title = {Adaptive governance of social-ecological systems},
-  journal = {Annu. Rev. Environ. Resour.},
-  year = {2005},
-  volume = {30},
-  pages = {441--473},
-  publisher = {Annual Reviews}
-}
-
 @ARTICLE{Henriksen20081025,
   author = {Hans Jørgen Henriksen and Heidi Christiansen Barlebo},
   title = {Reflections on the use of Bayesian belief networks for adaptive management},
@@ -372,6 +362,13 @@
   timestamp = {2011.05.09}
 }
 
+@PHDTHESIS{murphy2002dynamic,
+  author = {Murphy, K.P.},
+  title = {Dynamic bayesian networks: representation, inference and learning},
+  school = {Citeseer},
+  year = {2002}
+}
+
 @BOOK{pearl1988probabilistic,
   title = {Probabilistic reasoning in intelligent systems: networks of plausible
 	inference},
@@ -419,6 +416,14 @@
   volume = {May/June},
   owner = {james},
   timestamp = {2010.02.04}
+}
+
+@INPROCEEDINGS{swilling2010africa,
+  author = {Swilling, M.},
+  title = {Africa 2050--Growth, Resource Productivity and Decoupling},
+  booktitle = {Policy brief for the 7th meeting of the International Panel for Sustainable
+	Resource Management of the United Nations Environment Programme (UNEP)},
+  year = {2010}
 }
 
 @BOOK{Taleb2008,

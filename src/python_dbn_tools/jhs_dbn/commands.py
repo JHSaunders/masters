@@ -1,11 +1,12 @@
 #!/usr/bin/python
+
 import sys
 
 from ditto.command import Command,Arg,execute_command,register_command,ValueList
 from dbn_processing import *
 from inference import SimpleInferenceEngine
-from dynamic_inference import DynamicInferenceEngine
 from result_viewer import run_viewer
+from model_ide import start_ide
 
 def get_out_stream(name):
     if name =='-' or name==None:
@@ -162,32 +163,9 @@ class SimpleInferenceCommand(Command):
         json.dump(results,outs,sort_keys=True, indent=4)
 
 @register_command
-class DynamicInferenceCommand(Command):
-    name = "dynamic-inference"
-    description = ""
-    arguments = [ Arg("model","m","The input model ('-' for stdin)",str,default="-"),
-                  Arg("parameters","p","The input paramaters ('-' for stdin)",str,default="-"),
-                  Arg("output","o","Destination for inference results('-' for stdout)",str,default="-")]
-                  
-    def action(self):
-    
-        modelins = get_in_stream(self.argument_values.model)
-        parameterins = get_in_stream(self.argument_values.parameters)
-        
-        outs = get_out_stream(self.argument_values.output)
-        
-        model_obj = json.load(modelins)
-        param_obj = json.load(parameterins)
-        
-        results = DynamicInferenceEngine(model_obj,param_obj).run()
-        
-        json.dump(results,outs,sort_keys=True, indent=4)
-
-
-@register_command
 class ResultViewerCommand(Command):
     name = "results"
-    description = ""
+    description = "Opens the results viewer"
     arguments = [ Arg("model","m","The input model ('-' for stdin)",str,default="model.json"),
                   Arg("parameters","p","The input paramaters ('-' for stdin)",str,default="prm.json"),
                   Arg("results","r","The results file after inference ('-' for stdin)",str,default="res.json"),
@@ -198,7 +176,18 @@ class ResultViewerCommand(Command):
             self.argument_values.auto_update = 1
             
         run_viewer(self.argument_values.model,self.argument_values.parameters,self.argument_values.results,self.argument_values.auto_update)
-        
+
+@register_command
+class EditModelCommand(Command):
+    name = "edit"
+    description = "Opens the model editor"
+    arguments = [ Arg("model","m","The input model",str,default="model.json") ]
+    
+    def action(self):
+      
+      start_ide(self.argument_values.model)
+      pass
+    
 def main():
     execute_command()
 
