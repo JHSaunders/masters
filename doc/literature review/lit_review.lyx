@@ -126,7 +126,7 @@ key "Vitousek1997"
  on the environment 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Vitousek1997,swilling2010africa"
+key "Vitousek1997"
 
 \end_inset
 
@@ -142,7 +142,7 @@ t that our society depends on.
  However the problem is made more complex by the necessity to consider intra-gen
 erational equity, the considerations around the fair and equitable distribution
  of, or right of access to, resources between different sections of the
- same generation, this is largely the traditional economic problem.
+ same generation.
  In the South African constitution the concept of intergenerational equity
  is enshrined as a right.
 \end_layout
@@ -205,13 +205,17 @@ Current state of the world and the narrative of the poly-crisis
 The global community is faced with a polycrisis consisting of multiple interrela
 ted and reinforcing crises 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "swilling2010africa"
+LatexCommand citep
+key "Swilling2010"
 
 \end_inset
 
 .
- The massive industrialization of society over the last century has caused
+ 
+\end_layout
+
+\begin_layout Standard
+The massive industrialization of society over the last century has caused
  changes at a global level.
  This coupled with the influence of technology, which is developing at an
  increasing rate, has allowed the global population to rise exponentially,
@@ -238,14 +242,7 @@ n and water supplies.
  Biodiversity, a key component of many ecosystem services, is being dramatically
  reduced by mass extinctions of species caused by the compounding effects
  of climate change and the habitat destruction caused by expanding human
- activities 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "thomas2004extinction"
-
-\end_inset
-
-.
+ activities (thomas 2004 (lost)).
  Global ecosystem destruction is coupled with and compounded by climate
  change.
 \end_layout
@@ -257,7 +254,7 @@ The International Panel on Climate Change (IPCC), a committee convened by
 c green house gases 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "ipcc2007intergovernmental"
+key "IPCC2007"
 
 \end_inset
 
@@ -281,7 +278,7 @@ Anthropogenic warming and sea level rise would continue for centuries due
  
 \begin_inset CommandInset citation
 LatexCommand citep
-key "ipcc2007intergovernmental"
+key "IPCC2007"
 
 \end_inset
 
@@ -297,7 +294,7 @@ Predictions about climate change are heavily contingent on the assumptions
 Special Report on Emissions Scenarios 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "IPCC2000"
+key "Nakicenovic2000"
 
 \end_inset
 
@@ -306,28 +303,36 @@ key "IPCC2000"
  which were then updated in 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "ipcc2007intergovernmental"
+key "IPCC2007"
 
 \end_inset
 
 .
- Forty scenarios were developed and grouped in to 4 scenario families, that
- are representative the range of predicted possible futures 
+ Forty scenarios were developed and grouped into 4 scenario families or
+ story lines, that are representative the range of possible futures 
 \emph on
 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "IPCC2000"
+key "Nakicenovic2000"
 
 \end_inset
 
 .
 
 \emph default
+ 
+\end_layout
+
+\begin_layout Standard
+The scenarios describe possible futures based on societies responses to
+ climate change.
+ The scenarios are not given likelihood probabilities, there is no most
+ likely scenario, all are considered equally possible dependent on the future
+ decisions humanity makes with regard to its political, economic and environment
+al policies.
  These scenario families, listed in a rough order of severity, are B1, B2,
- A1, A2 and are divided based on the global integration of nations and the
- focus of policy.
- Table 
+ A1, A2 .Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:SRES Scenarios"
@@ -524,7 +529,47 @@ key "ipcc2007intergovernmental"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+The A1 family is defined by a a high level of globalization and homogenization
+ of the global economy activity of per capita income.
+ Economic growth is rapid due to the introduction of new efficient technologies.
+ The increased social interactions and economic growth lead to a global
+ population that peaks around mid-century.
+ The A1 family is divided into 3 scenarios dependent on the spread of technologi
+es used in energy generation: fossil intensive (A1FI), non-fossil energy
+ sources (A1T), or a balance across all sources (A1B) .
+\end_layout
+
+\begin_layout Standard
+The A2 family describes a heavily regionalized and economically heterogeneous
+ world.
+ The decreased global interaction and cooperation leads to economic and
+ fertility patterns not rapidly converging between regions.
+ This fragmentation leads to slow economic and technological growth as well
+ as a continuously increasing population.
+\end_layout
+
+\begin_layout Standard
+The B1 storyline describes a similarly globalized world as the A1 world
+ but with drastic change in economic emphasis toward service and information
+ sectors with corresponding decreases in material intensity, as well the
+ large scale introduction clean and efficiency increasing technologies.
+ Form these focuses emarge global solutions to economic, social and ecological
+ sustainability, in terms of both inter- and intra-generational equity.
+\end_layout
+
+\begin_layout Standard
+The B2 storyline envisages a regionalized world much like A2 but with local
+ policy makers emphasizing sustainable solutions to socio-economic and ecologica
+l problems.
+ The result is slower, though continuously, increasing population and less
+ economic growth and rapid technological development than in the A1 and
+ B1 story lines.
+ While there are many efforts towards environmental protection they lack
+ the global coordination of A2 and are bound by local regions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -554,7 +599,7 @@ key "Lubchenco1998"
  of the rest of the developing world
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Brown01022008,BloemJanuary2010"
+key "Brown2008,Bloem2010"
 
 \end_inset
 
@@ -605,7 +650,7 @@ Resource limits
 \begin_layout Standard
 \begin_inset CommandInset citation
 LatexCommand citep
-key "swilling2010africa"
+key "Swilling2010"
 
 \end_inset
 
@@ -938,7 +983,7 @@ Bayesian networks
 
 \begin_layout Standard
 \begin_inset Note Greyedout
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Explanation 
@@ -1088,7 +1133,7 @@ key "johnson2010modelling"
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
-bibfiles "primary"
+bibfiles "/home/james/Reading/library,/home/james/code/bpda/doc/proposal/primary"
 options "bibtotoc,plainnat"
 
 \end_inset
