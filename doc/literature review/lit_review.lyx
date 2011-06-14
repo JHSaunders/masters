@@ -121,16 +121,6 @@ key "Vitousek1997"
 .
  Our ability to influence, and damage, our environment are greater now than
  at any time before, exponentially so.
- The increasing human population coupled with the increasing intensity of
- human consumption and economic activity is placing unprecedented strain
- on the environment 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Vitousek1997"
-
-\end_inset
-
-.
  
 \end_layout
 
@@ -138,12 +128,18 @@ key "Vitousek1997"
 Sustainability can be most clearly described as ensuring intergenerational
  equity (Weiss, 1987), meaning that the actions of this generation do not
  prejudice future generations by depleting resources or degrading the environmen
-t that our society depends on.
- However the problem is made more complex by the necessity to consider intra-gen
-erational equity, the considerations around the fair and equitable distribution
- of, or right of access to, resources between different sections of the
- same generation.
- In the South African constitution the concept of intergenerational equity
+t that our society depends on, while simultaneously ensuring intra-generational
+ equity, the fair and equitable distribution of resources between different
+ sections of the same generation.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+In the South African constitution the concept of intergenerational equity
  is enshrined as a right.
 \end_layout
 
@@ -192,18 +188,20 @@ iii.
 (Section 24, Bill of Rights of South Africa,1996)
 \end_layout
 
-\begin_layout Section
-Current state of the world and the narrative of the poly-crisis
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-[Africa and the global community face a ‘polycrisis’ that consists of a
- multiple set of nested crises that tend to reinforce one another.]
-\end_layout
-
-\begin_layout Standard
-The global community is faced with a polycrisis consisting of multiple interrela
-ted and reinforcing crises 
+This concern about sustainability stems from the recent realization of the
+ fragility of our environment and society.
+ It comes at a period in our history that has seen and is seeing huge changes
+ in all aspects of our lives, spurred by the leaps in technology and the
+ increasing globalization it has allowed.
+ Not only is the world more complex than ever before but at the same time
+ the global community faces a polycrisis of multiple interrelated and reinforcin
+g crises 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Swilling2010"
@@ -215,20 +213,97 @@ key "Swilling2010"
 \end_layout
 
 \begin_layout Standard
-The massive industrialization of society over the last century has caused
- changes at a global level.
- This coupled with the influence of technology, which is developing at an
- increasing rate, has allowed the global population to rise exponentially,
- from 1.65 billion in 1900 to around 7 Billion in 2010 and is expected to
- reach 8.9 billion people by 2050 (UN WORLD POP 2300).
- At the same time as the global population has been increasing the amount
- of raw material consumed by individuals has been increasing, especially
- by in developed economies (???).
- The increase in individual demand for goods multiplied by the increase
- in global population has grown human industrial activities to the point
- where they have significantly degraded the global biosphere.
- The degradations can be evidenced in two primary ways, anthropogenic climate
- change, and ecosystem destruction.
+Since the 1900's the rate of technological progress has been exponentially
+ increasing, as have it's effects upon society.
+ 
+\end_layout
+
+\begin_layout Standard
+Advances in medicine have simultaneously decreased infant mortality and
+ increased longevity.
+ This has manifested as a rapidly growing population, from 1.65 billion people
+ in 1900 to almost 7 billion in 2010 (UN World pop prospects).
+ By 2100 it is expected that the global population will reach 10.1 billion,
+ although by then it is expected that the population growth rate will have
+ dramatically declined to an almost stable level (UN World pop prospects).
+ Never the massive increase in population has had dramatic effects upon
+ almost every aspect of society and society's impact upon the environment.
+ These effects have been compounded by society's changing consumption habits.
+\end_layout
+
+\begin_layout Standard
+Human industrial activities have correspondingly increased in magnitude.
+ Increasing technological prowess has allowed for stratospheric leaps in
+ the scope and reach of industry.
+ This has had a dramatically positive effect on the quality of life of many
+ (first world) citizens.
+ However it has also increased expectation and necessity to consume goods.
+ This increase in per a capita consumption coupled with the growing population
+ has led to a huge increase in the consumption of industrial inputs, such
+ as mineral and energy resources.
+ Corresponding to the increased consumption of industrial outputs has been
+ the increase in industrial waste and pollution, to the point that it is
+ now causing global damage to the biosphere.
+\end_layout
+
+\begin_layout Standard
+The changing form of the economy from what was originally an agricultural
+ base to an industrial and service sector base has brought about many changes
+ in the geography human settlement.
+ Rapid urbanization has occurred with over 50% of the global population
+ now living in cities.
+ While cities appear to offer an increased variety and quality of services
+ in reality many (if not most) urban immigrants are forced to settle in
+ the squalor of mushrooming shanty towns that surround most third world
+ cities.
+ The slow rate of job creation and the inability of urban infrastructure
+ to cope with the increased demands of urbanisation leave many exiled from
+ the economic system, with no hope of access to even the most basic services.
+\end_layout
+
+\begin_layout Standard
+As a consequence of new communication and transportation technologies, as
+ well as the insatiable desire for resources and goods of the developed
+ world economies, industrial corporations have become globe spanning.
+ This has connected geographically disparate economies into a dense web
+ of shared interests and competing agendas.
+ Actions in one area of the world are increasingly being observed to affect
+ completely separate sectors in countries on the opposite side of the world
+ and geopolitical  spectrum.
+ 
+\end_layout
+
+\begin_layout Standard
+Globalization is changing, among many things, the geopolitical and economic
+ power relationships between and within nations.
+ The bipolar power relations of the cold-war era are now a distant memory
+ and in its place is a shifting network of power blocks and global agendas.
+ Political decisions require more cooperation to be effective with traditionally
+ ignored power players making there presence felt with the combined economic
+ strength of the developing world, on the back of China, India and Brazil,
+ now demanding greater representation in global decision making and policy
+ bodies.
+ The rapid growth seen in parts of the developing world is placing enormous
+ strain on global resources as the huge population blocks of the like of
+ India and China are now demanding the lifestyle benefits common in the
+ developed world.
+ 
+\end_layout
+
+\begin_layout Standard
+These changing global dynamics have placed the world into the early stages
+ of what could be a polycrisis consisting of multiple interrelated and reinforci
+ng crises 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Swilling2010"
+
+\end_inset
+
+.
+ As previously mentioned the ecological impact of global industry is severely
+ affecting affecting the biosphere, causing large scale ecosystem destruction
+ and global climate change.
 \end_layout
 
 \begin_layout Standard
@@ -243,8 +318,8 @@ n and water supplies.
  reduced by mass extinctions of species caused by the compounding effects
  of climate change and the habitat destruction caused by expanding human
  activities (thomas 2004 (lost)).
- Global ecosystem destruction is coupled with and compounded by climate
- change.
+ Global ecosystem destruction is coupled with, compounded by, and compounds
+ climate change.
 \end_layout
 
 \begin_layout Standard
@@ -261,7 +336,7 @@ key "IPCC2007"
 .
  Its further states that even if green house gas emissions were to be stabilized
  global warming and rising sea levels would continue for centuries, stating
- quite simply:
+ quite plainly:
 \end_layout
 
 \begin_layout Quotation
@@ -283,6 +358,16 @@ key "IPCC2007"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Green house gases and the associated climate change affect not global temperatur
+es but also: sea levels, rainfall levels, ocean acidity, polar ice shelves
+ and wind patterns.
+ These changes further compound ecosystem destruction as well as impacting
+ upon a myriad of human activities through changes in agricultural conditions,
+ human settlement and land use.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -309,7 +394,7 @@ key "IPCC2007"
 
 .
  Forty scenarios were developed and grouped into 4 scenario families or
- story lines, that are representative the range of possible futures 
+ story lines, that are representative of the range of possible futures 
 \emph on
 
 \begin_inset CommandInset citation
@@ -530,13 +615,26 @@ key "ipcc2007intergovernmental"
 
 \begin_layout Standard
 The A1 family is defined by a a high level of globalization and homogenization
- of the global economy activity of per capita income.
+ of the global economy activity and per capita income.
  Economic growth is rapid due to the introduction of new efficient technologies.
- The increased social interactions and economic growth lead to a global
- population that peaks around mid-century.
+ The increased social interactions and economic growth lead to globally
+ converging fertility patterns causing the population to peak around mid-century
+ and then decline.
  The A1 family is divided into 3 scenarios dependent on the spread of technologi
 es used in energy generation: fossil intensive (A1FI), non-fossil energy
- sources (A1T), or a balance across all sources (A1B) .
+ sources (A1T), or a balance across all sources (A1B).
+ The impact of differing technological decisions is especiialy pronounced
+ in in these scenarios with the resulting increases in global temperatures
+ ranging from a low of 1.4
+\begin_inset Formula $^{\circ}C$
+\end_inset
+
+ in A1T to 6.4
+\begin_inset Formula $^{\circ}C$
+\end_inset
+
+ in A1FI.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -545,7 +643,17 @@ The A2 family describes a heavily regionalized and economically heterogeneous
  The decreased global interaction and cooperation leads to economic and
  fertility patterns not rapidly converging between regions.
  This fragmentation leads to slow economic and technological growth as well
- as a continuously increasing population.
+ as a continuously increasing population reaching 13.6 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Check this
+\end_layout
+
+\end_inset
+
+ million by 2100.
 \end_layout
 
 \begin_layout Standard
@@ -553,7 +661,7 @@ The B1 storyline describes a similarly globalized world as the A1 world
  but with drastic change in economic emphasis toward service and information
  sectors with corresponding decreases in material intensity, as well the
  large scale introduction clean and efficiency increasing technologies.
- Form these focuses emarge global solutions to economic, social and ecological
+ Form these focuses emerge global solutions to economic, social and ecological
  sustainability, in terms of both inter- and intra-generational equity.
 \end_layout
 
@@ -561,11 +669,12 @@ The B1 storyline describes a similarly globalized world as the A1 world
 The B2 storyline envisages a regionalized world much like A2 but with local
  policy makers emphasizing sustainable solutions to socio-economic and ecologica
 l problems.
- The result is slower, though continuously, increasing population and less
- economic growth and rapid technological development than in the A1 and
- B1 story lines.
+ The result is a continuously increasing population, though at less of a
+ rate than A2, and less economic growth and rapid technological development
+ than in the A1 and B1 story lines.
  While there are many efforts towards environmental protection they lack
- the global coordination of A2 and are bound by local regions.
+ the global coordination of A2 and are bound by local regions, thus limiting
+ their effectiveness.
 \end_layout
 
 \begin_layout Standard
@@ -573,15 +682,10 @@ l problems.
 status open
 
 \begin_layout Plain Layout
-Move this to separate sections
+Move this to separate sections: 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 The global population is becoming increasingly vulnerable to effects of
  both environmental disaster and slow environmental degradation 
 \begin_inset CommandInset citation
@@ -605,6 +709,11 @@ key "Brown2008,Bloem2010"
 
 .
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
