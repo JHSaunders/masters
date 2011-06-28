@@ -128,9 +128,9 @@ key "Vitousek1997"
 Sustainability can be most clearly described as ensuring intergenerational
  equity (Weiss, 1987), meaning that the actions of this generation do not
  prejudice future generations by depleting resources or degrading the environmen
-t that our society depends on, while simultaneously ensuring intra-generational
- equity, the fair and equitable distribution of resources between different
- sections of the same generation.
+t that, while simultaneously ensuring intra-generational equity, the fair
+ and equitable distribution of resources between different sections of the
+ same generation.
  
 \end_layout
 
@@ -410,8 +410,8 @@ key "Nakicenovic2000"
 \end_layout
 
 \begin_layout Standard
-The scenarios describe possible futures based on societies responses to
- climate change.
+The SRES scenarios describe possible futures based on societies responses
+ to climate change.
  The scenarios are not given likelihood probabilities, there is no most
  likely scenario, all are considered equally possible dependent on the future
  decisions humanity makes with regard to its political, economic and environment
@@ -678,29 +678,13 @@ l problems.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Move this to separate sections: 
-\end_layout
-
-\begin_layout Plain Layout
-The global population is becoming increasingly vulnerable to effects of
- both environmental disaster and slow environmental degradation 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Lubchenco1998"
-
-\end_inset
-
-.
- Not only is there a risk of massive loss of human life, but the increasing
- pressures on resources and land availability make even small environmental
- changes capable of displacing local populations and threatening food security,
- leading to economic and political instability.
- These risks are especially pertinent to Sub-Saharan Africa as well as much
- of the rest of the developing world
+The coupled effects of ecosystem destruction and climate change are negatively
+ impacting global food security.
+ Changes in rainfall and regional temperatures (Check Economist Article
+ sources), as well as damaged soil nutrient ecosystems (UNMEA) have reduced
+ crop yields.
+ This has been especially prevalent in the developing world areas that heavily
+ rely on subsistence farming, such as Sub-Saharan Africa 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Brown2008,Bloem2010"
@@ -708,79 +692,25 @@ key "Brown2008,Bloem2010"
 \end_inset
 
 .
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Global Changes (In no specific order yet, heavily interrelated)
-\end_layout
-
-\begin_layout Subsubsection
-Technological changes
-\end_layout
-
-\begin_layout Subsubsection
-Economic Changes (Globalization)
-\end_layout
-
-\begin_layout Subsubsection
-Environmental change
-\end_layout
-
-\begin_layout Subsubsection
-Water and Food scarcity
-\end_layout
-
-\begin_layout Subsubsection
-Changing land use and Urbanization 
+ Consequentially staple food prices have risen globally, causing political
+ instability in some countries, such as the food riots in Indonesia in 2008.
+ Some smaller yet wealthier nations have gone so far as to purchase massive
+ tracts of arable land in poorer nations, causing widespread protest in
+ those nations (madagascar) and further reducing their food security.
+ The water scarcity compounds food security by affecting the reliability
+ of irrigation.
 \end_layout
 
 \begin_layout Standard
-Poverty
-\end_layout
-
-\begin_layout Subsubsection
-Changes in geopolitical power relations (Security)
-\end_layout
-
-\begin_layout Subsubsection
-Institutional and Organisational changes
-\end_layout
-
-\begin_layout Subsubsection
-Resource limits
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Swilling2010"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Climate Change
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-This section a rewrite and a change in focus
-\end_layout
-
-\end_inset
-
-
+Increases in water demand and increased per capita use have placed global
+ water resources under great stress.
+ Over one in six people do not have access to safe drinking water, and Demand
+ far outstrips current supplies, and many of the current urban supplies
+ come from fresh water aquifers that are being depleted far faster than
+ they are begin renewed.
+ Water presents a particularly complex managerial problem as it involves
+ many different types of stakeholders and often water resources cross institutio
+nal and national boundaries.
 \end_layout
 
 \begin_layout Section
@@ -788,194 +718,250 @@ The Social-ecological system
 \end_layout
 
 \begin_layout Standard
-(The interrelated nature of these problems require that policy makers think
- in a new manner.
- This thing we must think about is the SES.)
-\end_layout
+The systemic and interrelated nature of these changes and problems require
+ that we approach them from a transdisciplinary perspective 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Baran2004,Islam2006"
 
-\begin_layout Standard
-This world in which policy makers must try to make these rights realisable
- is now more complicated than ever before.
- The problems of sustainability can best be contextualised within the modern
- 
+\end_inset
+
+, realizing that social, economic and ecological aspects are mutually influentia
+l 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cowan1994,Levin2006,Wu20021"
+
+\end_inset
+
+.
+ This 
 \noun on
-Social-ecological system
+Social-ecological system 
 \noun default
- 
+
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Folke2005"
 
 \end_inset
 
-.
- The concept of the social-ecological system emphasizes the coupling between
- the social-economic dimension of human activity and the ecological dimension
- of the natural environment 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Folke2005"
-
-\end_inset
-
-.
+ emphasises the coupling between the social-economic dimension of human
+ activity and the ecological dimension of the natural environment.
  The social-ecological system is heavily interconnected, with changes in
  one aspect capable of influencing many other aspects and factors.
- The increasing rate of human and technological development is rapidly increasin
-g the rate of change of the system, both at a purely social-economic level
- and at an environmental level.
- This rapid rate of change means that many of the problems now facing society
- in general and policy makers specifically are unprecedented in history,
- and require new approaches to governance (ref?).
- These properties of the social ecological system make it a 
-\noun on
-Complex Adaptive System
-\noun default
-.
+ The multivariate and interconnected nature of the social-ecological system
+ make it a Complex Adaptive System .
  
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Cowan1994,Levin2006"
-
-\end_inset
-
-, 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Wu20021"
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Plain Layout
-(complexity theory) 
+A Complex adaptive system is a system made up of multiple interacting agents,
+ each acting in its own local realm according to its own behaviour 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "heylighen2006complexity"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
-Interconnectedness
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Folke2005"
-
-\end_inset
-
- (biofuels example) 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Runge2007"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-Non-linearity,dynamics 
-\end_layout
-
-\begin_layout Plain Layout
+.
+ These agents influence and react to each other, they are interconnected.
+ Complex adaptive systems exhibit self-organisation and the ability to adapt
+ and change to outside pressures.
+ Most fundamentally they exhibit emergent behaviors, emergent behaviors
+ are behaviours that cannot be described by, and are not expected when,
+ looking solely at the local interactions and behaviours of individual agents
+ within the system (Carrianni).
+ They are global behaviours that are only apparent when looking at the system
+ as a whole.
+ A consequence of structure and behaviour of CAS is that many of the relationshi
+ps between variables can be heavily non-linear, with small perturbations
+ in one variable making dramatic and potentially irreversible changes in
+ the state of the system 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Richardson2003"
 
 \end_inset
 
-
+.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Standard
+Using the CAS as a framework through which to view SES gives us a rich and
+ expressive language to deal with the complexities of decision making around
+ social-ecological issues (Neef, 2005).
+  
 \end_layout
 
-\begin_layout Itemize
-Dealing with SES's is an inherently transdisciplinary activity 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Baran2004"
-
-\end_inset
-
-, 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Islam2006"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Dealing with SES requires a systemic view 
-\end_layout
-
-\begin_layout Itemize
-Transdisciplinary and systemic thinking require SES's to be thought of as
- Complex Adaptive Systems (CAS) 
-\end_layout
-
-\begin_layout Itemize
-Complex Adaptive Systems are:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Multi-agent system
-\end_layout
-
-\begin_layout Itemize
-Exhibiting self-organisation and adaptation
-\end_layout
-
-\begin_layout Itemize
-Emergent behaviour
-\end_layout
-
-\begin_layout Itemize
-Heavily interconnected
-\end_layout
-
-\begin_layout Itemize
-Exhibits non-linearities
-\end_layout
-
-\end_deeper
 \begin_layout Section
 Dealing with these changes requires new governance concepts
 \end_layout
 
 \begin_layout Standard
-* Resilience
+The inherent complexity of social-ecological systems breeds a large degree
+ of uncertainty, both because of a natural propensity of social-ecological
+ systems to contain random or chaotic events and, more importantly, due
+ to out limited and incomplete understanding of the system.
+ Incomplete understanding is inevitable given the scope of the social-ecological
+ systems and the rapidity with which the system dynamics can change.
+ Traditional management and governance techniques are ill-suited to dealing
+ with this uncertainty and complexity.
+ 
 \end_layout
 
 \begin_layout Standard
-* Complexity can be exploited (give some hope)
+Traditionally management has dealt with problem in terms of a predictive
+ relationship between a small number of variables, dealing with each in
+ isolation, or relative isolation, optimising some desired value or property
+ with respect to the small set of inputs.
+ This methodology is based upon a number of severely mistaken assumptions,
+ namely that : problems can be dealt with in isolation from the larger containin
+g system; the relationships between system variables are static and predictable;
+ there is only one possible future that we need concern ourselves with;
+ and that management has a complete understanding of the relevant situation.
 \end_layout
 
 \begin_layout Standard
-* Adaptive management 
-\begin_inset Note Greyedout
+Responding to the failure of traditional management in the dealing with
+ social-ecological issues, practitioners and researchers have developed
+ alternative techniques and perspectives to deal with complex social-ecological
+ systems.
+ Rather than denying management uncertainty and system complexity they make
+ them central to their management ideology.
+ Chief among these are 
+\noun on
+resilience
+\noun default
+ and 
+\noun on
+adaptive management
+\noun default
+.
+\end_layout
+
+\begin_layout Standard
+Resilience is a perspective that moves the management objective from optimisatio
+n, to increasing the 
+\begin_inset Quotes eld
+\end_inset
+
+adaptive capacity
+\begin_inset Quotes erd
+\end_inset
+
+ of a system.
+ Adaptive capacity is the ability of a system to absorb changes while still
+ maintaining the same controls over function and structure 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Holling1978,Holling1973"
+
+\end_inset
+
+.
+ This is deeply intertwined with the system's ability to self-organise and
+ its capacity to retain knowledge from experience.
+ A system with a low adaptive capacity is vulnerable to small disturbances,
+ potentially irreversibly causing it to settle into new stable state where
+ it does not provide the ecosystem services it previously did (resalliance
+ ref?).
+ In highly uncertain systems it is important that the system can maintain
+ its current functions no matter which of the multiplicity of futures manifests
+ itself (UNEP ref?).
+\end_layout
+
+\begin_layout Standard
+Complexity is not without its benefits however, within complex systems it
+ is possible o finds leverage points where small interventions can have
+ profound positive effects.
+ Similarly intelligent resource allocation and balancing can be used to
+ achieve desired goals without having to increase system resource usage
+ (swilling,decoupling paper).
+ This is possible due to the inherent non-linearity of complex adaptive
+ systems.
+ 
+\begin_inset Foot
 status collapsed
+
+\begin_layout Plain Layout
+This is still a bit underdeveloped, but I want to make it clear that there
+ is some positive attributes to this thinking, give people a little hope
+ rather than just despair.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Complementary to resilience and as a way to reinforce ecological resilience
+ is adaptive management.
+ Adaptive management embraces uncertainty and actively works to update and
+ adjust the collective understanding of the system.
+ The foundation of adaptive management are elegantly described by (folke
+ et al, 2005) as 
+\end_layout
+
+\begin_layout Quote
+\begin_inset Quotes eld
+\end_inset
+
+...policies become hypotheses, and management actions become the experiments
+ to test those hypotheses.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The focus on learning encourages broad participation in decision making,
+ moving away from pure technocratic decision making and incorporating local
+ knowledge and encouraging participation of the stakeholders most affected
+ by the decisions (Ostrom, ????).
+ 
+\end_layout
+
+\begin_layout Standard
+When dealing with decision making involving multiple stakeholders it becomes
+ necessary to create a shared understanding of the system in question.
+ Without openly dealing with the fragmentation of perspective between different
+ stakeholders it becomes impossible to take management action that is inclusive.
+ Fragmented perspectives can occur at multiple levels including fragmentation
+ of perspective between management and stakeholders, between decision makers
+ and researchers and between researchers of different backgrounds and discipline
+s.
+\end_layout
+
+\begin_layout Standard
+Without a shared understand debates and conversations between shareholders
+ cannot intersect with each other due to different assumptions, or mistaken
+ ideas about each others assumptions.
+ Shared understandings need not be, and often should not be, a single canonical
+ representation of reality, but should rather capture both the agreements
+ and disagreements between stakeholders on the structure of the system,
+ it should capture, as (Folke, 2005) says, the multi-objective reality.
+ 
+\end_layout
+
+\begin_layout Standard
+System models have been found useful in codifying and representing this
+ shared understanding.
+ Among these models computer models have found more and more traction as
+ being an embodiment of shared understanding.
+ It would be naive and techno-supremacist to say that a shared understanding
+ can be entirely encompassed by a computer model, but they have proved incredibl
+y useful as a reference point and central artifact for capturing shared
+ understanding.
+ This is not to deny the importance of narratives and discussions in modeling
+ many of the complexities of the shared understanding (?ref from Cam).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
 Adaptive governance 
@@ -994,27 +980,6 @@ key "Holling1973"
 
 
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-* Fragmented perspectives and Shared understanding
-\end_layout
-
-\begin_layout Standard
-* Shared understanding between different disciplines and decision makers
-\end_layout
-
-\begin_layout Standard
-* Role of modeling in creating shared understanding
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status collapsed
 
 \begin_layout Plain Layout
 And indicators (monitoring) 
@@ -1058,28 +1023,20 @@ key "Peter2010"
 \end_layout
 
 \begin_layout Section
-Brief history of modeling
+Introduction to modeling and some context
 \end_layout
 
 \begin_layout Standard
-* Differential equations
+* Challenge to modelling has changed (Move from predictive (single timeline)
+ models to probabilistic (multiple future) models)
 \end_layout
 
 \begin_layout Standard
-* Dynamical Systems models
+* Scenarios
 \end_layout
 
 \begin_layout Standard
-* Agent Based models
-\end_layout
-
-\begin_layout Standard
-* Challenge to modelling has changed (more uncertainty, more complex, "softer"
- less physical systems) [What do we really mean here?]
-\end_layout
-
-\begin_layout Standard
-Scenarios
+* Indicators and modelling (this is a maybe)
 \end_layout
 
 \begin_layout Section
@@ -1087,25 +1044,620 @@ Bayesian networks
 \end_layout
 
 \begin_layout Standard
-* What is a Bayesian network, Bayes rule, CPD's etc.
+
+\emph on
+[A proper introduction will be written once the previous section is done]
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
+\begin_inset Foot
+status collapsed
 
 \begin_layout Plain Layout
-Explanation 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "pearl1988probabilistic"
+Steve: This notation will change, I will probably follow one of the better
+ reference books, just need to find a system I like.
+\end_layout
+
+\end_inset
+
+In the canonical and original formulation a Bayesian network is composed
+ of 
+\begin_inset Formula $n$
+\end_inset
+
+ variables 
+\begin_inset Formula $V=\{V_{i}:0\leq i\leq n\}$
+\end_inset
+
+ composed of 
+\begin_inset Formula $N_{n}$
+\end_inset
+
+ discrete and disjoint states 
+\begin_inset Formula $S_{n}=\{s_{ni}:0\leq i\leq N_{n}\}$
+\end_inset
+
+.
+ For simplicity of notation we will use upper case letters to denote Variables
+ and the associated lower case for states when appropriate, e.g.
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ for a variable and 
+\begin_inset Formula $x$
+\end_inset
+
+ for a state of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ The states are given probabilities as to the likely hood of the variable
+ being in that state, so each state 
+\begin_inset Formula $x$
+\end_inset
+
+ in 
+\begin_inset Formula $X$
+\end_inset
+
+ is assigned a 
+\begin_inset Formula $P(X=x)$
+\end_inset
+
+.
+ In cases where continuous data must be dealt with it is normally discretised
+ or an extension to the Bayesian network structure is used, which will be
+ discussed later.
+\end_layout
+
+\begin_layout Standard
+The variables are related to each other in a directed acyclic graph.
+ Each variable has an associated set of inputs (or parents) 
+\begin_inset Formula $I_{n}\subset V$
+\end_inset
+
+.
+ The probabilities of the states of 
+\begin_inset Formula $V_{n}$
+\end_inset
+
+ are solely dependent on 
+\begin_inset Formula $I_{n}$
+\end_inset
+
+.
+ This structure means that if 
+\begin_inset Formula $X\notin I_{n}$
+\end_inset
+
+ then 
+\begin_inset Formula $V_{n}$
+\end_inset
+
+ is conditionally independent of 
+\begin_inset Formula $X$
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Need to check this is true, I am not sure if D-seperation would matter her
+ and may be using the wrong phrase.
+\end_layout
+
+\end_inset
+
+.
+ This property conditional independence is a major advantage of Bayesian
+ networks, it makes them both computationally more efficient and semantically
+ simpler.
+ 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Need to talk about the interpretation of this relationship as causality.
+\end_layout
 
 \end_inset
 
 
 \end_layout
 
+\begin_layout Standard
+The probabilities of the states in 
+\begin_inset Formula $V_{n}$
+\end_inset
+
+ are related to the probabilities of the parent's states through a conditional
+ probability distribution (CPD).
+ In the canonical form this takes the form of a conditional probability
+ table (CPT).
+ This CPT maps combinations of a variables' parent variables' states to
+ probabilities of the variables' states being true.
+ formally it is a function that maps 
+\begin_inset Formula $\times_{i\{V_{i}\in I_{n}\}}S_{i}\rightarrow P(V_{n}=x)$
+\end_inset
+
+ 
+\begin_inset Foot
+status collapsed
+
 \begin_layout Plain Layout
+Does this notation make sense, is it clear? 
+\end_layout
+
+\end_inset
+
+.
+ Thus the state (
+\begin_inset Formula $P(V_{n}=x)$
+\end_inset
+
+ for each 
+\begin_inset Formula $x\in S_{n}$
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Does using state in this context become confusing?
+\end_layout
+
+\end_inset
+
+) of a parent variable can be fully determined based on the state of it's
+ parents, isolated from the state of the rest of the network.
+ In the case where a variable 
+\begin_inset Formula $X$
+\end_inset
+
+ has no parents its states can simply be assigned a 
+\begin_inset Formula $P(X=x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The process of calculating the state of each variable is known as inference.
+ When the each variable is calculated in forward manner, i.e.
+ with it's parent's states already having been calculated, this is known
+ as deductive inference.
+ One of the strengths of Bayesian networks is that it can also perform the
+ reverse, it can infer the state of parents based on their children's states,
+ this is known as diagnostic inference.
+ 
+\end_layout
+
+\begin_layout Standard
+The concept behind diagnostic inference is natural, though difficult to
+ do intuitively (Reference from great psych paper I can't think of for this,
+ really funny).
+ Taking an example from the 
+\begin_inset Quotes eld
+\end_inset
+
+Hello world
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Hello world programs are used as the traditional introduction to all new
+ programming concepts fro beginners.
+ it has since turned into a general term for simplified introductory examples.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ of Bayesian networks, the sprinkler system
+\begin_inset Quotes erd
+\end_inset
+
+ (reference?).
+ Assume that you have a lawn, and that they neighbours have a sprinkler
+ system that reaches your yard
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Further assume you don't have a 2m high wall.
+\end_layout
+
+\end_inset
+
+.
+ You go out one day and notice the grass is wet.
+ Your options are that either the neighbours had the sprinkler on or that
+ it had rained.
+ However you notice that it is a very sunny day.
+ From that information you can infer that the sprinklers were indeed on.
+ You can diagnose the cause of an event based on the effects.
+ The statistical relationship that this works on is Bayes rule.
+ 
+\end_layout
+
+\begin_layout Standard
+Bayes rule, named ofter the seminal 18th century statistician Thomas Bayes,
+ relates the probability of 
+\begin_inset Formula $B$
+\end_inset
+
+ given the probability of 
+\begin_inset Formula $A$
+\end_inset
+
+ and the conditional probability 
+\begin_inset Formula $P(A|B)$
+\end_inset
+
+ of 
+\begin_inset Formula $A$
+\end_inset
+
+ given 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ It is a simple relation
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+I probably need to explain this better, its a hrad thing to explain easily
+ I find.
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+P(A|B)=\frac{P(B|A)P(A)}{P(B)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This relationship allows for Bayesian inference to be done when any evidence
+ is set.
+ Evidence is an assignment of the state of a variable, 
+\begin_inset Formula $P(V_{n}=x)$
+\end_inset
+
+ for each 
+\begin_inset Formula $x\in S_{n}$
+\end_inset
+
+.
+ Given the evidence the rest of the variables' state's can be inferred.
+\end_layout
+
+\begin_layout Standard
+Strategies for Bayesian inference fall into two main groups, exact and approxima
+te inference.
+ Both exact and approximate inference are NP-hard (Refs?), the computational
+ effort required to do the inference increases exponentially with the amount
+ of variables and ,specifically, states in the variables 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This is a simplified explanation of the concept of NP-hard, but a full discussio
+n of the computational complexity is outside of the scope of this paper.
+ 
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Exact methods give an exact solution to the bayesian inference problem.Exact
+ methods were originally developed by 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "pearl1988probabilistic"
+
+\end_inset
+
+ using a message passing system, but were limited to graphs that had a poly-tree
+ structure
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Should probably give a brief description of what a polytree is.
+\end_layout
+
+\end_inset
+
+.
+ This was extended to arbitrary Bayesian networks with the junction tree
+ algorithm (ref?).
+ Various other improvement and alternatives have been developed including
+ variable elimination (ref?), ...
+ and ...
+ 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Will search through for the names and refs, can't remember them right now.
+\end_layout
+
+\end_inset
+
+.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+* Exact inference for static BNs: 
+\end_layout
+
+\begin_layout Plain Layout
+* junction tree
+\end_layout
+
+\begin_layout Plain Layout
+* variable elimination
+\end_layout
+
+\begin_layout Plain Layout
+* brute force enumeration (for discrete nets)
+\end_layout
+
+\begin_layout Plain Layout
+* linear algebra (for Gaussian nets)
+\end_layout
+
+\begin_layout Plain Layout
+* Pearl's algorithm (for polytrees)
+\end_layout
+
+\begin_layout Plain Layout
+* quickscore (for QMR)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Approximate methods approximate the solution to the Bayesian inference problem.
+ Increasing the accuracy of the approximation exponentially increases the
+ required computational effort.
+ Approximation techniques work off a sampling system, where many samples
+ of the Bayesian networks states are taken, and the aggregate is used to
+ assign probabilities.
+ Due to this the computational effort required to improve the accuracy of
+ the approximation increases dramatically (ref?).
+ Most approximate inference techniques work off an MCMC system.
+ Techniques using Gibbs samplers (ref?) are popular, as well as ..., ...
+ and ...
+ 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Likewise need to do some searching through the reference archive.
+\end_layout
+
+\end_inset
+
+.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+* Approximate inference for static BNs: 
+\end_layout
+
+\begin_layout Plain Layout
+* likelihood weighting
+\end_layout
+
+\begin_layout Plain Layout
+* Gibbs sampling
+\end_layout
+
+\begin_layout Plain Layout
+* loopy belief propagation
+\end_layout
+
+\end_inset
+
+ In practice approximate techniques are faster than exact techniques, especially
+ in cases where the network is too large to feasibly calculate an exact
+ solution.
+ The disadvantage is that approximate techniques struggle to accurately
+ reconstruct the full probability distribution for complex variables with
+ many states.
+ They are more suited to case where the variables are simple or where only
+ aggregated statistics about the probability mass is required, such as mean
+ or variance.
+\end_layout
+
+\begin_layout Standard
+The Bayesian network structure has been extended and generalised.
+ Most extensions relate to the structure of the variables and the associated
+ CPDs.
+ The motivation for these extensions is most often that they allow for a
+ more natural and computationally efficient representation of continuous
+ variables than the classic discrete variables do.
+ In general they work by assuming a certain structure for the underlying
+ probability distribution of a variable, and then parameterising that.
+ Gaussian Bayesian networks (also called Gaussian networks) (ref?) assume
+ that the variables have an underlying Gaussian distribution, which is parameter
+ised by the mean and variance.
+ The CPD takes the form of a covariance matrix.
+ Gaussian and discrete nodes can be both be used in the same network, with
+ the restriction that Gaussian nodes cannot have discrete parents (ref?).
+ Gaussian networks have been extended to Conditional Gaussian networks which
+ allow discrete variables to act as switches between Gaussian distributions
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Must check this
+\end_layout
+
+\end_inset
+
+ (ref?), as well as Guassian mixture models (ref?).
+ Similar systems for Poisson and exponential distributions (ref?) exist.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+I need to brush up on this section, and check what is relevant to put in.
+ Right now I am struggling to remember what teh consequences of all the
+ different formulations are.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bayesian networks can be developed either through manual definition, through
+ automated learning form data, or a mixture of both.
+ The automated learning of Bayesian networks can be separated into four
+ distinct types
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Is types the right word? Sections maybe? 
+\end_layout
+
+\end_inset
+
+ (ref?):
+\end_layout
+
+\begin_layout Itemize
+Known structure with complete data
+\end_layout
+
+\begin_layout Itemize
+Known with incomplete data
+\end_layout
+
+\begin_layout Itemize
+Unknown structure with complete data
+\end_layout
+
+\begin_layout Itemize
+Unknown structure with incomplete data
+\end_layout
+
+\begin_layout Standard
+If the graph structure of the network is known before hand then learning
+ is significantly simpler.
+ In the case where a complete set of data is available where the value of
+ each variable is known for each data point the process of learning becomes
+ almost trivial, for each data point and each variable the corresponding
+ entry in the conditional probability table, based on the variable and it's
+ parents states, is incremented.
+ finally the CPTs are normalised (ref?).
+ Though this is essentially a frequentist interpretation of the data, and
+ Bayesian networks are ,obviously, Bayesian in nature it does not cause
+ any practical statistical contradictions 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+I probably don't have to put this point in, maybe I am just trying to sound
+ clever.
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In the case where the data is incomplete, in that there are data points
+ where variables do not have a value assigned, the task is only slightly
+ more difficult.
+ In this case an expectation maximisation style algorithm can be used.
+ The algorithm proceeds as before, except that when a variable does not
+ have a a value assigned Bayesian inference is performed on the existing
+ network to generate a value (ref?).
+ 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Must check this.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Learning Bayesian networks with unknown graph structure is more complicated
+ and significantly more computationally intensive.
+ The basic outline of the system is to generate graph structures in some
+ way (generally using some sort of randomized hill climbing algorithm) and
+ then populate the CPT with the previously mentioned methods and then score
+ them in some way, generally by using a portion of the known data that was
+ not used in the training as a verification dataset.
+ This is commonly called a search-and-score system (ref? Banjo paper).
+ The possible solution space for graph structures is huge, it increases
+ exponentially with the number of variables.
+ As such the solution will most likely not be globally optimal, and largely
+ depends on the quality of the graph generation routine.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Perhaps I should say something about detecting hidden nodes etc.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Use of Bayesian networks in SES modeling 
+\end_layout
+
+\begin_layout Standard
+* Advantages of Bayesian Networks for SES modeling 
+\end_layout
+
+\begin_layout Standard
+* Short comings of BN's
+\end_layout
+
+\begin_layout Standard
 Bayesian networks in Social-Ecological modeling 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1130,7 +1682,7 @@ key "Henriksen20081025"
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 Pro's and Cons
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1141,26 +1693,9 @@ key "MichelaCatenacci2010"
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 The absence of feedback and time (inherent relationship between time and
  sustainability)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Use of Bayesian networks in SES modelling 
-\end_layout
-
-\begin_layout Standard
-* Advantages of Bayesian Networks for SES modelling 
-\end_layout
-
-\begin_layout Standard
-* Short comings of BN's
 \end_layout
 
 \begin_layout Section
@@ -1168,11 +1703,47 @@ Dynamic Bayesian networks
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
 Explanation and description
+\end_layout
+
+\begin_layout Plain Layout
+* Exact inference for DBNs: 
+\end_layout
+
+\begin_layout Plain Layout
+* junction tree
+\end_layout
+
+\begin_layout Plain Layout
+* frontier algorithm
+\end_layout
+
+\begin_layout Plain Layout
+* forwards-backwards (for HMMs)
+\end_layout
+
+\begin_layout Plain Layout
+* Kalman-RTS (for LDSs)
+\end_layout
+
+\begin_layout Plain Layout
+*
+\end_layout
+
+\begin_layout Plain Layout
+* Approximate inference for DBNs: 
+\end_layout
+
+\begin_layout Plain Layout
+* Boyen-Koller
+\end_layout
+
+\begin_layout Plain Layout
+* factored-frontier/loopy belief propagation
 \end_layout
 
 \end_inset
@@ -1185,7 +1756,7 @@ Variations of dynamic Bayesian networks
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -1214,7 +1785,7 @@ Dynamic Bayesian networks in Social-Ecological modeling
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
