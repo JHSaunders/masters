@@ -83,6 +83,17 @@ James Saunders
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+[Note to readers: This is very rough still.
+ I have skipped a lot of references but in some places have put (ref?) where
+ I know I have the reference I just need to find it.
+ Footnotes have been added with questions and remarks.
+ I am not sure about how many headings to use, right now they are used just
+ to give structure but may be removed in the future.]
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
 
@@ -119,78 +130,23 @@ key "Vitousek1997"
 \end_inset
 
 .
- Our ability to influence, and damage, our environment are greater now than
- at any time before, exponentially so.
  
 \end_layout
 
 \begin_layout Standard
 Sustainability can be most clearly described as ensuring intergenerational
- equity (Weiss, 1987), meaning that the actions of this generation do not
- prejudice future generations by depleting resources or degrading the environmen
-t that, while simultaneously ensuring intra-generational equity, the fair
- and equitable distribution of resources between different sections of the
- same generation.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-In the South African constitution the concept of intergenerational equity
- is enshrined as a right.
-\end_layout
-
-\begin_layout Quote
-Everyone has the right -
-\end_layout
-
-\begin_deeper
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-a.
- to an environment that is not harmful to their health or well-being; and
- 
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-b.
- to have the environment protected, for the benefit of present and future
- generations, through reasonable legislative and other measures that 
-\end_layout
-
-\begin_deeper
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-i.
- prevent pollution and ecological degradation; 
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-ii.
- promote conservation; and 
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-iii.
- secure ecologically sustainable development and use of natural resources
- while promoting justifiable economic and social development.
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Quote
-(Section 24, Bill of Rights of South Africa,1996)
-\end_layout
+ equity 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Sohn1989"
 
 \end_inset
 
-
+, meaning that the actions of this generation do not prejudice future generation
+s by depleting resources or degrading the environment, while simultaneously
+ ensuring intra-generational equity, the fair and equitable distribution
+ of resources between different sections of the same generation.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -212,22 +168,41 @@ key "Swilling2010"
  
 \end_layout
 
+\begin_layout Section
+The changing world and the polycrisis
+\end_layout
+
 \begin_layout Standard
-Since the 1900's the rate of technological progress has been exponentially
- increasing, as have it's effects upon society.
+
+\emph on
+[I am torn as how deep to go into this, I want to give a good overview of
+ the complexity, interconnectedness and multiplicity of the problems, as
+ well as a feeling for how fast things are changing and how we really can
+ not rely on precedent.
+ I feel this perspective is important in order to understand the various
+ trade offs and priority of the modeling techniques.
+ However I don't have the time or expertise to give a full history of the
+ entire world here.
+ Some of this stuff would probably move to the introduction when the lit
+ review is integrated into the rest of the thesis.
+ The section is a bit disjointed right now and there are some obvious segways,
+ but I will smooth it out.]
+\emph default
  
 \end_layout
 
 \begin_layout Standard
-Advances in medicine have simultaneously decreased infant mortality and
+Since the 1900's the rate of technological progress has been exponentially
+ increasing, as have it's effects upon society.
+ Advances in medicine have simultaneously decreased infant mortality and
  increased longevity.
- This has manifested as a rapidly growing population, from 1.65 billion people
- in 1900 to almost 7 billion in 2010 (UN World pop prospects).
+ This has manifested as a rapidly growing population, growing from 1.65 billion
+ people in 1900 to almost 7 billion in 2010 (UN World pop prospects).
  By 2100 it is expected that the global population will reach 10.1 billion,
  although by then it is expected that the population growth rate will have
  dramatically declined to an almost stable level (UN World pop prospects).
- Never the massive increase in population has had dramatic effects upon
- almost every aspect of society and society's impact upon the environment.
+ The massive increase in population has had dramatic effects upon almost
+ every aspect of society and society's impact upon the environment.
  These effects have been compounded by society's changing consumption habits.
 \end_layout
 
@@ -235,81 +210,66 @@ Advances in medicine have simultaneously decreased infant mortality and
 Human industrial activities have correspondingly increased in magnitude.
  Increasing technological prowess has allowed for stratospheric leaps in
  the scope and reach of industry.
- This has had a dramatically positive effect on the quality of life of many
- (first world) citizens.
+ This has had a dramatically positive effect on the quality of life of many,
+ first world, citizens.
  However it has also increased expectation and necessity to consume goods.
  This increase in per a capita consumption coupled with the growing population
  has led to a huge increase in the consumption of industrial inputs, such
  as mineral and energy resources.
  Corresponding to the increased consumption of industrial outputs has been
  the increase in industrial waste and pollution, to the point that it is
- now causing global damage to the biosphere.
+ now damaging the global biosphere.
 \end_layout
 
 \begin_layout Standard
-The changing form of the economy from what was originally an agricultural
- base to an industrial and service sector base has brought about many changes
- in the geography human settlement.
- Rapid urbanization has occurred with over 50% of the global population
+The movement of the economy from an agricultural base to an industrial and
+ services base has altered the patterns of human settlement.
+ The population has rapidly urbanised with over 50% of the global population
  now living in cities.
  While cities appear to offer an increased variety and quality of services
- in reality many (if not most) urban immigrants are forced to settle in
+ in reality many ,if not most, urban immigrants are forced to settle in
  the squalor of mushrooming shanty towns that surround most third world
  cities.
  The slow rate of job creation and the inability of urban infrastructure
- to cope with the increased demands of urbanisation leave many exiled from
- the economic system, with no hope of access to even the most basic services.
+ to cope with the increased demands of urbanisation leave many people exiled
+ from the economic system, with no hope of access to even the most basic
+ services.
 \end_layout
 
 \begin_layout Standard
 As a consequence of new communication and transportation technologies, as
  well as the insatiable desire for resources and goods of the developed
  world economies, industrial corporations have become globe spanning.
- This has connected geographically disparate economies into a dense web
- of shared interests and competing agendas.
+ Previously disparate economies have been connected into a dense web of
+ shared interests and competing agendas.
  Actions in one area of the world are increasingly being observed to affect
  completely separate sectors in countries on the opposite side of the world
  and geopolitical  spectrum.
- 
+ These changes in economic relationships have lead geopolitical relationships.
 \end_layout
 
 \begin_layout Standard
-Globalization is changing, among many things, the geopolitical and economic
- power relationships between and within nations.
- The bipolar power relations of the cold-war era are now a distant memory
+The bipolar power relations of the cold-war era are now a distant memory
  and in its place is a shifting network of power blocks and global agendas.
- Political decisions require more cooperation to be effective with traditionally
- ignored power players making there presence felt with the combined economic
- strength of the developing world, on the back of China, India and Brazil,
- now demanding greater representation in global decision making and policy
- bodies.
+ Political decisions require more cooperation to be effective.
+ Traditionally ignored power players are making their presence felt using
+ the emerging economic strength of the developing world and are now demanding
+ greater representation in global decision making and policy bodies.
  The rapid growth seen in parts of the developing world is placing enormous
  strain on global resources as the huge population blocks of the like of
- India and China are now demanding the lifestyle benefits common in the
- developed world.
+ India and China are now demanding the lifestyle benefits that are common
+ in the developed world.
  
 \end_layout
 
 \begin_layout Standard
-These changing global dynamics have placed the world into the early stages
- of what could be a polycrisis consisting of multiple interrelated and reinforci
-ng crises 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Swilling2010"
-
-\end_inset
-
-.
- As previously mentioned the ecological impact of global industry is severely
+As previously mentioned the ecological impact of global industry is severely
  affecting affecting the biosphere, causing large scale ecosystem destruction
  and global climate change.
-\end_layout
-
-\begin_layout Standard
-15 of the 24 key ecosystem services on which humans depend are degraded
- or are being used unsustainably (United Nations Millennium Ecosystem Assessment
-, 2005 (from M swilling, UNEP) ).
+ According to the UN Millennium Ecosystem Assessment (UNMEA), 15 of the
+ 24 key ecosystem services on which humans depend are degraded or are being
+ used unsustainably (United Nations Millennium Ecosystem Assessment, 2005
+ (from M swilling, UNEP) ).
  These services provide for and support basic necessities such as food productio
 n and water supplies.
  The degradation of these services disproportionately affects the poor,
@@ -320,6 +280,47 @@ n and water supplies.
  activities (thomas 2004 (lost)).
  Global ecosystem destruction is coupled with, compounded by, and compounds
  climate change.
+ which will be discussed later.
+\end_layout
+
+\begin_layout Standard
+The coupled effects of ecosystem destruction and climate change are negatively
+ impacting global food security.
+ Changes in rainfall and regional temperatures (Check Economist Article
+ sources), as well as damaged soil nutrient ecosystems (UNMEA) have reduced
+ crop yields.
+ This has been especially prevalent in the developing world areas that heavily
+ rely on subsistence farming, such as Sub-Saharan Africa 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Brown2008,Bloem2010"
+
+\end_inset
+
+.
+ Consequentially staple food prices have risen globally, causing political
+ instability in some countries, such as the food riots in Indonesia in 2008.
+ Some smaller yet wealthier nations have gone so far as to purchase massive
+ tracts of arable land in poorer nations, causing widespread protest in
+ those nations (Madagascar ref?) and further reducing their food security.
+ Water scarcity compounds food insecurity by affecting the reliability of
+ irrigation.
+\end_layout
+
+\begin_layout Standard
+Increases in water demand and increased per capita use have placed global
+ water resources under great stress.
+ Over one in six people do not have access to safe drinking water (ref?),
+ demand far outstrips current supplies, and many of the current urban supplies
+ come from fresh water aquifers that are being depleted far faster than
+ they are begin renewed (ref?).
+ Water presents a particularly complex managerial problem as it involves
+ many different types of stakeholders and often water resources cross institutio
+nal and national boundaries.
+\end_layout
+
+\begin_layout Subsection
+Anthropogenic climate change
 \end_layout
 
 \begin_layout Standard
@@ -407,6 +408,10 @@ key "Nakicenovic2000"
 
 \emph default
  
+\end_layout
+
+\begin_layout Subsubsection
+Special Report on Emissions Scenarios
 \end_layout
 
 \begin_layout Standard
@@ -623,7 +628,7 @@ The A1 family is defined by a a high level of globalization and homogenization
  The A1 family is divided into 3 scenarios dependent on the spread of technologi
 es used in energy generation: fossil intensive (A1FI), non-fossil energy
  sources (A1T), or a balance across all sources (A1B).
- The impact of differing technological decisions is especiialy pronounced
+ The impact of differing technological decisions is especially pronounced
  in in these scenarios with the resulting increases in global temperatures
  ranging from a low of 1.4
 \begin_inset Formula $^{\circ}C$
@@ -645,7 +650,7 @@ The A2 family describes a heavily regionalized and economically heterogeneous
  This fragmentation leads to slow economic and technological growth as well
  as a continuously increasing population reaching 13.6 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Check this
@@ -677,44 +682,8 @@ l problems.
  their effectiveness.
 \end_layout
 
-\begin_layout Standard
-The coupled effects of ecosystem destruction and climate change are negatively
- impacting global food security.
- Changes in rainfall and regional temperatures (Check Economist Article
- sources), as well as damaged soil nutrient ecosystems (UNMEA) have reduced
- crop yields.
- This has been especially prevalent in the developing world areas that heavily
- rely on subsistence farming, such as Sub-Saharan Africa 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Brown2008,Bloem2010"
-
-\end_inset
-
-.
- Consequentially staple food prices have risen globally, causing political
- instability in some countries, such as the food riots in Indonesia in 2008.
- Some smaller yet wealthier nations have gone so far as to purchase massive
- tracts of arable land in poorer nations, causing widespread protest in
- those nations (madagascar) and further reducing their food security.
- The water scarcity compounds food security by affecting the reliability
- of irrigation.
-\end_layout
-
-\begin_layout Standard
-Increases in water demand and increased per capita use have placed global
- water resources under great stress.
- Over one in six people do not have access to safe drinking water, and Demand
- far outstrips current supplies, and many of the current urban supplies
- come from fresh water aquifers that are being depleted far faster than
- they are begin renewed.
- Water presents a particularly complex managerial problem as it involves
- many different types of stakeholders and often water resources cross institutio
-nal and national boundaries.
-\end_layout
-
 \begin_layout Section
-The Social-ecological system
+The social-ecological system
 \end_layout
 
 \begin_layout Standard
@@ -722,12 +691,12 @@ The systemic and interrelated nature of these changes and problems require
  that we approach them from a transdisciplinary perspective 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Baran2004,Islam2006"
+key "Maxneef2005"
 
 \end_inset
 
-, realizing that social, economic and ecological aspects are mutually influentia
-l 
+ , realizing that social, economic and ecological aspects are mutually influenti
+al 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Cowan1994,Levin2006,Wu20021"
@@ -735,9 +704,9 @@ key "Cowan1994,Levin2006,Wu20021"
 \end_inset
 
 .
- This 
+ This perspective of thinking in terms of the
 \noun on
-Social-ecological system 
+ Social-ecological system 
 \noun default
 
 \begin_inset CommandInset citation
@@ -751,12 +720,15 @@ key "Folke2005"
  The social-ecological system is heavily interconnected, with changes in
  one aspect capable of influencing many other aspects and factors.
  The multivariate and interconnected nature of the social-ecological system
- make it a Complex Adaptive System .
- 
+ make it a Complex Adaptive System (ref?).
+ Using the complex adaptive system as a framework through which to view
+ social-ecological systems gives us a rich and expressive language to deal
+ with the complexities of decision making around social-ecological issues
+ (ref?).
 \end_layout
 
 \begin_layout Standard
-A Complex adaptive system is a system made up of multiple interacting agents,
+A complex adaptive system is a system made up of multiple interacting agents,
  each acting in its own local realm according to its own behaviour 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -764,49 +736,65 @@ key "heylighen2006complexity"
 
 \end_inset
 
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+I need to expand on what an agent is.
+\end_layout
+
+\end_inset
+
 .
- These agents influence and react to each other, they are interconnected.
- Complex adaptive systems exhibit self-organisation and the ability to adapt
+ These agents influence and react to each other based only on the local
+ information available to them.
+ Complex adaptive systems exhibit self-organization and the ability to adapt
  and change to outside pressures.
- Most fundamentally they exhibit emergent behaviors, emergent behaviors
- are behaviours that cannot be described by, and are not expected when,
- looking solely at the local interactions and behaviours of individual agents
- within the system (Carrianni).
+ Most fundamentally they exhibit emergent behaviors 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Islam2006"
+
+\end_inset
+
+, emergent behaviors are behaviours that cannot be described by, and are
+ not expected when, looking solely at the local interactions and behaviours
+ of individual agents within the system 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cariani1992"
+
+\end_inset
+
+.
  They are global behaviours that are only apparent when looking at the system
  as a whole.
- A consequence of structure and behaviour of CAS is that many of the relationshi
-ps between variables can be heavily non-linear, with small perturbations
- in one variable making dramatic and potentially irreversible changes in
- the state of the system 
+ A consequence of the structure and behaviour of CAS is that many of the
+ relationships between variables can be heavily non-linear 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Richardson2003"
 
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Standard
-Using the CAS as a framework through which to view SES gives us a rich and
- expressive language to deal with the complexities of decision making around
- social-ecological issues (Neef, 2005).
-  
+, with small perturbations in one variable making dramatic and potentially
+ irreversible changes in the state of the system .
 \end_layout
 
 \begin_layout Section
-Dealing with these changes requires new governance concepts
+New approaches to governance 
 \end_layout
 
 \begin_layout Standard
 The inherent complexity of social-ecological systems breeds a large degree
  of uncertainty, both because of a natural propensity of social-ecological
  systems to contain random or chaotic events and, more importantly, due
- to out limited and incomplete understanding of the system.
+ to out limited and incomplete understanding of the system (ref?) .
  Incomplete understanding is inevitable given the scope of the social-ecological
  systems and the rapidity with which the system dynamics can change.
  Traditional management and governance techniques are ill-suited to dealing
- with this uncertainty and complexity.
+ with this uncertainty and complexity (ref?).
  
 \end_layout
 
@@ -819,7 +807,8 @@ Traditionally management has dealt with problem in terms of a predictive
  namely that : problems can be dealt with in isolation from the larger containin
 g system; the relationships between system variables are static and predictable;
  there is only one possible future that we need concern ourselves with;
- and that management has a complete understanding of the relevant situation.
+ and that management has a complete understanding of the relevant situation
+ (ref?).
 \end_layout
 
 \begin_layout Standard
@@ -855,7 +844,7 @@ adaptive capacity
  maintaining the same controls over function and structure 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Holling1978,Holling1973"
+key "Holling1973"
 
 \end_inset
 
@@ -877,7 +866,7 @@ Complexity is not without its benefits however, within complex systems it
  profound positive effects.
  Similarly intelligent resource allocation and balancing can be used to
  achieve desired goals without having to increase system resource usage
- (swilling,decoupling paper).
+ (swilling,decoupling paper ref?).
  This is possible due to the inherent non-linearity of complex adaptive
  systems.
  
@@ -897,11 +886,24 @@ This is still a bit underdeveloped, but I want to make it clear that there
 
 \begin_layout Standard
 Complementary to resilience and as a way to reinforce ecological resilience
- is adaptive management.
+ is adaptive management 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Holling1978"
+
+\end_inset
+
+.
  Adaptive management embraces uncertainty and actively works to update and
  adjust the collective understanding of the system.
- The foundation of adaptive management are elegantly described by (folke
- et al, 2005) as 
+ The foundation of adaptive management are elegantly described by 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Folke2005"
+
+\end_inset
+
+ as 
 \end_layout
 
 \begin_layout Quote
@@ -920,7 +922,14 @@ Complementary to resilience and as a way to reinforce ecological resilience
 The focus on learning encourages broad participation in decision making,
  moving away from pure technocratic decision making and incorporating local
  knowledge and encouraging participation of the stakeholders most affected
- by the decisions (Ostrom, ????).
+ by the decisions 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Ostrom2007a"
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -932,7 +941,14 @@ When dealing with decision making involving multiple stakeholders it becomes
  Fragmented perspectives can occur at multiple levels including fragmentation
  of perspective between management and stakeholders, between decision makers
  and researchers and between researchers of different backgrounds and discipline
-s.
+s 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Peter2010"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -942,7 +958,14 @@ Without a shared understand debates and conversations between shareholders
  Shared understandings need not be, and often should not be, a single canonical
  representation of reality, but should rather capture both the agreements
  and disagreements between stakeholders on the structure of the system,
- it should capture, as (Folke, 2005) says, the multi-objective reality.
+ it should capture, as 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Folke2005"
+
+\end_inset
+
+ say, the multi-objective reality.
  
 \end_layout
 
@@ -959,30 +982,33 @@ y useful as a reference point and central artifact for capturing shared
  many of the complexities of the shared understanding (?ref from Cam).
 \end_layout
 
+\begin_layout Section
+Introduction to modeling and some context
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+[This section talks about some of the goals and methods of modeling in the
+ abstract before introducing Bayesian networks in the next section.]
+\end_layout
+
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-Adaptive governance 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Holling1978"
-
-\end_inset
-
-, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Holling1973"
-
-\end_inset
-
-
+* Challenge to modeling has changed (Move from predictive (single timeline)
+ models to probabilistic (multiple future) models)
 \end_layout
 
 \begin_layout Plain Layout
-And indicators (monitoring) 
+* Scenarios
+\end_layout
+
+\begin_layout Plain Layout
+* Indicators and modeling (this is a maybe) and indicators (monitoring)
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Dietz2003"
@@ -1006,37 +1032,9 @@ key "malhotra1999knowledge"
 
 \end_layout
 
-\begin_layout Plain Layout
-, Integration models as important for Transdisciplinarity 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Peter2010"
-
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Introduction to modeling and some context
-\end_layout
-
-\begin_layout Standard
-* Challenge to modelling has changed (Move from predictive (single timeline)
- models to probabilistic (multiple future) models)
-\end_layout
-
-\begin_layout Standard
-* Scenarios
-\end_layout
-
-\begin_layout Standard
-* Indicators and modelling (this is a maybe)
 \end_layout
 
 \begin_layout Section
@@ -1054,8 +1052,8 @@ Bayesian networks
 status collapsed
 
 \begin_layout Plain Layout
-Steve: This notation will change, I will probably follow one of the better
- reference books, just need to find a system I like.
+Steve: This notation will change a bit, I will probably follow one of the
+ better reference books, just need to find a system I like.
 \end_layout
 
 \end_inset
@@ -1145,8 +1143,7 @@ The variables are related to each other in a directed acyclic graph.
 status collapsed
 
 \begin_layout Plain Layout
-Need to check this is true, I am not sure if D-seperation would matter her
- and may be using the wrong phrase.
+Need to check this is true, I am not sure if D-seperation would matter here.
 \end_layout
 
 \end_inset
@@ -1223,6 +1220,10 @@ Does using state in this context become confusing?
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Subsection
+Bayesian Inference
 \end_layout
 
 \begin_layout Standard
@@ -1451,9 +1452,8 @@ Approximate methods approximate the solution to the Bayesian inference problem.
  Due to this the computational effort required to improve the accuracy of
  the approximation increases dramatically (ref?).
  Most approximate inference techniques work off an MCMC system.
- Techniques using Gibbs samplers (ref?) are popular, as well as ..., ...
- and ...
- 
+ Techniques using Gibbs samplers (ref?) are popular, as well as likelihood
+ weighting (ref?) and loopy belief propagation(ref?) 
 \begin_inset Foot
 status collapsed
 
@@ -1464,27 +1464,6 @@ Likewise need to do some searching through the reference archive.
 \end_inset
 
 .
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-* Approximate inference for static BNs: 
-\end_layout
-
-\begin_layout Plain Layout
-* likelihood weighting
-\end_layout
-
-\begin_layout Plain Layout
-* Gibbs sampling
-\end_layout
-
-\begin_layout Plain Layout
-* loopy belief propagation
-\end_layout
-
-\end_inset
-
  In practice approximate techniques are faster than exact techniques, especially
  in cases where the network is too large to feasibly calculate an exact
  solution.
@@ -1493,7 +1472,11 @@ status collapsed
  many states.
  They are more suited to case where the variables are simple or where only
  aggregated statistics about the probability mass is required, such as mean
- or variance.
+ or variance (ref? if I can find one).
+\end_layout
+
+\begin_layout Subsection
+Extended and alternative Bayesian networks
 \end_layout
 
 \begin_layout Standard
@@ -1540,11 +1523,15 @@ I need to brush up on this section, and check what is relevant to put in.
 
 \end_layout
 
+\begin_layout Subsection
+Automated Learning of Bayesian networks
+\end_layout
+
 \begin_layout Standard
 Bayesian networks can be developed either through manual definition, through
  automated learning form data, or a mixture of both.
  The automated learning of Bayesian networks can be separated into four
- distinct types
+ distinct types 
 \begin_inset Foot
 status collapsed
 
@@ -1625,9 +1612,9 @@ Learning Bayesian networks with unknown graph structure is more complicated
  and significantly more computationally intensive.
  The basic outline of the system is to generate graph structures in some
  way (generally using some sort of randomized hill climbing algorithm) and
- then populate the CPT with the previously mentioned methods and then score
+ then populate the CPT via the previously mentioned methods and then score
  them in some way, generally by using a portion of the known data that was
- not used in the training as a verification dataset.
+ not used in the training as a verification dataset (ref? check swazi paper).
  This is commonly called a search-and-score system (ref? Banjo paper).
  The possible solution space for graph structures is huge, it increases
  exponentially with the number of variables.
@@ -1650,14 +1637,18 @@ Use of Bayesian networks in SES modeling
 \end_layout
 
 \begin_layout Standard
-* Advantages of Bayesian Networks for SES modeling 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+* Advantages of Bayesian Networks for SES modeling
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 * Short comings of BN's
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Bayesian networks in Social-Ecological modeling 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1682,7 +1673,7 @@ key "Henriksen20081025"
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Pro's and Cons
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1693,9 +1684,14 @@ key "MichelaCatenacci2010"
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 The absence of feedback and time (inherent relationship between time and
  sustainability)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1757,7 +1753,7 @@ Variations of dynamic Bayesian networks
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Discrete Variables, Discrete Time (Standard DBN)
